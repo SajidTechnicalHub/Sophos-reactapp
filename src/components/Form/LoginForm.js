@@ -1,31 +1,68 @@
-import React from 'react'
-
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom';
 const LoginForm = () => {
+    const [input, setInput] = useState({
+        username: '',
+        email: '',
+        password: ''
+    });
+    const InputEvent = (e) =>{
+        const {name, value} = e.target;
+        setInput(()=>{
+            return{ ...input, [name]:value }
+        })
+    }
+    const SubmitEvent = (e) => {
+        e.preventDefault()
+        alert( `Your Email: ${input.email} and Password is: ${input.password} `)
+        setInput({
+            username:'',
+            email: '',
+            password: ''
+        })
+    }
     return (
         <>
             <div>
-                <form>
+                <form onSubmit={SubmitEvent} >
                     <div className="mb-3">
                         <label for="InputUsername" className="form-label">Username</label>
-                        <input type="email" className="form-control" id="InputUsername" aria-describedby="emailHelp"/>
+                        <input type="text"
+                         name="username" 
+                         value={input.username} 
+                         onChange={InputEvent}  
+                         className="form-control" 
+                         />
                         
                     </div>
                     <div className="mb-3">
                         <label for="InputEmail1" className="form-label">Email address</label>
-                        <input type="email" className="form-control" id="InputEmail1" aria-describedby="emailHelp"/>
-                            <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
+                        <input type="email"
+                         name="email" 
+                         value={input.email} 
+                         onChange={InputEvent}  
+                         className="form-control"
+                         />
+                           
                     </div>
                     <div className="mb-3">
                         <label for="InputPassword1" className="form-label">Password</label>
-                        <input type="password" className="form-control" id="InputPassword1"/>
+                        <input type="password"
+                         name="password" 
+                         value={input.password} 
+                         onChange={InputEvent}  
+                         className="form-control"
+                         />
                     </div>
                     <div className="mb-3 form-check">
                         <input type="checkbox" className="form-check-input" id="Check1"/>
                             <label className="form-check-label" for="Check1">Check me out</label>
                     </div>
                     <div className='submit-btn'>
-                      <button type="submit" className="btn btn-primary">login</button>
-                      <button type="submit" className="btn btn-primary">Sign up</button>
+                      <button type="submit" className="form-btn">login</button>
+                      <Link to="signup">
+                        <button className="form-btn">Sign Up</button>
+                    </Link>
                     </div>
                     
                 </form>

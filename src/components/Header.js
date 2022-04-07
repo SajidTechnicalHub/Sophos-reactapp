@@ -1,11 +1,12 @@
 import React from 'react'
+import {NavLink} from 'react-router-dom'
 
 const Header = () => {
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-dark header-bg-color">
         <div className="container-fluid">
-          <a className="navbar-brand" href="#">
+          <a className="navbar-brand" href="/">
             <span className='header-title'>
               <span className='header-logo'>Ph</span><h3>Phish Threat</h3>
             </span>
@@ -16,16 +17,19 @@ const Header = () => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav ms-auto ">
               <li className="nav-item">
-                <a className="nav-link " aria-current="page" href="#">Features</a>
+                <a  className="nav-link " aria-current="page" href="/">Features</a>
+                {/* <NavLink activeClassName='' className=" nav-link" to="/">Features</NavLink> */}
+                
               </li>
               <li className="nav-item ">
-                <a className="nav-link active" href="#">Free Trail</a>
+                {/* <a className="nav-link active" href="/">Free Trail</a> */}
+                <NavLink activeClassName='' className=" nav-link" to="/">Free Trail</NavLink>
               </li>
               <li className="nav-item ">
-                <a className="nav-link " href="#">How to Buy</a>
+                <a className="nav-link " href="/">How to Buy</a>
               </li>
               <li className="nav-item ">
-                <a className="nav-link " href="#">Get Pricing</a>
+                <a className="nav-link " href="/">Get Pricing</a>
               </li>
             </ul>
 
