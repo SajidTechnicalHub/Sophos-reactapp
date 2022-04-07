@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Sophos-reactapp/static/css/main.588112f0.css",
+    "main.js": "/Sophos-reactapp/static/js/main.10ee7288.js",
+    "index.html": "/Sophos-reactapp/index.html",
+    "main.588112f0.css.map": "/Sophos-reactapp/static/css/main.588112f0.css.map",
+    "main.10ee7288.js.map": "/Sophos-reactapp/static/js/main.10ee7288.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.588112f0.css",
+    "static/js/main.10ee7288.js"
+  ]
+}
