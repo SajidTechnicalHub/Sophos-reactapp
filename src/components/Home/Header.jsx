@@ -8,7 +8,7 @@ const Header = () => {
         <div className="container-fluid">
           <Link to='/' className="navbar-brand">
             <span className='header-title'>
-              <span className='header-logo'>Ph</span><h3>Phish Threat</h3>
+              <span className='header-logo'>Ph</span><h3>PhishCode Threat</h3>
             </span>
             </Link>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
