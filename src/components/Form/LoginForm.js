@@ -26,7 +26,7 @@ const LoginForm = () => {
             <div>
                 <form onSubmit={SubmitEvent} >
                     <div className="mb-3">
-                        <label for="InputUsername" className="form-label">Username</label>
+                        <label htmlFor="InputUsername" className="form-label">Username</label>
                         <input type="text"
                          name="username" 
                          value={input.username} 
@@ -36,7 +36,7 @@ const LoginForm = () => {
                         
                     </div>
                     <div className="mb-3">
-                        <label for="InputEmail1" className="form-label">Email address</label>
+                        <label htmlFor="InputEmail1" className="form-label">Email address</label>
                         <input type="email"
                          name="email" 
                          value={input.email} 
@@ -46,7 +46,7 @@ const LoginForm = () => {
                            
                     </div>
                     <div className="mb-3">
-                        <label for="InputPassword1" className="form-label">Password</label>
+                        <label htmlFor="InputPassword1" className="form-label">Password</label>
                         <input type="password"
                          name="password" 
                          value={input.password} 
@@ -56,7 +56,7 @@ const LoginForm = () => {
                     </div>
                     <div className="mb-3 form-check">
                         <input type="checkbox" className="form-check-input" id="Check1"/>
-                            <label className="form-check-label" for="Check1">Check me out</label>
+                            <label className="form-check-label" htmlFor="Check1">Check me out</label>
                     </div>
                     <div className='submit-btn'>
                       <button type="submit" className="form-btn">login</button>

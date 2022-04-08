@@ -11,7 +11,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /* background-color: rgb(25, 0, 255)!important; */
-  background-color: rgb(13, 5, 85)!important;
+  background-color: #1e334a!important;
   padding: 0px;
   margin: 0px;
   box-sizing: border-box;
@@ -20,7 +20,7 @@ body {
 
 .header-bg-color{
   /* background: rgba(0,91,200,0.9); */
-  background: rgba(10, 8, 95, 0.9);
+  background: #244161;
   backdrop-filter: saturate(180%) blur(20px);
   /* margin-top: 80px; */
 }
@@ -145,7 +145,7 @@ body {
   gap:10px;
 }
 .check-icon-style{
-  color: blue;
+  color: #1e334a;
   font-size: 12px;
   background-color: white;
   border-radius: 50%;
@@ -192,6 +192,11 @@ body {
     font-size: 35x;
     color: #fff;
     font-weight: 500;
+  }
+  .main-section-title-block{
+    
+    padding-right: 0px;
+  
   }
 }
 
@@ -266,7 +271,7 @@ body {
 }
 .form-btn{
   color: white;
-  background-color: blue;
+  background-color: #1e334a;
   padding: 3px 13px;
   border-radius: 20px;
   cursor: pointer;
@@ -274,7 +279,7 @@ body {
 }
 .form-btn:hover{
   color: white;
-  background-color: rgba(0,91,200,0.9);
+  background-color: #1e334a;
   padding: 3px 13px;
   border-radius: 20px;
   cursor: pointer;

@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheck } from '@fortawesome/free-solid-svg-icons'
-import LoginForm from './Form/LoginForm'
-import SignUpForm from './Form/SignUpForm'
+import LoginForm from '../Form/LoginForm'
+
 const Home = () => {
 
-    const [form, setForm] = useState('logi')
+    // const [form, setForm] = useState('logi')
     return (
         <>
             <div className='container-fluid main-section'>
@@ -59,7 +59,7 @@ const Home = () => {
                         <div className='main-section-form-block'>
 
                             {/* form==='login'? <LoginForm/>:<SignUpForm /> */}
-                            <LoginForm/>
+                            <LoginForm />
 
                         </div>
 
