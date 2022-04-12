@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/static/css/main.d4f3707a.css",
-    "main.js": "/static/js/main.9f3b0752.js",
-    "index.html": "/index.html",
-    "main.d4f3707a.css.map": "/static/css/main.d4f3707a.css.map",
-    "main.9f3b0752.js.map": "/static/js/main.9f3b0752.js.map"
+    "main.css": "/Sophos-reactapp/static/css/main.d4f3707a.css",
+    "main.js": "/Sophos-reactapp/static/js/main.9f3b0752.js",
+    "index.html": "/Sophos-reactapp/index.html",
+    "main.d4f3707a.css.map": "/Sophos-reactapp/static/css/main.d4f3707a.css.map",
+    "main.9f3b0752.js.map": "/Sophos-reactapp/static/js/main.9f3b0752.js.map"
   },
   "entrypoints": [
     "static/css/main.d4f3707a.css",
