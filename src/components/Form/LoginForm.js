@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 const LoginForm = () => {
     const [input, setInput] = useState({
-        username: '',
+        // username: '',
         email: '',
         password: ''
     });
@@ -16,7 +16,7 @@ const LoginForm = () => {
         e.preventDefault()
         alert( `Your Email: ${input.email} and Password is: ${input.password} `)
         setInput({
-            username:'',
+            // username:'',
             email: '',
             password: ''
         })
@@ -25,23 +25,26 @@ const LoginForm = () => {
         <>
             <div>
                 <form onSubmit={SubmitEvent} >
-                    <div className="mb-3">
+                    {/* <div className="mb-3">
                         <label htmlFor="InputUsername" className="form-label">Username</label>
                         <input type="text"
                          name="username" 
                          value={input.username} 
                          onChange={InputEvent}  
-                         className="form-control" 
+                         className="form-control"
+                         required="required"  
                          />
                         
-                    </div>
+                    </div> */}
                     <div className="mb-3">
-                        <label htmlFor="InputEmail1" className="form-label">Email address</label>
+                        <label htmlFor="InputEmail1" className="form-label">Email </label>
                         <input type="email"
                          name="email" 
                          value={input.email} 
                          onChange={InputEvent}  
                          className="form-control"
+                         required="required" 
+                         placeholder=' Enter Username Or Email'
                          />
                            
                     </div>
@@ -52,6 +55,8 @@ const LoginForm = () => {
                          value={input.password} 
                          onChange={InputEvent}  
                          className="form-control"
+                         required="required" 
+                         placeholder='Enter Password'
                          />
                     </div>
                     <div className="mb-3 form-check">
@@ -60,11 +65,14 @@ const LoginForm = () => {
                     </div>
                     <div className='submit-btn'>
                       <button type="submit" className="form-btn">login</button>
-                      <Link to="signup">
-                        <button className="form-btn">Sign Up</button>
+                      <Link to="">
+                        <span><a href=''> Forgot Your Password?</a></span>
+                    </Link>
+                      <Link to="/signup">
+                        <button className=" btn">Sign Up</button>
                     </Link>
                     </div>
-                    
+                   
                 </form>
             </div>
         </>

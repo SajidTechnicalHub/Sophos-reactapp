@@ -8,7 +8,7 @@ const Header = () => {
         <div className="container-fluid">
           <Link to='/' className="navbar-brand">
             <span className='header-title'>
-              <span className='header-logo'>Ph</span><h3>PhishCode Threat</h3>
+              <span className='header-logo'>Ph</span><h3>PhishCode</h3>
             </span>
             </Link>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -16,6 +16,12 @@ const Header = () => {
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav ms-auto ">
+            <li className="nav-item">
+                {/* <a  className="nav-link " aria-current="page" href="/">Features</a> */}
+                <Link to='/' className=" nav-link">Documentation</Link>
+                
+              </li>
+              
               <li className="nav-item">
                 {/* <a  className="nav-link " aria-current="page" href="/">Features</a> */}
                 <Link to='/' className=" nav-link">Features</Link>

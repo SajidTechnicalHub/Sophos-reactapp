@@ -1,0 +1,34 @@
+
+.topbar{
+    width: 100%;
+    height: 60px;
+    /* background-color: #244161; */
+    background-color: #071330;
+    display: flex;
+    align-items: end;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    
+    
+}
+
+.topbarWrapper{
+    margin-left: 20px;
+    
+}
+.topbar-title{
+    color: #fff;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    gap:5px;
+}
+.topbar-logo{
+    padding: 1px;
+    border: 2px solid #fff;
+    border-radius: 10px 0px 10px 0px;
+    font-size: 20px;
+    font-weight: 500;
+    text-align: center;
+}

@@ -1,0 +1,153 @@
+
+.main-container{
+    display: flex;
+}
+.mainpages{
+    /* margin-left: 250px; */
+    height: calc(100vh - 60px);
+    padding: 10px;
+}
+.sidebar{
+    flex: 1;
+    height: calc(100vh - 60px );
+    /* max-height: 100vh; */
+    /* width: 100%; */
+    /* background-color: #244161; */
+    background-color: #071330;
+    position: fixed;
+    top: 60px;
+    /* width: 250px; */
+    overflow-y: auto;
+    
+  
+}
+
+/* scrollbar style */
+    /* width */
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+    
+    /* Track */
+    ::-webkit-scrollbar-track {
+        background: #f1f1f1; 
+    }
+    
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        background: #888; 
+    }
+    
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: #555; 
+    }
+
+.sidebarWrapper{
+    /* padding: 20px 10px; */
+    padding-left: 20px;
+    color: lightgray;
+}
+
+.sidebarMenu{
+    margin-bottom: 10px;
+    line-height: 35px;
+}
+.sidebarTitle{
+    color: #fff;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+.sidebarList{
+    list-style: none;
+    line-height: 25px;
+    color: rgb(245, 234, 234);
+    margin-left: -18px;
+    /* display: none ; */
+}
+.sidebarListItem{
+    cursor: pointer;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    
+}
+.sidebarListItemIcon{
+    color: #fff;
+    font-size: 30px!important;
+    margin-right: 10px;
+    /* margin-top: 8px; */
+    padding: 7px;
+    background-color: #0c4160;
+}
+.sidebarLine{
+    min-width:100%;
+    color: #fff;
+    height: 5px;
+    margin-top: 0px;
+    
+}
+.sidebarTitleText{
+    text-decoration: none;
+    color: #fff;
+}
+.sidebarTitleText:hover{
+    text-decoration: none;
+    color: #fff;
+}
+.sidebarListItem:hover,
+.sidebarTitle:hover{
+    background-color: #244161;
+    /* padding-left: 2px; */
+    
+}
+.sidebarTitleDropdown{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap:50px;
+}
+.leftErrow{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   gap:120px;
+}
+.leftErrowStyle{
+    font-size: 45px!important;
+    
+}
+
+@media(max-width:992px){
+    .sidebar{
+        max-width: 80px;
+        overflow-y: none;
+        margin-left: -10px;
+    }
+    .hideTitle{
+        display: none;
+    }
+    .sidebarListItemIcon{
+        display: block;
+    }
+    .leftErrow{
+        gap:0px!important;
+    }
+    .leftErrowStyle{
+        margin-left: -15px;
+        
+    }
+    .sidebarList{
+        margin-left: -30px;
+    }
+    .mainpages{
+        margin-left: 60px!important;
+        height: calc(100vh - 60px);
+        padding: 10px;
+    }
+    
+    
+}

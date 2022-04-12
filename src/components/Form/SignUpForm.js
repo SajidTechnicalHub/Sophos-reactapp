@@ -6,7 +6,7 @@ const SignUpForm = () => {
 
     const [input, setInput] = useState({
         fname: '',
-        lname: '',
+        username: '',
         email: '',
         job_role: '',
         phone: '',
@@ -14,7 +14,7 @@ const SignUpForm = () => {
         company_size: '',
         state: '',
         zip_code: '',
-        country:''
+        country: ''
     });
 
     // Sign Up Form part Hide show CSS Classes
@@ -45,10 +45,10 @@ const SignUpForm = () => {
     }
     const SubmitEvent = (e) => {
         e.preventDefault()
-        // alert(`Your Fname: ${input.fname} and LName is: ${input.lname}, role:${input.job_role}, Phone: ${input.phone}, company: ${input.company}  `)
+        // alert(`Your Fname: ${input.fname} and username is: ${input.username}, role:${input.job_role}, Phone: ${input.phone}, company: ${input.company}  `)
         setInput({
             fname: '',
-            lname: '',
+            username: '',
             email: '',
             job_role: '',
             phone: '',
@@ -56,7 +56,7 @@ const SignUpForm = () => {
             company_size: '',
             state: '',
             zip_code: '',
-            country:''
+            country: ''
 
         })
     }
@@ -65,35 +65,53 @@ const SignUpForm = () => {
             <form onSubmit={SubmitEvent} >
                 <div className='' style={beforenext}>
                     <div className="mb-3">
-                        <label htmlFor="Inputfname" className="form-label">First Name</label>
+                        <label htmlFor="Inputfname" className="form-label">First Name (*)</label>
                         <input type="text"
                             name="fname"
                             value={input.fname}
                             onChange={InputEvent}
                             className="form-control"
+                            // required="required"
                         />
 
                     </div>
                     <div className="mb-3">
-                        <label htmlFor="lname" className="form-label">Last Name</label>
+                        <label htmlFor="lname" className="form-label">Last Name (*)</label>
                         <input type="text"
                             name="lname"
                             value={input.lname}
                             onChange={InputEvent}
                             className="form-control"
+                            // required="required"
                         />
                     </div>
                     <div className="mb-3">
-                        <label htmlFor="email" className="form-label">Email address</label>
+                        <label htmlFor="username" className="form-label">Username (*)</label>
+                        <input type="text"
+                            name="username"
+                            value={input.username}
+                            onChange={InputEvent}
+                            className="form-control"
+                            // required="required"
+                        />
+                    </div>
+                    <div className="mb-3">
+                        <label htmlFor="email" className="form-label">Email (*)</label>
                         <input type="email"
                             name="email"
                             value={input.email}
                             onChange={InputEvent}
                             className="form-control"
+                            // required="required"
                         />
 
                     </div>
-                    <button className="form-btn" onClick={NextChangeClass}>Next</button>
+                    <div className="nextLogin">
+                        <span className="form-btn-next" onClick={NextChangeClass}>Next</span>
+                        <Link to="/">
+                            <span className="btn submit-btn">Login</span>
+                        </Link>
+                    </div>
                     <p className='signup-para'>
                         By submitting this form, you consent to be contacted about Sophos products
                         and services from members of the Sophos group of companies and selected
@@ -106,12 +124,13 @@ const SignUpForm = () => {
                 {/* After Next Button */}
                 <div className='' style={next}>
                     <div className="mb-3">
-                        <label htmlFor="job_role" className="form-label">Job Role</label>
+                        <label htmlFor="job_role" className="form-label">Job Role(*)</label>
                         <select type="text"
                             name="job_role"
                             value={input.job_role}
                             onChange={InputEvent}
-                            className="form-control" >
+                            className="form-control"
+                            required="required" >
 
                             <option value='' selected="selected">- Select -</option>
 
@@ -134,36 +153,39 @@ const SignUpForm = () => {
                     </div>
 
                     <div className="mb-3">
-                        <label htmlFor="phone" className="form-label">Phone Number</label>
+                        <label htmlFor="phone" className="form-label">Phone Number(*)</label>
                         <input type="text"
                             name="phone"
                             value={input.phone}
                             onChange={InputEvent}
                             className="form-control"
+                            required="required"
                         />
                     </div>
                     <div className="mb-3">
-                        <label htmlFor="company" className="form-label">Company</label>
+                        <label htmlFor="company" className="form-label">Company(*)</label>
                         <input type="text"
                             name="company"
                             value={input.company}
                             onChange={InputEvent}
                             onClick={CompanyEvent}
                             className="form-control"
+                            required="required"
                         />
-                        <a href="#">Where does this information come from?</a>
+                        <a href="#" className='check-text' style={{color:"blue"}}>Where does this information come from?</a>
                     </div>
 
 
 
                     <div className='' style={afternext}>
                         <div className="mb-3">
-                            <label htmlFor="industry" className="form-label">Industry</label>
+                            <label htmlFor="industry" className="form-label">Industry(*)</label>
                             <select type="text"
                                 name="industry"
                                 value={input.industry}
                                 onChange={InputEvent}
-                                className="form-control" >
+                                className="form-control"
+                                required="required" >
                                 <option value="" selected="selected">- Select -</option>
                                 <option value="Aerospace &amp; Defense">Aerospace &amp; Defense</option>
                                 <option value="Biotechnology">Biotechnology</option>
@@ -191,25 +213,27 @@ const SignUpForm = () => {
                         </div>
 
                         <div className="mb-3">
-                            <label htmlFor="company_size" className="form-label">Company Size</label>
+                            <label htmlFor="company_size" className="form-label">Company Size(*)</label>
                             <input type="number"
                                 name="company_size"
                                 value={input.company_size}
                                 onChange={InputEvent}
                                 className="form-control"
+                                required="required"
                                 min='1'
                             />
                         </div>
                         <div className="mb-3">
-                            <label htmlFor="country" className="form-label">Country</label>
+                            <label htmlFor="country" className="form-label">Country(*)</label>
                             <select type="text"
                                 name="country"
                                 value={input.country}
                                 onChange={InputEvent}
                                 className="form-control"
                                 required="required"
+                                
                                 aria-required="true"
-                             >
+                            >
                                 <option value="" selected="selected">- Select -</option>
                                 <option >United States</option>
                                 <option >United Kingdom</option>
@@ -446,21 +470,23 @@ const SignUpForm = () => {
 
 
                         <div className="mb-3">
-                            <label htmlFor="state" className="form-label">State</label>
+                            <label htmlFor="state" className="form-label">State(*)</label>
                             <input type="text"
                                 name="state"
                                 value={input.state}
                                 onChange={InputEvent}
                                 className="form-control"
+                                required="required"
                             />
                         </div>
                         <div className="mb-3">
-                            <label htmlFor="zip_code" className="form-label">Zip Code</label>
+                            <label htmlFor="zip_code" className="form-label">Zip Code(*)</label>
                             <input type="text"
                                 name="zip_code"
                                 value={input.zip_code}
                                 onChange={InputEvent}
                                 className="form-control"
+                                required="required"
                             />
                         </div>
 
@@ -473,9 +499,9 @@ const SignUpForm = () => {
                     </div>
                     <div className='submit-btn'>
                         <button type="submit" className="form-btn">Sign Up</button>
-                        {/* <Link to="login">
-                        <span className="btn btn-primary">Login</span>
-                    </Link> */}
+                        <Link to="/">
+                            <span className="btn submit-btn">Login</span>
+                        </Link>
                     </div>
                 </div>
             </form>

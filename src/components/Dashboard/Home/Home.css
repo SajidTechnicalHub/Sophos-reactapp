@@ -1,0 +1,20 @@
+.homeDashboard{
+    background-color: white;
+    /* min-height: 100vh; */
+}
+.homeContainer{
+    display: flex;
+}
+
+.other{
+    /* flex: 4; */
+    background-color: #fff;
+    /* margin-left: 250px; */
+    height: calc(100vh - 60px);
+    /* width: auto; */
+}
+@media(max-width:992px){
+    .other{
+        margin-left: 70px;
+    }
+}
