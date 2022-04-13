@@ -21,6 +21,10 @@ const Header = () => {
                 <Link to='/' className=" nav-link">Documentation</Link>
                 
               </li>
+              <li className="nav-item">
+                
+                <Link to='admin' className=" nav-link">Dashboard</Link>
+              </li>
               
               <li className="nav-item">
                 {/* <a  className="nav-link " aria-current="page" href="/">Features</a> */}

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheck } from '@fortawesome/free-solid-svg-icons'
-import { Link } from 'react-router-dom'
+import { Link, Outlet } from 'react-router-dom'
 import ArrowDropDownOutlinedIcon from '@mui/icons-material/ArrowDropDownOutlined';
 import ArrowLeftOutlinedIcon from '@mui/icons-material/ArrowLeftOutlined';
 import CottageOutlinedIcon from '@mui/icons-material/CottageOutlined';
@@ -42,6 +42,7 @@ const Sidebar = ({ children }) => {
 
   const MainPagesFullWidth = {
     marginLeft: '270px',
+    
 
   }
   const MainPagesHalfWidth = {
@@ -105,7 +106,7 @@ const Sidebar = ({ children }) => {
                 <CottageOutlinedIcon className='sidebarListItemIcon' />
                 {/* <span className='sidebarTitleText'>Home</span> */}
                 <span className='leftErrow'>
-                  <Link to='/' className='sidebarTitleText hideTitle ' style={sidebar}>Home</Link>
+                  <Link to='/admin' className='sidebarTitleText hideTitle ' style={sidebar}>Home</Link>
 
                   <span className=' hideTitle ' onClick={SidebarEvent}><ArrowLeftOutlinedIcon  className='leftErrowStyle'/></span>
                 </span>
@@ -131,41 +132,41 @@ const Sidebar = ({ children }) => {
                 <li className="sidebarListItem">
                   {/* <FontAwesomeIcon icon={faCheck} className='sidebarListItemIcon'></FontAwesomeIcon> */}
                   <PersonOutlineOutlinedIcon className='sidebarListItemIcon' />
-                  <span className='hideTitle' style={sidebar}>Users</span>
+                  <Link to='users' className='sidebarTitleText hideTitle' style={sidebar}>Users</Link>
                 </li>
                 <li className="sidebarListItem">
                   {/* <FontAwesomeIcon icon={faCheck} className='sidebarListItemIcon'></FontAwesomeIcon> */}
                   <GroupsOutlinedIcon className='sidebarListItemIcon' />
-                  <span className='hideTitle' style={sidebar}>Groups</span>
+                  <Link to='groups' className='sidebarTitleText hideTitle' style={sidebar}>Groups</Link>
                 </li>
                 <li className="sidebarListItem">
                   {/* <FontAwesomeIcon icon={faCheck} className='sidebarListItemIcon'></FontAwesomeIcon> */}
                   <GppGoodOutlinedIcon className='sidebarListItemIcon' />
-                  <span className='hideTitle' style={sidebar}> Roles</span>
+                  <Link to='roles' className='sidebarTitleText hideTitle' style={sidebar}> Roles</Link>
                 </li>
               </ul>
               <div className="sidebarTitle">
                 {/* <FontAwesomeIcon icon={faCheck} className='sidebarListItemIcon'></FontAwesomeIcon> */}
                 
-                <LocalPostOfficeOutlinedIcon className='sidebarListItemIcon' / >
-                <span className='hideTitle' style={sidebar}>Email Setup</span>
+                <LocalPostOfficeOutlinedIcon className='sidebarListItemIcon'  />
+                <Link to='emailSetup' className='sidebarTitleText hideTitle' style={sidebar}>Email Setup</Link>
               </div>
               <div className="sidebarTitle">
                 {/* <FontAwesomeIcon icon={faCheck} className='sidebarListItemIcon'></FontAwesomeIcon> */}
                 <ContactMailOutlinedIcon className='sidebarListItemIcon' />
         
-                <span className='hideTitle' style={sidebar}>Email Templates</span>
+                <Link to='emailTemplates' className='sidebarTitleText hideTitle' style={sidebar}>Email Templetes</Link>
               </div>
               <div className="sidebarTitle">
                 {/* <FontAwesomeIcon icon={faCheck} className='sidebarListItemIcon'></FontAwesomeIcon> */}
                 
                 <AddBusinessOutlinedIcon className='sidebarListItemIcon' />
-                <span className='hideTitle' style={sidebar}>Compaigns</span>
+                <Link to='compaigns' className='sidebarTitleText hideTitle' style={sidebar}>Compaigns</Link>
               </div>
               <div className="sidebarTitle">
                 {/* <FontAwesomeIcon icon={faCheck} className='sidebarListItemIcon'></FontAwesomeIcon> */}
                 <SettingsOutlinedIcon className='sidebarListItemIcon' />
-                <span className='hideTitle' style={sidebar}>Settings</span>
+                <Link to='settings' className='sidebarTitleText hideTitle' style={sidebar}>Settings</Link>
               </div>
 
 
@@ -179,12 +180,12 @@ const Sidebar = ({ children }) => {
               <div className="sidebarTitle">
                 {/* <FontAwesomeIcon icon={faCheck} className='sidebarListItemIcon'></FontAwesomeIcon> */}
                 <LoginOutlinedIcon className='sidebarListItemIcon' />
-                <span className='hideTitle' style={sidebar}>Logout</span>
+                <Link to='logout' className='sidebarTitleText hideTitle' style={sidebar}>Logout</Link>
               </div>
             </div>
           </div>
         </div>
-        <div className='mainpages' style={sidebarwidth}>{children}</div>
+        <div className='mainpages' style={sidebarwidth}><Outlet/></div>
       </div>
     </>
   )

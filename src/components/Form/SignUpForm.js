@@ -62,7 +62,7 @@ const SignUpForm = () => {
     }
     return (
         <>
-            <form onSubmit={SubmitEvent} >
+            <form onSubmit={SubmitEvent}  >
                 <div className='' style={beforenext}>
                     <div className="mb-3">
                         <label htmlFor="Inputfname" className="form-label">First Name (*)</label>

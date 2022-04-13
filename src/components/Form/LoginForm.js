@@ -23,7 +23,7 @@ const LoginForm = () => {
     }
     return (
         <>
-            <div>
+            <div >
                 <form onSubmit={SubmitEvent} >
                     {/* <div className="mb-3">
                         <label htmlFor="InputUsername" className="form-label">Username</label>
@@ -36,7 +36,7 @@ const LoginForm = () => {
                          />
                         
                     </div> */}
-                    <div className="mb-3">
+                    <div className="mb-4">
                         <label htmlFor="InputEmail1" className="form-label">Email </label>
                         <input type="email"
                          name="email" 
@@ -44,11 +44,11 @@ const LoginForm = () => {
                          onChange={InputEvent}  
                          className="form-control"
                          required="required" 
-                         placeholder=' Enter Username Or Email'
+                         placeholder='username or email'
                          />
                            
                     </div>
-                    <div className="mb-3">
+                    <div className="mb-4">
                         <label htmlFor="InputPassword1" className="form-label">Password</label>
                         <input type="password"
                          name="password" 
@@ -56,21 +56,26 @@ const LoginForm = () => {
                          onChange={InputEvent}  
                          className="form-control"
                          required="required" 
-                         placeholder='Enter Password'
+                         placeholder='Password'
                          />
                     </div>
                     <div className="mb-3 form-check">
                         <input type="checkbox" className="form-check-input" id="Check1"/>
                             <label className="form-check-label" htmlFor="Check1">Check me out</label>
                     </div>
-                    <div className='submit-btn'>
-                      <button type="submit" className="form-btn">login</button>
-                      <Link to="">
-                        <span><a href=''> Forgot Your Password?</a></span>
+                    
+                    <div className='submit-login-btn'>
+                      
+                    <button type="submit" className="login-form-btn mb-3">Login</button>
+                    
+                    <Link to="">
+                        <span className='forget-password'> Forgotten password?</span>
                     </Link>
-                      <Link to="/signup">
-                        <button className=" btn">Sign Up</button>
+                    <hr className='login-form-line' />
+                    <Link to="signup">
+                        <button className=" login-form-btn">Create New Account</button>
                     </Link>
+                      
                     </div>
                    
                 </form>

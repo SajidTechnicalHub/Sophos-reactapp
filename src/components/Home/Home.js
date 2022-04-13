@@ -3,11 +3,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheck } from '@fortawesome/free-solid-svg-icons'
 import LoginForm from '../Form/LoginForm'
 import SignUpForm from '../Form/SignUpForm'
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
 
 const Home = () => {
 
-    // const [form, setForm] = useState('logi')
+    const [isLogin, setIsLogin] = useState(false)
     return (
         <>
             <div className='container-fluid main-section'>
@@ -59,8 +59,9 @@ const Home = () => {
             ********************************** */}
                     <div className='col-lg-6 '>
                         <div className='main-section-form-block'>
-
-                           <LoginForm />
+                        
+                        {/* {isLogin ?  <LoginForm /> : <SignUpForm />} */}
+                        <Outlet />
                         </div>
 
                     </div>
