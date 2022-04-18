@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
 import Topbar from '../Topbar/Topbar'
-import './Home.css'
+import './DashboardLayout.css'
 import Sidebar from '../Sidebar/Sidebar'
 
 

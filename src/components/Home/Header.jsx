@@ -6,7 +6,7 @@ const Header = () => {
     <>
       <nav className="navbar navbar-expand-lg navbar-dark header-bg-color">
         <div className="container-fluid">
-          <Link to='/' className="navbar-brand">
+          <Link to='Sophos-reactapp' className="navbar-brand">
             <span className='header-title'>
               <span className='header-logo'>Ph</span><h3>PhishCode</h3>
             </span>
@@ -18,7 +18,7 @@ const Header = () => {
             <ul className="navbar-nav ms-auto ">
             <li className="nav-item">
                 {/* <a  className="nav-link " aria-current="page" href="/">Features</a> */}
-                <Link to='/' className=" nav-link">Documentation</Link>
+                <Link to='/Sophos-reactapp' className=" nav-link">Documentation</Link>
                 
               </li>
               <li className="nav-item">
@@ -28,20 +28,20 @@ const Header = () => {
               
               <li className="nav-item">
                 {/* <a  className="nav-link " aria-current="page" href="/">Features</a> */}
-                <Link to='/' className=" nav-link">Features</Link>
+                <Link to='/Sophos-reactapp' className=" nav-link">Features</Link>
                 
               </li>
               <li className="nav-item ">
                 {/* <a className="nav-link active" href="/">Free Trail</a> */}
-                <NavLink activeclassname='' className=" nav-link" to='/'>Free Trail</NavLink>
+                <NavLink activeclassname='' className=" nav-link" to='/Sophos-reactapp'>Free Trail</NavLink>
               </li>
               <li className="nav-item ">
                 {/* <a className="nav-link " href="/">How to Buy</a> */}
-                <Link to='/' className=" nav-link">How to Buy</Link>
+                <Link to='/Sophos-reactapp' className=" nav-link">How to Buy</Link>
               </li>
               <li className="nav-item ">
                 {/* <a className="nav-link " href="/">Get Pricing</a> */}
-                <Link to='/' className=" nav-link">Get Pricing</Link>
+                <Link to='/Sophos-reactapp' className=" nav-link">Get Pricing</Link>
               </li>
             </ul>
 

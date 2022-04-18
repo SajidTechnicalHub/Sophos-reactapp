@@ -68,8 +68,8 @@ const LoginForm = () => {
                       
                     <button type="submit" className="login-form-btn mb-3">Login</button>
                     
-                    <Link to="">
-                        <span className='forget-password'> Forgotten password?</span>
+                    <Link to="Forgot_Password">
+                        <span className=''> Forgotten password?</span>
                     </Link>
                     <hr className='login-form-line' />
                     <Link to="signup">

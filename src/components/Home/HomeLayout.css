@@ -1,4 +1,4 @@
-body{
+.Home-layout-bg{
     background-color: #1e334a!important;
 }
 
@@ -101,11 +101,7 @@ body{
       Main Title Section
   ******************************** */
   .main-section{
-    margin-top: 100px;
-    /* display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center; */
+    min-height: 100vh;
   }
   
   
@@ -116,6 +112,7 @@ body{
     font-size: 60px;
     color: #fff;
     font-weight: 500;
+    margin-top: 100px;
   }
   .main-section-title-block{
     margin-left: 50px;
@@ -169,6 +166,7 @@ body{
     .main-section-title-block,
     .main-section-form-block{
       margin-left: 20px;
+
     }
     .main-title{
       font-size: 50px;
@@ -205,6 +203,8 @@ body{
     min-height: 200px;
     height: fit-content;
     margin-right: 30px;
+    margin-top: 100px; 
+    
     
   }
   /* .form-section{

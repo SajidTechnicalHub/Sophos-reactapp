@@ -7,7 +7,8 @@ const Topbar = () => {
       <div className='topbar'>
         <div className='topbarWrapper'>
           <span className="topbar-title">
-          <span className='topbar-logo'>Ph</span><h3>PhishCode</h3>
+          <span className='topbar-logo'>Ph</span>
+          <h3>PhishCode</h3>
           {/* PhishCode */}
           </span>
         </div>

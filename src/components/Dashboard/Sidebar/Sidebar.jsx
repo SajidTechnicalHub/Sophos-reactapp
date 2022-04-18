@@ -15,17 +15,19 @@ import ContactMailOutlinedIcon from '@mui/icons-material/ContactMailOutlined';
 import AddBusinessOutlinedIcon from '@mui/icons-material/AddBusinessOutlined';
 import LoginOutlinedIcon from '@mui/icons-material/LoginOutlined';
 import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
+import HubOutlinedIcon from '@mui/icons-material/HubOutlined';
+import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
 import './Sidebar.css'
 
-const Sidebar = ({ children }) => {
+const Sidebar = () => {
   //  Hide show CSS Classes
   const Hide = {
     display: 'none',
-    
+
   }
   const Show = {
     display: 'inline-block',
-    
+
   }
 
   const SidebarHide = {
@@ -37,17 +39,17 @@ const Sidebar = ({ children }) => {
   const SidebarShow = {
 
     Width: '250px',
-   
+
   }
 
   const MainPagesFullWidth = {
     marginLeft: '270px',
-    
+
 
   }
   const MainPagesHalfWidth = {
     marginLeft: '110px',
-    
+
   }
 
   const [changeclass, setChangeClass] = useState(Hide);
@@ -97,26 +99,28 @@ const Sidebar = ({ children }) => {
   return (
     <>
       <div className="main-container">
+
         <div className='sidebar' style={sidebartoggle}  >
           <hr className='sidebarLine' />
           <div className="sidebarWrapper">
             <div className="sidebarMenu">
               <div className="sidebarTitle ">
                 {/* <FontAwesomeIcon icon={faCheck} className='sidebarListItemIcon'></FontAwesomeIcon> */}
-                <CottageOutlinedIcon className='sidebarListItemIcon' />
+                <Link to='Home'><CottageOutlinedIcon className='sidebarListItemIcon' /></Link>
                 {/* <span className='sidebarTitleText'>Home</span> */}
                 <span className='leftErrow'>
-                  <Link to='/admin' className='sidebarTitleText hideTitle ' style={sidebar}>Home</Link>
+                  <Link to='Home' className='sidebarTitleText hideTitle ' style={sidebar}>Home</Link>
 
-                  <span className=' hideTitle ' onClick={SidebarEvent}><ArrowLeftOutlinedIcon  className='leftErrowStyle'/></span>
+                  <span className=' hideTitle ' onClick={SidebarEvent}><ArrowLeftOutlinedIcon className='leftErrowStyle' /></span>
                 </span>
               </div>
 
 
               <div className="sidebarTitle ">
                 {/* <FontAwesomeIcon icon={faCheck} className='sidebarListItemIcon'></FontAwesomeIcon> */}
-                <DashboardOutlinedIcon className='sidebarListItemIcon' />
-                <Link to='dashboard' className='sidebarTitleText hideTitle' style={sidebar}>Dashboard</Link>
+                <Link to='dashboard'>
+                  <DashboardOutlinedIcon className='sidebarListItemIcon' />
+                  <span className='sidebarTitleText hideTitle' style={sidebar}>Dashboard</span></Link>
 
               </div>
               <div className="sidebarTitle" onClick={DropdownEvent}>
@@ -131,42 +135,59 @@ const Sidebar = ({ children }) => {
               <ul className="sidebarList" style={changeclass} >
                 <li className="sidebarListItem">
                   {/* <FontAwesomeIcon icon={faCheck} className='sidebarListItemIcon'></FontAwesomeIcon> */}
-                  <PersonOutlineOutlinedIcon className='sidebarListItemIcon' />
-                  <Link to='users' className='sidebarTitleText hideTitle' style={sidebar}>Users</Link>
+                  <Link to='users'>
+                    <PersonOutlineOutlinedIcon className='sidebarListItemIcon' />
+                    <span className='sidebarTitleText hideTitle' style={sidebar}>Users </span>
+                  </Link>
                 </li>
                 <li className="sidebarListItem">
                   {/* <FontAwesomeIcon icon={faCheck} className='sidebarListItemIcon'></FontAwesomeIcon> */}
-                  <GroupsOutlinedIcon className='sidebarListItemIcon' />
-                  <Link to='groups' className='sidebarTitleText hideTitle' style={sidebar}>Groups</Link>
+                  <Link to='groups'>
+                    <GroupsOutlinedIcon className='sidebarListItemIcon' />
+                    <span className='sidebarTitleText hideTitle' style={sidebar}>Groups</span>
+                  </Link>
                 </li>
                 <li className="sidebarListItem">
                   {/* <FontAwesomeIcon icon={faCheck} className='sidebarListItemIcon'></FontAwesomeIcon> */}
-                  <GppGoodOutlinedIcon className='sidebarListItemIcon' />
-                  <Link to='roles' className='sidebarTitleText hideTitle' style={sidebar}> Roles</Link>
+                  <Link to='roles'>
+                    <GppGoodOutlinedIcon className='sidebarListItemIcon' />
+                    <span className='sidebarTitleText hideTitle' style={sidebar}> Roles</span>
+                  </Link>
                 </li>
               </ul>
               <div className="sidebarTitle">
                 {/* <FontAwesomeIcon icon={faCheck} className='sidebarListItemIcon'></FontAwesomeIcon> */}
-                
-                <LocalPostOfficeOutlinedIcon className='sidebarListItemIcon'  />
-                <Link to='emailSetup' className='sidebarTitleText hideTitle' style={sidebar}>Email Setup</Link>
+                <Link to='emailSetup'>
+                  <LocalPostOfficeOutlinedIcon className='sidebarListItemIcon' />
+                  <span className='sidebarTitleText hideTitle' style={sidebar}>Email Setup</span></Link>
               </div>
               <div className="sidebarTitle">
                 {/* <FontAwesomeIcon icon={faCheck} className='sidebarListItemIcon'></FontAwesomeIcon> */}
-                <ContactMailOutlinedIcon className='sidebarListItemIcon' />
-        
-                <Link to='emailTemplates' className='sidebarTitleText hideTitle' style={sidebar}>Email Templetes</Link>
+                <Link to='emailTemplates'>
+                  <ContactMailOutlinedIcon className='sidebarListItemIcon' />
+
+                  <span className='sidebarTitleText hideTitle' style={sidebar}>Email Templetes</span>
+                </Link>
               </div>
               <div className="sidebarTitle">
                 {/* <FontAwesomeIcon icon={faCheck} className='sidebarListItemIcon'></FontAwesomeIcon> */}
-                
-                <AddBusinessOutlinedIcon className='sidebarListItemIcon' />
-                <Link to='compaigns' className='sidebarTitleText hideTitle' style={sidebar}>Compaigns</Link>
+                <Link to='compaigns'>
+                  <AddBusinessOutlinedIcon className='sidebarListItemIcon' />
+                  <span className='sidebarTitleText hideTitle' style={sidebar}>Compaigns</span>
+                </Link>
               </div>
               <div className="sidebarTitle">
                 {/* <FontAwesomeIcon icon={faCheck} className='sidebarListItemIcon'></FontAwesomeIcon> */}
-                <SettingsOutlinedIcon className='sidebarListItemIcon' />
-                <Link to='settings' className='sidebarTitleText hideTitle' style={sidebar}>Settings</Link>
+                <Link to='learninghub'>
+                  <HubOutlinedIcon className='sidebarListItemIcon' />
+                  <span className='sidebarTitleText hideTitle' style={sidebar}>Learning Hub</span>
+                </Link>
+              </div>
+              <div className="sidebarTitle">
+                {/* <FontAwesomeIcon icon={faCheck} className='sidebarListItemIcon'></FontAwesomeIcon> */}
+                <Link to='settings'>
+                  <SettingsOutlinedIcon className='sidebarListItemIcon' />
+                  <span className='sidebarTitleText hideTitle' style={sidebar}>Settings</span></Link>
               </div>
 
 
@@ -179,13 +200,15 @@ const Sidebar = ({ children }) => {
             <div className="sidebarMenu">
               <div className="sidebarTitle">
                 {/* <FontAwesomeIcon icon={faCheck} className='sidebarListItemIcon'></FontAwesomeIcon> */}
-                <LoginOutlinedIcon className='sidebarListItemIcon' />
-                <Link to='logout' className='sidebarTitleText hideTitle' style={sidebar}>Logout</Link>
+                <Link to='logout'>
+                  <LoginOutlinedIcon className='sidebarListItemIcon' />
+                  <span className='sidebarTitleText hideTitle' style={sidebar}>Logout</span>
+                </Link>
               </div>
             </div>
           </div>
         </div>
-        <div className='mainpages' style={sidebarwidth}><Outlet/></div>
+        <div className='mainpages' style={sidebarwidth}><Outlet /></div>
       </div>
     </>
   )

@@ -108,7 +108,7 @@ const SignUpForm = () => {
                     </div>
                     <div className="nextLogin">
                         <span className="form-btn-next" onClick={NextChangeClass}>Next</span>
-                        <Link to="/">
+                        <Link to="/Sophos-reactapp">
                             <span className="btn submit-btn">Login</span>
                         </Link>
                     </div>
@@ -499,7 +499,7 @@ const SignUpForm = () => {
                     </div>
                     <div className='submit-btn'>
                         <button type="submit" className="form-btn">Sign Up</button>
-                        <Link to="/">
+                        <Link to="/Sophos-reactapp">
                             <span className="btn submit-btn">Login</span>
                         </Link>
                     </div>

@@ -6,9 +6,12 @@ import './HomeLayout.css'
 const HomeLayout = () => {
   return (
     <>
-    <Header/>
-    <Home />
-    
+      <div className='Home-layout-bg'>
+        <Header />
+        <Home />
+      </div>
+
+
     </>
   )
 }
