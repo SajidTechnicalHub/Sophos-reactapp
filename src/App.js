@@ -19,10 +19,10 @@ import Logout from "./components/Dashboard/Logout/Logout";
 import Error from './components/Error/Error';
 import LearningHub from "./components/Dashboard/Learning Hub/LearningHub";
 import ForgotPasswordLayout from "./components/Forgot Password/ForgotPasswordLayout";
-import ForgotPassword from "./components/Forgot Password/ForgotPassword";
 import ForgotPasswordEmail from "./components/Forgot Password/ForgotPasswordEmail";
 import ForgotPasswordCode from "./components/Forgot Password/ForgotPasswordCode";
 import NewPassword from "./components/Forgot Password/NewPassword";
+import Projects from "./components/Projects/Projects";
 function App() {
   return (
     <div className="container-flude">
@@ -35,9 +35,8 @@ function App() {
         </Route>
 
         <Route path="Sophos-reactapp/Forgot_Password" element={<ForgotPasswordLayout />}>
-          <Route index element={<ForgotPassword />} />
-          <Route path="email_id" element={<ForgotPassword />} />
-          <Route path="email" element={<ForgotPasswordEmail />} />
+          <Route index element={<ForgotPasswordEmail />} />
+          <Route path="Forgot_Password" element={<ForgotPasswordEmail />} />
           <Route path="code" element={<ForgotPasswordCode/>} />
           <Route path="new_password" element={<NewPassword/>} />
         </Route>
@@ -55,8 +54,11 @@ function App() {
           <Route path="learninghub" element={<LearningHub />} />
           <Route path="settings" element={<Settings />} />
           <Route path="logout" element={<Logout />} />
+          
         </Route>
+        <Route path="Sophos-reactapp/projects" element={<Projects />} />
         <Route path="/*" element={<Error />} />
+        
       </Routes>
 
 

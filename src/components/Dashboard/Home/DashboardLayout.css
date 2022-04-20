@@ -71,8 +71,4 @@ p{
 .breadcrumb-items{
     padding-left: 10px;
 }
-.verify-code{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+

@@ -4,6 +4,7 @@ import Logo from './home.svg'
 import Intro from './Intro'
 import Feedback from './Feedback'
 const HomePage = () => {
+  
   const activeClass = {
     color: "#0c4160",
     borderBottom: "2px solid #0c4160",

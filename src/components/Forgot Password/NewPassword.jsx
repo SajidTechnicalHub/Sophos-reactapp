@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom';
+import ForgotPasswordFooter from './ForgotPasswordFooter';
 
 
 const NewPassword = () => {
@@ -34,7 +34,7 @@ const NewPassword = () => {
                     <form onSubmit={SubmitEvent}  >
 
                         <div className="mb-4">
-                            <label htmlFor="Password" className="form-label forgot-form-label ">Enter Your New Password(*) </label>
+                            <label htmlFor="Password" className="form-label forgot-label ">Enter Your New Password<span className='estaric'>*</span> </label>
 
                             <input type="password"
                                 name="password"
@@ -47,7 +47,7 @@ const NewPassword = () => {
 
                         </div>
                         <div className="mb-4">
-                            <label htmlFor="new_Password" className="form-label forgot-form-label ">Enter Your New Password(*) </label>
+                            <label htmlFor="new_Password" className="form-label forgot-label ">Re-Type Your New Password<span className='estaric'>*</span> </label>
 
                             <input type="password"
                                 name="new_password"
@@ -59,13 +59,15 @@ const NewPassword = () => {
                             />
 
                         </div>
-                        <br />
+                        
                         <div className='password-btn-block'>
-                            <button type="submit" className="forgot-form-btn mb-3">Save New Password</button>
-                            <br />
+                            <button type="submit" className="forgot-form-btn ">Save New Password</button>
+                            
                         </div>
                     </form>
+                    <br />
                 </div>
+                <ForgotPasswordFooter/>
             </div>
         </>
     )

@@ -48,7 +48,7 @@
 
 .sidebarWrapper{
     /* padding: 20px 10px; */
-    padding-left: 20px;
+    padding-left: 5px;
     color: lightgray;
 }
 
@@ -73,7 +73,9 @@
 }
 .sidebarListItem{
     cursor: pointer;
-    padding: 10px;
+    /* padding: 10px; */
+    padding-right: 10px;
+    margin-top: 10px;
     display: flex;
     align-items: center;
     
@@ -117,14 +119,24 @@
    display: flex;
    justify-content: space-between;
    align-items: center;
-   gap:120px;
+   gap:90px;
+  
 }
 .leftErrowStyle{
-    font-size: 45px!important;
+    font-size: 35px!important;
     
+}
+.logout-margin{
+    margin-top: 127px;
 }
 a{
     display: inline-block!;
+}
+.user-margin-top{
+    margin-top: -1px;
+}
+.role-margin-buttom{
+    margin-bottom: -5px;
 }
 
 @media(max-width:792px){
@@ -149,6 +161,9 @@ a{
         max-width: 78px;
         overflow-y: none;
         margin-left: -10px;
+    }
+    .sidebarWrapper{
+        margin-left: 10px!important;
     }
     .hideTitle{
         display: none;

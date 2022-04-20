@@ -65,7 +65,7 @@ const SignUpForm = () => {
             <form onSubmit={SubmitEvent}  >
                 <div className='' style={beforenext}>
                     <div className="mb-3">
-                        <label htmlFor="Inputfname" className="form-label">First Name (*)</label>
+                        <label htmlFor="Inputfname" className="form-label">First Name<span className='estaric'>*</span></label>
                         <input type="text"
                             name="fname"
                             value={input.fname}
@@ -76,7 +76,7 @@ const SignUpForm = () => {
 
                     </div>
                     <div className="mb-3">
-                        <label htmlFor="lname" className="form-label">Last Name (*)</label>
+                        <label htmlFor="lname" className="form-label">Last Name<span className='estaric'>*</span></label>
                         <input type="text"
                             name="lname"
                             value={input.lname}
@@ -86,7 +86,7 @@ const SignUpForm = () => {
                         />
                     </div>
                     <div className="mb-3">
-                        <label htmlFor="username" className="form-label">Username (*)</label>
+                        <label htmlFor="username" className="form-label">Username<span className='estaric'>*</span></label>
                         <input type="text"
                             name="username"
                             value={input.username}
@@ -96,7 +96,7 @@ const SignUpForm = () => {
                         />
                     </div>
                     <div className="mb-3">
-                        <label htmlFor="email" className="form-label">Email (*)</label>
+                        <label htmlFor="email" className="form-label">Email<span className='estaric'>*</span></label>
                         <input type="email"
                             name="email"
                             value={input.email}
@@ -124,7 +124,7 @@ const SignUpForm = () => {
                 {/* After Next Button */}
                 <div className='' style={next}>
                     <div className="mb-3">
-                        <label htmlFor="job_role" className="form-label">Job Role(*)</label>
+                        <label htmlFor="job_role" className="form-label">Job Rol<span className='estaric'>*</span></label>
                         <select type="text"
                             name="job_role"
                             value={input.job_role}
@@ -153,7 +153,7 @@ const SignUpForm = () => {
                     </div>
 
                     <div className="mb-3">
-                        <label htmlFor="phone" className="form-label">Phone Number(*)</label>
+                        <label htmlFor="phone" className="form-label">Phone Numbe<span className='estaric'>*</span></label>
                         <input type="text"
                             name="phone"
                             value={input.phone}
@@ -163,7 +163,7 @@ const SignUpForm = () => {
                         />
                     </div>
                     <div className="mb-3">
-                        <label htmlFor="company" className="form-label">Company(*)</label>
+                        <label htmlFor="company" className="form-label">Compan<span className='estaric'>*</span></label>
                         <input type="text"
                             name="company"
                             value={input.company}
@@ -179,7 +179,7 @@ const SignUpForm = () => {
 
                     <div className='' style={afternext}>
                         <div className="mb-3">
-                            <label htmlFor="industry" className="form-label">Industry(*)</label>
+                            <label htmlFor="industry" className="form-label">Industr<span className='estaric'>*</span></label>
                             <select type="text"
                                 name="industry"
                                 value={input.industry}
@@ -213,7 +213,7 @@ const SignUpForm = () => {
                         </div>
 
                         <div className="mb-3">
-                            <label htmlFor="company_size" className="form-label">Company Size(*)</label>
+                            <label htmlFor="company_size" className="form-label">Company Siz<span className='estaric'>*</span></label>
                             <input type="number"
                                 name="company_size"
                                 value={input.company_size}
@@ -224,7 +224,7 @@ const SignUpForm = () => {
                             />
                         </div>
                         <div className="mb-3">
-                            <label htmlFor="country" className="form-label">Country(*)</label>
+                            <label htmlFor="country" className="form-label">Countr<span className='estaric'>*</span></label>
                             <select type="text"
                                 name="country"
                                 value={input.country}
@@ -470,7 +470,7 @@ const SignUpForm = () => {
 
 
                         <div className="mb-3">
-                            <label htmlFor="state" className="form-label">State(*)</label>
+                            <label htmlFor="state" className="form-label">Stat<span className='estaric'>*</span></label>
                             <input type="text"
                                 name="state"
                                 value={input.state}
@@ -480,7 +480,7 @@ const SignUpForm = () => {
                             />
                         </div>
                         <div className="mb-3">
-                            <label htmlFor="zip_code" className="form-label">Zip Code(*)</label>
+                            <label htmlFor="zip_code" className="form-label">Zip Cod<span className='estaric'>*</span></label>
                             <input type="text"
                                 name="zip_code"
                                 value={input.zip_code}

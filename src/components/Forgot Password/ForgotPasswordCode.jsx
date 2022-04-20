@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from "react"
 import { Link } from 'react-router-dom';
+import ForgotPasswordFooter from './ForgotPasswordFooter';
 
 const ForgotPasswordCode = () => {
     const [input, setInput] = useState({
@@ -33,7 +34,7 @@ const ForgotPasswordCode = () => {
                     <form   >
 
                         <div className="mb-4">
-                            <label htmlFor="InputEmail1" className="form-label mb-4 ">Enter Your Code </label>
+                            <label htmlFor="InputEmail1" className="form-label forgot-label">Enter Your Code </label>
 
                             <input type="text"
                                 name="code"
@@ -45,26 +46,26 @@ const ForgotPasswordCode = () => {
                             />
 
                         </div>
-                        <br />
+                      
                         <div className='password-btn-block'>
 
                             <button type="submit" className="forgot-form-btn mb-3"><Link to="/Sophos-reactapp/Forgot_Password/new_password" >Verify Your Code</Link></button>
 
-                            <br />
-
-
                         </div>
                         <div className='verify-code'>
-                            <Link to="/Sophos-reactapp/Forgot_Password/email" className="back">
-                                <span className=''> Back</span>
+                            <Link to="/Sophos-reactapp/Forgot_Password" className="back">
+                                <span > Back</span>
                             </Link>
                             <Link to="" className="back">
-                                <span className=''> Not received code yet? Resend Email</span>
+                                <span > Not received code yet? Resend Email</span>
                             </Link>
                         </div>
 
                     </form>
+                    <br />  
                 </div>
+                
+                <ForgotPasswordFooter/>
             </div>
         </>
     )

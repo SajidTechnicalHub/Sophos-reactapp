@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { Link } from 'react-router-dom';
 import React from 'react'
+import ForgotPasswordFooter from "./ForgotPasswordFooter";
 
 const ForgotPasswordEmail = () => {
     const [input, setInput] = useState({
@@ -32,7 +33,7 @@ const ForgotPasswordEmail = () => {
                 <form   >
 
                     <div className="mb-4">
-                        <label htmlFor="InputEmail1" className="form-label mb-4 ">Enter Your Email </label>
+                        <label htmlFor="InputEmail1" className="form-label forgot-label ">Email </label>
 
                         <input type="email"
                             name="email"
@@ -44,20 +45,19 @@ const ForgotPasswordEmail = () => {
                         />
 
                     </div>
-                    <br />
                     <div className='password-btn-block'>
 
                         <button type="submit" className="forgot-form-btn mb-3"><Link to="/Sophos-reactapp/Forgot_Password/code">Send Varification Code</Link></button>
 
-                        <br />
-
-
+                       
                     </div>
                     <Link to="/Sophos-reactapp/login" className="back">
                         <span className=''> Back to Login</span>
                     </Link>
                 </form>
+                <br />
             </div>
+            <ForgotPasswordFooter/>
         </div>
 
         </>
