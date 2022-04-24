@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 const LoginForm = () => {
     const [input, setInput] = useState({
         // username: '',
         email: '',
         password: ''
     });
+    let navigate = useNavigate()
     const InputEvent = (e) =>{
         const {name, value} = e.target;
         setInput(()=>{
@@ -14,42 +15,32 @@ const LoginForm = () => {
     }
     const SubmitEvent = (e) => {
         e.preventDefault()
-        alert( `Your Email: ${input.email} and Password is: ${input.password} `)
+        // alert( `Your Email: ${input.email} and Password is: ${input.password} `)
         setInput({
             // username:'',
             email: '',
             password: ''
         })
+        navigate('/Sophos-reactapp/projects')
     }
     return (
         <>
             <div >
                 <form onSubmit={SubmitEvent} >
-                    {/* <div className="mb-3">
-                        <label htmlFor="InputUsername" className="form-label">Username</label>
-                        <input type="text"
-                         name="username" 
-                         value={input.username} 
-                         onChange={InputEvent}  
-                         className="form-control"
-                         required="required"  
-                         />
-                        
-                    </div> */}
                     <div className="mb-4">
-                        <label htmlFor="InputEmail1" className="form-label">Email </label>
+                        <label htmlFor="InputEmail1" className="form-label">Email<span className='estaric'>*</span></label>
                         <input type="email"
                          name="email" 
                          value={input.email} 
                          onChange={InputEvent}  
                          className="form-control"
                          required="required" 
-                         placeholder='username or email'
+                         placeholder='Username or Email'
                          />
                            
                     </div>
                     <div className="mb-4">
-                        <label htmlFor="InputPassword1" className="form-label">Password</label>
+                        <label htmlFor="InputPassword1" className="form-label">Password<span className='estaric'>*</span></label>
                         <input type="password"
                          name="password" 
                          value={input.password} 
@@ -66,7 +57,7 @@ const LoginForm = () => {
                     
                     <div className='submit-login-btn'>
                       
-                    <button type="submit" className="login-form-btn mb-3">Login</button>
+                    <button type="submit" className="login-form-btn mb-3">Signin</button>
                     
                     <Link to="Forgot_Password">
                         <span className=''> Forgotten password?</span>

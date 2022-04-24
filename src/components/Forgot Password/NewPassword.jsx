@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import ForgotPasswordFooter from './ForgotPasswordFooter';
-
+import { useNavigate } from 'react-router-dom';
 
 const NewPassword = () => {
     const [input, setInput] = useState({
@@ -8,6 +8,7 @@ const NewPassword = () => {
         new_password: ''
 
     });
+    let navigate = useNavigate()
     const InputEvent = (e) => {
         const { name, value } = e.target;
         setInput(() => {
@@ -16,13 +17,14 @@ const NewPassword = () => {
     }
     const SubmitEvent = (e) => {
         e.preventDefault()
-        alert(`Your Password: ${input.password}`)
+        // alert(`Your Password: ${input.password}`)
         setInput({
 
             password: '',
             new_password: ''
 
         })
+        navigate('/Sophos-reactapp/projects')
     }
     return (
         <>

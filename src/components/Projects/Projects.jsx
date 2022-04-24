@@ -1,137 +1,181 @@
-import React from 'react'
-import Button from '@mui/material/Button';
-import './Projects.css'
+
+import React, { useState, useEffect } from 'react'
 import SearchIcon from '@mui/icons-material/Search';
-// import { DataGrid } from '@mui/x-data-grid';
-import InputAdornment from '@mui/material/InputAdornment';
-import TextField from '@mui/material/TextField';
-import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
-import { DataGrid } from '@mui/x-data-grid';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import Modal from '@mui/material/Modal';
+import DeleteIcon from '@mui/icons-material/Delete';
+import { DataGrid, GridToolbar } from '@mui/x-data-grid';
 import EditIcon from '@mui/icons-material/Edit';
+import StarOutlineIcon from '@mui/icons-material/StarOutline';
+import StarIcon from '@mui/icons-material/Star';
+import Header from '../Home/Header'
+import { Link } from 'react-router-dom';
+import { Avatar } from '@mui/material';
+import CreateProject from './CreateProject';
+import { RowData } from './ProjectData';
+
 
 
 const Projects = () => {
+  const handleDelete = (id) => {
+
+    setTableData(tableData.filter((item) => item.id !== id))
+  }
+  const Search = (tableData) => {
+    return tableData.filter(
+      (row) =>
+        row.projectname.toLowerCase().indexOf(q) > -1 ||
+        row.projectname.indexOf(q) > -1 ||
+        row.lead.toLowerCase().indexOf(q) > -1 ||
+        row.lead.indexOf(q) > -1
+    );
+  }
+ 
   const columns = [
-    { field: 'id', headerName: 'ID', width: 70 },
-    { field: 'name', headerName: 'Name', width: 170 },
-    { field: 'url', headerName: 'URL', width: 170 },
-    { field: 'type', headerName: 'Type', width: 150 },
-    { field: 'lead', headerName: 'Lead', width: 150 },
     {
-      field: 'action', headerName: 'Action', width: 150,
-      renderCell: (params) => {
+      field: 'start', headerName: <StarIcon />, width: 50, sortable: false,
+      renderCell: (cellValues) => {
         return (
           <>
-
-            <EditIcon className='edit-icon' />
-            <DeleteOutlineIcon className='delete-icon' />
-
+            <div className="lead-column-block">
+              {cellValues.row.star}
+            </div>
           </>
-        )
+
+        );
       }
     },
-
-
-  ];
-
-  const rows = [
+    { field: 'projectname', headerName: 'Project Name', width: 230 },
+    { field: 'url', headerName: 'URL', width: 230 },
+    { field: 'type', headerName: 'Type', width: 230 },
     {
-      id: 1,
-      name: 'Snow',
-      type: 'Web',
-      url: 'sajid@gmail.com',
-      lead: 'Sajid',
-      delete: 'ds'
+      field: 'lead', headerName: 'Lead', width: 230,
+      renderCell: (cellValues) => {
+        return (
+          <>
+            <div className="lead-column-block">
+              {/* <img src={cellValues.row.imageUrl} alt="leader" className='leader-img' /> */}
+              <Avatar className='avater leader-img'>{cellValues.row.lead[0]}</Avatar>
+              {cellValues.row.lead}
+            </div>
+          </>
 
+        );
+      }
     },
     {
-      id: 2,
-      name: 'School Management System',
-      type: 'Web',
-      url: 'yasir@gmail.com',
-      lead: 'Yasir',
+      field: "action", headerName: 'Action', width: 100, sortable: false,
+      renderCell: (cellValues) => {
+        return (
+          <>
+            <div className="action-icon">
+              <Link to={'/Sophos-reactapp/projects/edit_project/' + cellValues.row.id}>
+                <EditIcon className='edit-icon' />
+              </Link>
+              <DeleteIcon className='delete-icon' onClick={() => handleDelete(cellValues.row.id)} />
+            </div>
+          </>
 
+        );
+      }
     },
-    {
-      id: 3,
-      name: 'Snow',
-      type: 'Web',
-      url: 'ahmad@gmail.com',
-      lead: 'Ahmad',
+  ]
+  const style = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: "90%",
+    height: "95%",
+    bgcolor: 'background.paper',
+    border: '2px solid #000',
+    overflow:'scroll',
+    boxShadow: 24,
+    display:'block'
+    // p: 4,
+  };
 
-    },
-    {
-      id: 4,
-      name: 'Snow',
-      type: 'Web',
-      url: 'ali@gmail.com',
-      lead: 'Ali',
+  const [tableData, setTableData] = useState(RowData)
+  const [pageSize, setPageSize] = React.useState(5);
+  const [q, setQ] = useState("")
 
-    },
 
-    {
-      id: 5,
-      name: 'Snow',
-      type: 'Web',
-      url: 'ali@gmail.com',
-      lead: 'Ali',
+  // Handle Project Create Model
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
 
-    },
 
-    {
-      id: 6,
-      name: 'Snow',
-      type: 'Web',
-      url: 'ali@gmail.com',
-      lead: 'Ali',
 
-    },
+  // useEffect(() => {
+  //   fetch("https://jsonplaceholder.typicode.com/posts")
+  //     .then((data) => data.json())
+  //     .then((data) => setTableData(data))
+  // }, [])
+  // console.log(tableData)
 
-    {
-      id: 7,
-      name: 'Snow',
-      type: 'Web',
-      url: 'ali@gmail.com',
-      lead: 'Ali',
-
-    },
-  ];
   return (
     <>
+      
 
       <div className="project-container">
         <div className="project-header">
+          <hr />
           <div className="project-header-contents">
-            <h4>Projects</h4>
-            <Button variant="contained" size="small" className='project-create-btn'>Create Project</Button>
+
+            <h5>All Projects</h5>
+            <Button variant="contained" onClick={handleOpen} size="small" className='project-create-btn'>Create Project</Button>
 
           </div>
+          <hr />
           <div className="project-search">
+            <SearchIcon className='search-icon' />
+            <input type="text" value={q} onChange={(e) => setQ(e.target.value)} placeholder='Search Here.' className='search' />
 
-            <TextField
-              type='search'
-              placeholder='Search...'
-              InputProps={{
-                endAdornment: (
-                  <InputAdornment position="end">
-                    <SearchIcon />
-                  </InputAdornment>
-                ),
-              }}
-              variant="standard"
-            />
           </div>
         </div>
         <div className="project-list">
-          <div style={{ height: 430, width: '100%' }}>
+          <div style={{ height: 450, width: '95%' }}>
+
             <DataGrid
-              rows={rows}
+              rows={Search(tableData)}
               columns={columns}
-              pageSize={6}
-              rowsPerPageOptions={[6]}
-              checkboxSelection
+              // checkboxSelection
+              disableSelectionOnClick
+              pageSize={pageSize}
+              onPageSizeChange={(newPageSize) => setPageSize(newPageSize)}
+              rowsPerPageOptions={[5, 10, 20]}
+              pagination
+              {...tableData}
+              components={{ Toolbar: GridToolbar }}
+
+
             />
           </div>
+
+          <Modal
+            open={open}
+            onClose={handleClose}
+            aria-labelledby="modal-modal-title"
+            aria-describedby="modal-modal-description"
+          >
+            <Box sx={style}>
+              <div className="create-project-moldel-container">
+                <div className="project-model-header">
+                  <h3>Add Project</h3>
+                </div>
+                <hr />
+                <div className='create-project-model-form-container'>
+                  <CreateProject 
+                 
+                  />
+                </div>
+
+              </div>
+            </Box>
+          </Modal>
         </div>
       </div>
 

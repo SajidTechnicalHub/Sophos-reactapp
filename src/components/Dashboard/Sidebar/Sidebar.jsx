@@ -52,12 +52,16 @@ const Sidebar = () => {
     marginLeft: '90px',
 
   }
+  const Padding = {
+    paddingRight: '112px'
+  }
 
   const [changeclass, setChangeClass] = useState(Hide);
   const [sidebar, setSidebar] = useState(Show);
   const [sidebartoggle, setSidebarToggle] = useState(SidebarShow)
   const [sidebarwidth, setSidebarWidth] = useState(MainPagesFullWidth)
   const [isErrow, setIsErrow] = useState(true)
+  const [sidebarListItemPadding, setSidebarListItemPadding] = useState(Padding)
 
   const DropdownEvent = () => {
 
@@ -73,21 +77,22 @@ const Sidebar = () => {
   }
 
   const SidebarEvent = () => {
-    if (isErrow ===false){
+    if (isErrow === false) {
       setIsErrow(true)
-    }else{
+    } else {
       setIsErrow(false)
     }
-    
+
     if (sidebar.display === 'inline-block') {
 
       setSidebar(Hide)
-      
+      setSidebarListItemPadding()
       setSidebarWidth(MainPagesHalfWidth)
       // console.log(sidebar);
     } else {
       setSidebar(Show)
       setSidebarWidth(MainPagesFullWidth)
+      setSidebarListItemPadding(Padding)
       // console.log(sidebar);
     }
 
@@ -111,25 +116,27 @@ const Sidebar = () => {
           <hr className='sidebarLine' />
           <div className="sidebarWrapper">
             <div className="sidebarMenu">
-              <div className="sidebarTitle ">
-                <Link to='Home'><CottageOutlinedIcon className='sidebarListItemIcon' /></Link>
-                {/* <span className='sidebarTitleText'>Home</span> */}
-                <span className='leftErrow'>
-                  <Link to='Home' className='sidebarTitleText hideTitle ' style={sidebar}>Home</Link>
-                  {isErrow ?
-                    <span className=' hideTitle ' onClick={SidebarEvent}><ArrowLeftOutlinedIcon className='leftErrowStyle' /></span>
-                    : <span className=' hideTitle ' onClick={SidebarEvent}><ArrowRightIcon className='leftErrowStyle' /></span>
-                  }
-                </span>
-              </div>
+              <Link to='Home'>
+                <div className="sidebarTitle ">
+                  <CottageOutlinedIcon className='sidebarListItemIcon' />
 
+                  <span className='leftErrow'>
+                    <Link to='Home' className='sidebarTitleText hideTitle ' style={sidebar}>Home</Link>
+                    {isErrow ?
+                      <span className=' hideTitle ' onClick={SidebarEvent}><ArrowLeftOutlinedIcon className='leftErrowStyle' /></span>
+                      : <span className=' hideTitle ' onClick={SidebarEvent}><ArrowRightIcon className='leftErrowStyle' /></span>
+                    }
+                  </span>
+                </div>
+              </Link>
+              <Link to='dashboard'>
+                <div className="sidebarTitle ">
 
-              <div className="sidebarTitle ">
-                <Link to='dashboard'>
                   <DashboardOutlinedIcon className='sidebarListItemIcon' />
-                  <span className='sidebarTitleText hideTitle' style={sidebar}>Dashboard</span></Link>
+                  <span className='sidebarTitleText hideTitle' style={sidebar}>Dashboard</span>
 
-              </div>
+                </div>
+              </Link>
               <div className="sidebarTitle" onClick={DropdownEvent}>
 
 
@@ -138,72 +145,88 @@ const Sidebar = () => {
                   <ArrowDropDownOutlinedIcon className='hideTitle' style={sidebar} /></span>
 
               </div>
-              <ul className="sidebarList" style={changeclass} >
-                <li className="sidebarListItem user-margin-top">
+              <ul className="sidebarList " style={changeclass} >
+                <Link to='users'>
+                  <li className="sidebarListItem user-margin-top " style={sidebarListItemPadding}>
 
-                  <Link to='users'>
+
                     <PersonOutlineOutlinedIcon className='sidebarListItemIcon' />
                     <span className='sidebarTitleText hideTitle' style={sidebar}>Users </span>
-                  </Link>
-                </li>
-                <li className="sidebarListItem ">
 
-                  <Link to='groups'>
+                  </li>
+                </Link>
+                <Link to='groups'>
+                  <li className="sidebarListItem ">
+
+
                     <GroupsOutlinedIcon className='sidebarListItemIcon' />
                     <span className='sidebarTitleText hideTitle' style={sidebar}>Groups</span>
-                  </Link>
-                </li>
-                <li className="sidebarListItem role-margin-buttom ">
 
-                  <Link to='roles'>
+                  </li>
+                </Link>
+                <Link to='roles'>
+                  <li className="sidebarListItem role-margin-buttom ">
+
+
                     <GppGoodOutlinedIcon className='sidebarListItemIcon' />
                     <span className='sidebarTitleText hideTitle' style={sidebar}> Roles</span>
-                  </Link>
-                </li>
+
+                  </li>
+                </Link>
               </ul>
-              <div className="sidebarTitle">
-                <Link to='emailSetup'>
+              <Link to='emailSetup'>
+                <div className="sidebarTitle">
+
                   <LocalPostOfficeOutlinedIcon className='sidebarListItemIcon' />
-                  <span className='sidebarTitleText hideTitle' style={sidebar}>Email Setup</span></Link>
-              </div>
-              <div className="sidebarTitle">
-                <Link to='emailTemplates'>
+                  <span className='sidebarTitleText hideTitle' style={sidebar}>Email Setup</span>
+                </div>
+              </Link>
+              <Link to='emailTemplates'>
+                <div className="sidebarTitle">
+
                   <ContactMailOutlinedIcon className='sidebarListItemIcon' />
 
                   <span className='sidebarTitleText hideTitle' style={sidebar}>Email Templetes</span>
-                </Link>
-              </div>
-              <div className="sidebarTitle">
-                <Link to='compaigns'>
+
+                </div>
+              </Link>
+              <Link to='compaigns'>
+                <div className="sidebarTitle">
                   <AddBusinessOutlinedIcon className='sidebarListItemIcon' />
                   <span className='sidebarTitleText hideTitle' style={sidebar}>Compaigns</span>
-                </Link>
-              </div>
-              <div className="sidebarTitle">
-                <Link to='learninghub'>
+
+                </div>
+              </Link>
+              <Link to='learninghub'>
+                <div className="sidebarTitle">
+
                   <HubOutlinedIcon className='sidebarListItemIcon' />
                   <span className='sidebarTitleText hideTitle' style={sidebar}>Learning Hub</span>
-                </Link>
-              </div>
-              <div className="sidebarTitle">
-                <Link to='settings'>
+
+                </div>
+              </Link>
+              <Link to='settings'>
+                <div className="sidebarTitle">
+
                   <SettingsOutlinedIcon className='sidebarListItemIcon' />
-                  <span className='sidebarTitleText hideTitle' style={sidebar}>Settings</span></Link>
-              </div>
+                  <span className='sidebarTitleText hideTitle' style={sidebar}>Settings</span>
+                </div>
 
-
+              </Link>
             </div>
-           <br />
+            <br />
           </div>
           <hr className='sidebarLine' />
           <div className="sidebarWrapper">
             <div className="sidebarMenu">
-              <div className="sidebarTitle logout-margin">
-                <Link to='logout'>
+              <Link to='logout'>
+                <div className="sidebarTitle logout-margin">
+
                   <LoginOutlinedIcon className='sidebarListItemIcon' />
                   <span className='sidebarTitleText hideTitle' style={sidebar}>Logout</span>
-                </Link>
-              </div>
+
+                </div>
+              </Link>
             </div>
           </div>
         </div>

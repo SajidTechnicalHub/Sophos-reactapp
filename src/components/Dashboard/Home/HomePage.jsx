@@ -28,10 +28,7 @@ const HomePage = () => {
       SetIsClick(true)
     }
 
-    // if (intro === true){
-    //   setIntro(true)
-    //   setFeedBack(false)
-    // }
+ 
     if (feedBack === false) {
       setFeedBack(true)
       setIntro(false)

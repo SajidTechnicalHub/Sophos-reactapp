@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from "react"
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import ForgotPasswordFooter from './ForgotPasswordFooter';
 
 const ForgotPasswordCode = () => {
@@ -9,6 +9,7 @@ const ForgotPasswordCode = () => {
         code: '',
 
     });
+    let navigate = useNavigate()
     const InputEvent = (e) => {
         const { name, value } = e.target;
         setInput(() => {
@@ -17,12 +18,13 @@ const ForgotPasswordCode = () => {
     }
     const SubmitEvent = (e) => {
         e.preventDefault()
-        alert(`Yourcode: ${input.email}`)
+        // alert(`Yourcode: ${input.email}`)
         setInput({
 
             code: '',
 
         })
+        navigate('/Sophos-reactapp/Forgot_Password/new_password')
     }
     return (
         <>
@@ -31,10 +33,10 @@ const ForgotPasswordCode = () => {
                     <h3>PhishCode</h3>
                 </div>
                 <div className="forgot-password-content">
-                    <form   >
+                    <form onSubmit={SubmitEvent}  >
 
                         <div className="mb-4">
-                            <label htmlFor="InputEmail1" className="form-label forgot-label">Enter Your Code </label>
+                            <label htmlFor="InputEmail1" className="form-label forgot-label">Enter Your Code<span className='estaric'>*</span> </label>
 
                             <input type="text"
                                 name="code"
@@ -49,7 +51,7 @@ const ForgotPasswordCode = () => {
                       
                         <div className='password-btn-block'>
 
-                            <button type="submit" className="forgot-form-btn mb-3"><Link to="/Sophos-reactapp/Forgot_Password/new_password" >Verify Your Code</Link></button>
+                            <button type="submit" className="forgot-form-btn mb-3">Verify Your Code</button>
 
                         </div>
                         <div className='verify-code'>

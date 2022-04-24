@@ -1,6 +1,6 @@
 
 .main-container{
-    display: flex;
+    /* display: flex; */
     background-color: #eceff1; 
     
 }
@@ -103,9 +103,17 @@
     text-decoration: none;
     color: #fff;
 }
-.sidebarListItem:hover,
+/* .sidebarListItemPadding{
+     padding-right: 112px;
+} */
+.sidebarListItem:hover{
+    background-color: #244161;
+    /* padding-right: 105px; */
+}
+
 .sidebarTitle:hover{
     background-color: #244161;
+    
     /* padding-left: 2px; */
     
 }

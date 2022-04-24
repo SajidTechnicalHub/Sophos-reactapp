@@ -6,7 +6,7 @@ const Header = () => {
     <>
       <nav className="navbar navbar-expand-lg navbar-dark header-bg-color">
         <div className="container-fluid">
-          <Link to='Sophos-reactapp' className="navbar-brand">
+          <Link to='/Sophos-reactapp' className="navbar-brand">
             <span className='header-title'>
               <span className='header-logo'>Ph</span><h3>PhishCode</h3>
             </span>
@@ -23,11 +23,11 @@ const Header = () => {
               </li>
               <li className="nav-item">
                 
-                <Link to='projects' className=" nav-link">Projects</Link>
+                <Link to='/Sophos-reactapp/projects' className=" nav-link">Projects</Link>
               </li>
               <li className="nav-item">
                 
-                <Link to='admin' className=" nav-link">Dashboard</Link>
+                <Link to='/Sophos-reactapp/admin' className=" nav-link">Dashboard</Link>
               </li>
               
               <li className="nav-item">
