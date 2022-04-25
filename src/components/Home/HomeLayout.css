@@ -224,6 +224,7 @@
     justify-content: space-between;
     align-items: center;
     /* gap:10px; */
+    color: blue!important;
   }
   .submit-login-btn{
     display: flex;

@@ -4,13 +4,23 @@ import './Topbar.css'
 import img from './user1.png'
 const Topbar = () => {
 
-  const [currentDateTime, setCurrentDateTime] = useState(() => new Date().toLocaleString());
+  const [currentDateTime, setCurrentDateTime] = useState(() => new Date().getUTCHours()+':'+new Date().getUTCMinutes()+':'+ new Date().getUTCSeconds()+ ' '+ '(UTC)');
   useEffect(() => {
     const secondsTimer = setInterval(() => {
-      setCurrentDateTime(new Date().toLocaleString());
+      setCurrentDateTime(new Date().getUTCHours()+':'+new Date().getUTCMinutes()+':'+ new Date().getUTCSeconds()+ ' '+ '(UTC)');
     }, 1000);
     return () => clearInterval(secondsTimer);
+    
   }, [setCurrentDateTime]);
+
+  // const [currentDateTime, setCurrentDateTime] = useState(() => new Date().toUTCString());
+  // useEffect(() => {
+  //   const secondsTimer = setInterval(() => {
+  //     setCurrentDateTime(new Date().toUTCString());
+  //   }, 1000);
+  //   return () => clearInterval(secondsTimer);
+    
+  // }, [setCurrentDateTime]);
 
   return (
     <>
@@ -24,9 +34,19 @@ const Topbar = () => {
             
           </span>
         </div>
+        <span className='time'>{currentDateTime}</span>
         <div className='topbar-notify'>
-          <span className='time'>{currentDateTime}</span>
+          
           <img src={img} className='topbar-notify-img' alt="user" />
+          <div className="dropdown">
+              <button className="  btn-sm dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                User Name
+              </button>
+              <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li><a  className="dropdown-item" href="#">Profile</a></li>
+                <li><a  className="dropdown-item" href="#">Settings</a></li>
+              </ul>
+            </div>
         </div>
       </div>
     </>

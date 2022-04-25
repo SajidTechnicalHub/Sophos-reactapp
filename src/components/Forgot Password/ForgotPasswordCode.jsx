@@ -54,9 +54,10 @@ const ForgotPasswordCode = () => {
                             <button type="submit" className="forgot-form-btn mb-3">Verify Your Code</button>
 
                         </div>
+                        <br />
                         <div className='verify-code'>
                             <Link to="/Sophos-reactapp/Forgot_Password" className="back">
-                                <span > Back</span>
+                                <span > Back </span>
                             </Link>
                             <Link to="" className="back">
                                 <span > Not received code yet? Resend Email</span>

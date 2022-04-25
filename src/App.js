@@ -9,7 +9,7 @@ import DashboardLayout from './components/Dashboard/Home/DashboardLayout';
 import HomePage from './components/Dashboard/Home/HomePage';
 import Dashboard from './components/Dashboard/Dashboard/Dashboard';
 import Users from "./components/Dashboard/Administration/Users";
-import Groups from './components/Dashboard/Administration/Groups';
+import Groups from "./components/Dashboard/Administration/Groups/Groups";
 import Roles from './components/Dashboard/Administration/Roles';
 import EmailSetup from './components/Dashboard/Email/EmailSetup';
 import EmailTemplates from './components/Dashboard/Email/EmailTemplates';

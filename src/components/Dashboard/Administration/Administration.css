@@ -16,12 +16,11 @@
     /*
      margin-top: 5px; */
 }
-.users-top-header a{
-    color:#1e334a ;
-}
+.users-top-header a,
 .users-top-header a:hover{
-    color: #5f768f !important;
+    color: #1e334a;
 }
+
 .users-header{
     display: flex;
     flex-direction: column;
@@ -33,6 +32,30 @@
     justify-content: space-between;
     align-items: center;
 }
+/* ****************** Add User Dropdown start***************** */
+.users-header-contents .dropdown{
+    padding-right: 30px;
+    /* background-color: #1e334a; */
+    
+}
+.users-header-contents .btn-secondary,
+.users-header-contents .btn-secondary:focus,
+.users-header-contents .btn-secondary:hover{
+    
+    background-color: #1e334a;
+}
+.users-header-contents .dropdown .dropdown-menu{
+    border: 2px solid black;
+    padding: 0px;
+}
+
+.users-header-contents .dropdown .dropdown-menu .dropdown-item{
+    
+    background-color: #1e334a;
+    color: #fff!important;
+    font-size: 15px;
+}
+/* ************************************************************ */
 .users-header-contents h5{
     margin-left: 30px;
     background-color: #1e334a;
@@ -139,15 +162,56 @@
     align-items: center;
     gap:5px;
 }
+/* ****************** Import User start***************** */
+.import-user ul li a{
+    color: #1e334a; 
+}
+.user-line-block{
+    display: flex;
+    justify-content: center;
+}
+.import-user-line{
+    height: 360px;
+    width: 1px;
+    background-color: grey;
+    
+}
+.file-upload .btn{
+    padding: 10px!important;
+    width: 100%!important;
+    background-color: #1e334a!important;
+    text-align: center;
+    color: #fff!important;
+    border-radius: 5px;
+}
+.imort-user-model-form {
+    padding: 20px;
+    width: 100%;
+}
+.file-size{
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    gap:3px;
+    color: rgb(165, 156, 156);
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+.import-user label,
+.import-user input{
+    font-size: 15px!important;
+}
+@media(max-width:992px){
+    .import-user-line{
+        display: none;
+    }
+}
 
+/* ***************************************************** */
 @media(max-width:902px){
     .users-top-header{
-        
         justify-content: center;
-        
         gap:10px;
-        /*
-         margin-top: 5px; */
     }
     .users-header{
         display: flex;
@@ -182,6 +246,14 @@
         width: 300px!important;
     }
 
+}
+@media(max-width:700px){
+    .users-top-header{
+        flex-direction: column!important;
+        justify-content: center;
+        gap:2px;
+        font-size: 13px!important;
+    }
 }
 @media(max-width:489px){
     .users-input-search{

@@ -3,17 +3,12 @@ import { Link, useNavigate } from 'react-router-dom';
 import Button from '@mui/material/Button'
 
 
-const EditUser = (props) => {
+const EditGroups = (props) => {
     let navigate = useNavigate();
     const [input, setInput] = useState({
-        // username: '',
-        username: '',
-        email: '',
-        project_type: '',
-        project_avatar: '',
-        project_description: '',
-        avatar: '',
-        role: '',
+        groupname: '',
+        description: '',
+        
     });
     const [inputData, setInputData] = useState('')
     const [item, setItem] = useState([])
@@ -28,15 +23,11 @@ const EditUser = (props) => {
         // alert(`Project Name: ${input.username}, URE:: ${input.email} `)
 
         setInput({
-            username: '',
-            email: '',
-            project_type: '',
-            project_avatar: '',
-            project_description: '',
-            avatar: '',
-            role: '',
+            groupname: '',
+            description: '',
         })
         navigate("/Sophos-reactapp/admin");
+
 
     }
 
@@ -49,55 +40,42 @@ const EditUser = (props) => {
 
             <form onSubmit={SubmitEvent} className='create-project-model-form input-field'>
                 <div className="row">
-                    <div className="col-lg-6">
+                    <div className="col-lg-7">
                         <div className="mb-4 input-field-block ">
-                            <label htmlFor="username" className="form-label">Full Name<span className='estaric'>*</span></label>
+                            <label htmlFor="groupname" className="form-label">Group Name<span className='estaric'>*</span></label>
                             <input type="text"
                                 name="username"
-                                value={input.username}
+                                value={input.groupname}
                                 onChange={InputEvent}
                                 // className="form-control"
                                 required="required"
-                                placeholder='Enter Full Name'
+                                placeholder='Type Gruop Name'
                             />
 
                         </div>
                     </div>
-                    <div className="col-lg-6">
-                        <div className="mb-4 input-field-block">
-                            <label htmlFor="email" className="form-label">Email<span className='estaric'>*</span></label>
-                            <input type="Email"
-                                name="email"
-                                value={input.email}
-                                onChange={InputEvent}
-                                // className="form-control"
-                                required="required"
-                                placeholder='username@gmail.com'
-                            />
-
-                        </div>
-                    </div>
+                    <div className="col-lg-5"></div>
                 </div>
 
                 <div className="row">
-                    <div className="col-lg-6">
-                        <div className="mb-1  input-field-block">
-                            <label htmlFor="role" className="form-label">Role<span className='estaric'>*</span></label>
-                            <select type="text"
-                                name="role"
-                                value={input.role}
+                    <div className="col-lg-7">
+                        <div className="mb-4 input-field-block ">
+                            <label htmlFor="description" className="form-label">Group Description<span className='estaric'>*</span></label>
+                            <textarea type="text"
+                                name="description"
+                                value={input.description}
                                 onChange={InputEvent}
-                                // className="form-control"
-                                required="required" >
-                                <option >User</option>
-                                <option >Admin</option>
-                            </select>
+                                // className="form-control "
+                                required="required"
+                                placeholder='Group Description'
+                            />
+
                         </div>
                     </div>
-                    <div className="col-lg-6">
-
-                    </div>
+                    <div className="col-lg-5"></div>
                 </div>
+
+            
 
                 <div className="row mb-5 ">
                     <h5>Add Groups</h5>
@@ -125,7 +103,7 @@ const EditUser = (props) => {
                     </div>
                 </div>
 
-                <Button variant="contained" type='submit' size="small" className='project-create-btn'>Save Details</Button>
+                <Button variant="contained" type='submit' size="small" className='project-create-btn'>Update</Button>
 
                 <Button variant="contained" onClick={CancelEvent} size="small" className=''>Cancel</Button>
 
@@ -136,4 +114,4 @@ const EditUser = (props) => {
     )
 }
 
-export default EditUser
+export default EditGroups

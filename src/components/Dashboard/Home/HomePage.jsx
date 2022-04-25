@@ -52,10 +52,12 @@ const HomePage = () => {
             <img src={Logo} className='home-img' alt="logo image" />
           </div>
           <div className="col-lg-6 mt-3 ">
-            <h2>Welcome to Phish Code</h2>
-            <p>Copper mug try-hard pitchfork pour-over freegan heirloom neutra
-              air plant cold-pressed tacos poke beard tote bag. Heirloom echo park mlkshk tote
-              bag selvage hot chicken authentic tumeric truffaut hexagon try-hard chambray.</p>
+            <h2>Welcome To PHISHCODE!</h2>
+            <p>A solid security awareness program is an integral part of any defense-in-depth strategy. 
+              PHISCODE educates and tests your end users through automated attack simulations, quality 
+              security awareness training, and actionable reporting metrics. PHISHCODE provides you with 
+              the flexibility and customization that 
+              your organization needs to facilitate a positive security awareness culture.</p>
 
             <div className='hpmepage-child-navbar mb-2'>
 

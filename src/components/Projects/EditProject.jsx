@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from 'react'
-import { Link, useNavigate, useParams  } from 'react-router-dom';
+import React, { useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom';
 import Button from '@mui/material/Button'
 
-const EditProject = () => {
+
+const EditProject = (props) => {
     let navigate = useNavigate();
-  
-    
     const [input, setInput] = useState({
         // username: '',
         project_name: '',
@@ -16,7 +15,6 @@ const EditProject = () => {
         avatar:'',
         lead: '',
     });
-    let { id } = useParams();
    
     const InputEvent = (e) => {
         const { name, value } = e.target;
@@ -37,16 +35,18 @@ const EditProject = () => {
             avatar:'',
             lead: '',
         })
-        
-        navigate("/Sophos-reactapp/projects");
+        navigate("/Sophos-reactapp");
        
     }
 
+    const CancelEvent =() =>{
+        props.Cancel()
+    }
+   
     return (
-        <div className="edit-project-container">
-            <h4>Edit Project</h4>
-            {/* <p>id is:{id}</p> */}
-            <form onSubmit={SubmitEvent} className=''>
+        <>
+
+            <form onSubmit={SubmitEvent} className='create-project-model-form'>
                 <div className="row">
                     <div className="col-lg-6">
                         <div className="mb-4">
@@ -125,7 +125,7 @@ const EditProject = () => {
                         onChange={InputEvent}
                         className="form-control avatar-file"
                         required="required"
-
+                        
                     />
 
                 </div>
@@ -142,10 +142,16 @@ const EditProject = () => {
                     />
 
                 </div>
+                
+
                 <Button variant="contained" type='submit' size="small" className='project-create-btn'>Update</Button>
 
+                <Button variant="contained" onClick={CancelEvent} size="small" className=''>Cancel</Button>
+
+
             </form>
-        </div>
+
+        </>
     )
 }
 

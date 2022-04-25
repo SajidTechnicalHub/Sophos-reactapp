@@ -15,8 +15,9 @@ import { Link } from 'react-router-dom';
 import { Avatar } from '@mui/material';
 import CreateProject from './CreateProject';
 import { RowData } from './ProjectData';
-
-
+import { DataGridPro } from '@mui/x-data-grid-pro';
+import ReactFileReader from 'react-file-reader';
+import EditProject from './EditProject'
 
 const Projects = () => {
   const handleDelete = (id) => {
@@ -32,7 +33,7 @@ const Projects = () => {
         row.lead.indexOf(q) > -1
     );
   }
- 
+
   const columns = [
     {
       field: 'start', headerName: <StarIcon />, width: 50, sortable: false,
@@ -47,11 +48,11 @@ const Projects = () => {
         );
       }
     },
-    { field: 'projectname', headerName: 'Project Name', width: 230 },
-    { field: 'url', headerName: 'URL', width: 230 },
-    { field: 'type', headerName: 'Type', width: 230 },
+    { field: 'projectname', headerName: 'Project Name', width: 240, flex: true },
+    { field: 'url', headerName: 'URL', width: 240 },
+    { field: 'type', headerName: 'Type', width: 240 },
     {
-      field: 'lead', headerName: 'Lead', width: 230,
+      field: 'lead', headerName: 'Lead', width: 240,
       renderCell: (cellValues) => {
         return (
           <>
@@ -71,9 +72,11 @@ const Projects = () => {
         return (
           <>
             <div className="action-icon">
-              <Link to={'/Sophos-reactapp/projects/edit_project/' + cellValues.row.id}>
+              {/* <Link to={'/Sophos-reactapp/projects/edit_project/' + cellValues.row.id}>
                 <EditIcon className='edit-icon' />
-              </Link>
+              </Link> */}
+              <EditIcon className='edit-icon' onClick={handleOpenEdit} />
+              
               <DeleteIcon className='delete-icon' onClick={() => handleDelete(cellValues.row.id)} />
             </div>
           </>
@@ -91,9 +94,9 @@ const Projects = () => {
     height: "95%",
     bgcolor: 'background.paper',
     border: '2px solid #000',
-    overflow:'scroll',
+    overflow: 'scroll',
     boxShadow: 24,
-    display:'block'
+    display: 'block'
     // p: 4,
   };
 
@@ -107,6 +110,10 @@ const Projects = () => {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
+  // Handle Project Edit Model
+  const [openEdit, setOpenEdit] = React.useState(false);
+  const handleOpenEdit = () => setOpenEdit(true);
+  const handleCloseEdit = () => setOpenEdit(false);
 
 
   // useEffect(() => {
@@ -116,9 +123,22 @@ const Projects = () => {
   // }, [])
   // console.log(tableData)
 
+  // Upload CSV file
+  // *******************************
+
+  const handleFiles = files => {
+    var reader = new FileReader();
+    reader.onload = function (e) {
+      // Use reader.result
+      alert(reader.result)
+    }
+    reader.readAsText(files[0]);
+  }
+
+  // **************************************
   return (
     <>
-      
+
 
       <div className="project-container">
         <div className="project-header">
@@ -135,11 +155,17 @@ const Projects = () => {
             <input type="text" value={q} onChange={(e) => setQ(e.target.value)} placeholder='Search Here.' className='search' />
 
           </div>
+
+{/* Upload csv file */}
+          {/* <ReactFileReader handleFiles={handleFiles} fileTypes={'.csv'}>
+            <button className='btn'>Upload</button>
+          </ReactFileReader> */}
+
         </div>
         <div className="project-list">
           <div style={{ height: 450, width: '95%' }}>
 
-            <DataGrid
+            <DataGridPro
               rows={Search(tableData)}
               columns={columns}
               // checkboxSelection
@@ -150,6 +176,7 @@ const Projects = () => {
               pagination
               {...tableData}
               components={{ Toolbar: GridToolbar }}
+
 
 
             />
@@ -168,8 +195,32 @@ const Projects = () => {
                 </div>
                 <hr />
                 <div className='create-project-model-form-container'>
-                  <CreateProject 
-                 
+                  <CreateProject
+                   Cancel={handleClose}
+                  />
+                </div>
+
+              </div>
+            </Box>
+          </Modal>
+          
+          {/* Edit Project Model */}
+
+          <Modal
+            open={openEdit}
+            onClose={handleCloseEdit}
+            aria-labelledby="modal-modal-title"
+            aria-describedby="modal-modal-description"
+          >
+            <Box sx={style}>
+              <div className="create-project-moldel-container">
+                <div className="project-model-header">
+                  <h3>Edit Project</h3>
+                </div>
+                <hr />
+                <div className='create-project-model-form-container'>
+                  <EditProject
+                   Cancel={handleCloseEdit}
                   />
                 </div>
 

@@ -147,7 +147,7 @@ const CreateProject = (props) => {
 
                 <Button variant="contained" type='submit' size="small" className='project-create-btn'>Save Details</Button>
 
-                <Button variant="contained" onClick={CancelEvent} size="small" className='project-create-btn'>Cancel</Button>
+                <Button variant="contained" onClick={CancelEvent} size="small" className=''>Cancel</Button>
 
 
             </form>

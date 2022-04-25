@@ -19,11 +19,9 @@ const Feedback = () => {
 
   return (
     <div>
-      <p>This is just the beginning. We're invested in building a one-stop
-        shop to meet all your security needs across Microsoft 365. But we need your
-        help. Join the Windows insider programs to preview and review the latest enhancements.
-        Leave feedback right here in Microsoft 365 Defender anytime to help
-        us build the right solutions for you.</p>
+      <p>Your feedback helps us create an elite product features and services for you 
+        and for all of our customers. 
+        It’ll only take one minute and will be invaluable for us!</p>
 
       <form onSubmit={SubmitEvent} >
         <div className=" mb-3">

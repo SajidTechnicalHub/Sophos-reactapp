@@ -6,7 +6,7 @@
     background-color: #071330;
     display: flex;
     justify-content: space-between;
-    align-items: end;
+    align-items: center;
     position: fixed;
     top: 0;
     z-index: 999;
@@ -30,8 +30,8 @@
     border-radius: 50%;
     object-fit: cover;
     cursor: pointer;
-    margin-bottom: 8px;
-    margin-right: 10px;
+    /* margin-bottom: 8px; */
+    
     
 }
 .topbar-title{
@@ -40,6 +40,7 @@
     /* justify-content: center; */
     align-items: center;
     gap:5px;
+    margin-top: 25px;
 }
 .time{
     color: white;
@@ -63,4 +64,24 @@
 .topbar-project-title{
     font-size: 20px;
     font-weight: 500;
+}
+
+.topbar .dropdown button{
+    border: none!important;
+    background: none;
+    color: white;
+}
+
+@media(max-width:488px){
+    .topbar-vertical-line,
+    .topbar-project-title{
+        display: none;
+    }
+    .time{
+        display: none;
+    }
+    .topbarWrapper{
+        margin-left: 5px!important;
+        margin-bottom: 0px!important;
+    }
 }

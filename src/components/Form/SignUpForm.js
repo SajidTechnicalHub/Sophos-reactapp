@@ -109,7 +109,7 @@ const SignUpForm = () => {
                     <div className="nextLogin">
                         <span className="form-btn-next" onClick={NextChangeClass}>Next</span>
                         <Link to="/Sophos-reactapp">
-                            <span className="btn submit-btn">Login</span>
+                            <span className="btn submit-btn">Back to Login</span>
                         </Link>
                     </div>
                     <p className='signup-para'>
@@ -172,7 +172,6 @@ const SignUpForm = () => {
                             className="form-control"
                             required="required"
                         />
-                        <a href="#" className='check-text' style={{color:"blue"}}>Where does this information come from?</a>
                     </div>
 
 
@@ -494,13 +493,13 @@ const SignUpForm = () => {
                     <div className="mb-3 form-check">
                         <input type="checkbox" className="form-check-input" id="Check2" />
                         <label className="form-check-label check-text" htmlFor="Check2">
-                            I agree to all the terms and conditions in the <a href=''>  Sophos End User Terms of Use</a>.
+                            I agree to all the terms and conditions in the <a href=''>  Phish Code End User Terms of Use</a>.
                         </label>
                     </div>
                     <div className='submit-btn'>
                         <button type="submit" className="form-btn">Sign Up</button>
                         <Link to="/Sophos-reactapp">
-                            <span className="btn submit-btn">Login</span>
+                            <span className="btn submit-btn">Back to Login</span>
                         </Link>
                     </div>
                 </div>

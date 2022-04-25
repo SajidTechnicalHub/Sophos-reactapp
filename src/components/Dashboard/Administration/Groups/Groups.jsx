@@ -7,25 +7,19 @@ import Modal from '@mui/material/Modal';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { DataGrid, GridToolbar } from '@mui/x-data-grid';
 import EditIcon from '@mui/icons-material/Edit';
-import StarOutlineIcon from '@mui/icons-material/StarOutline';
-import StarIcon from '@mui/icons-material/Star';
-import { Link } from 'react-router-dom';
-import { Avatar } from '@mui/material';
-import CreateProject from '../../Projects/CreateProject';
-import { RowData } from '../../Projects/ProjectData';
-import './Administration.css'
-import { UserList } from './UserData'
-import AddUser from './User/AddUser'
-import EditUser from './User/EditUser';
-import ImportUser from './User/ImportUser';
-const Users = () => {
+import './Groups.css'
+import { GroupsList } from './GroupsData';
+import AddGroups from './AddGroups'
+import EditGroups from './EditGroups';
+
+const Gruops = () => {
   const handleDelete = (id) => {
-    console.log(id)
-    setUsers(users.filter((item) => item.id !== id))
-    console.log(users)
+
+    setGroups(groups.filter((item) => item.id !== id))
+    
   }
-  const Search = (users) => {
-    return users.filter(
+  const Search = (groups) => {
+    return groups.filter(
       (row) =>
         row.Name.toLowerCase().indexOf(q) > -1 ||
         row.Name.indexOf(q) > -1
@@ -34,23 +28,22 @@ const Users = () => {
   }
 
   const columns = [
-    {
-      field: 'Start', headerName: <StarIcon />, width: 50, sortable: false,
-      renderCell: (cellValues) => {
-        return (
-          <>
-            <div className="lead-column-block">
-              {cellValues.row.Star}
-            </div>
-          </>
+    // {
+    //   field: 'Start', headerName: <StarIcon />, width: 50, sortable: false,
+    //   renderCell: (cellValues) => {
+    //     return (
+    //       <>
+    //         <div className="lead-column-block">
+    //           {cellValues.row.Star}
+    //         </div>
+    //       </>
 
-        );
-      }
-    },
-    { field: 'Name', headerName: 'Name', width: 220 },
-    { field: 'Email', headerName: 'Email', width: 220 },
-    { field: 'Groups', headerName: 'Groups', width: 220 },
-    { field: 'Role', headerName: 'Role', width: 220, },
+    //     );
+    //   }
+    // },
+    { field: 'Name', headerName: 'Name/Users', width: 365 },
+    { field: 'Description', headerName: 'Description', width: 365 },
+    { field: 'Total_User', headerName: 'Total_User', width: 150 },
     {
       field: "action", headerName: 'Action', width: 100, sortable: false,
       renderCell: (cellValues) => {
@@ -83,22 +76,8 @@ const Users = () => {
     display: 'block'
     // p: 4,
   };
-  const ImportUserStyle = {
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    width: "80%",
-    height: "80%",
-    bgcolor: 'background.paper',
-    border: '2px solid #000',
-    overflow: 'scroll',
-    boxShadow: 24,
-    display: 'block'
-    // p: 4,
-  };
 
-  const [users, setUsers] = useState(UserList)
+  const [groups, setGroups] = useState(GroupsList)
   const [pageSize, setPageSize] = useState(5);
   const [q, setQ] = useState("")
 
@@ -112,51 +91,41 @@ const Users = () => {
   const handleOpenEdit = () => setOpenEdit(true);
   const handleCloseEdit = () => setOpenEdit(false);
 
-  //Handle Import user form CSV Model
-  const [openImportUser, setOpenImportUser] = useState(false);
-  const handleOpenImportUser = () => setOpenImportUser(true);
-  const handleCloseImportUser = () => setOpenImportUser(false);
+
 
   return (
     <>
 
       <div className="breadcrumb">
-        <span className='breadcrumb-items'>Users</span>
+        <span className='breadcrumb-items'>Groups</span>
 
       </div>
       <div className="users-container">
-        <div className="users-top-header">
-          <Link to=''>Azure AD Users(Preview)</Link>
-          <Link to=''>Active Directory Users(Preview)</Link>
-        </div>
+
         <div className="users-header">
-          <hr />
           <div className="users-header-contents">
             {/* <h5>All Users</h5> */}
             <div className="users-search">
               <SearchIcon className='users-search-icon' />
-              <input type="text" value={q} onChange={(e) => setQ(e.target.value)} placeholder='Search Here.' className='users-input-search' />
+              <input
+                type="text"
+                value={q}
+                onChange={(e) => setQ(e.target.value)}
+                placeholder='Search Here.'
+                className='users-input-search' />
+                
               <select
                 name=""
                 id=""
                 className='user-manu'
               >
 
-                <option>All Users</option>
-                <option>Admin Users</option>
-                <option>Active Directory Users</option>
+                <option>Show All Groups</option>
+                <option>Add Groups</option>
               </select>
             </div>
-            {/* <Button variant="contained" onClick={handleOpen} size="small" className='add-users-btn'>ADD USER</Button> */}
-            <div className="dropdown">
-              <button className="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                Add
-              </button>
-              <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li><a onClick={handleOpen} className="dropdown-item" href="#">Add User</a></li>
-                <li><a onClick={handleOpenImportUser} className="dropdown-item" href="#">Import User From CSV</a></li>
-              </ul>
-            </div>
+            <Button variant="contained" onClick={handleOpen} size="small" className='add-users-btn'>Add Group</Button>
+
           </div>
 
         </div>
@@ -164,15 +133,15 @@ const Users = () => {
           <div style={{ height: 450, width: '100%' }}>
 
             <DataGrid
-              rows={Search(users)}
+              rows={Search(groups)}
               columns={columns}
-              // checkboxSelection
+              checkboxSelection
               disableSelectionOnClick
               pageSize={pageSize}
               onPageSizeChange={(newPageSize) => setPageSize(newPageSize)}
-              rowsPerPageOptions={[5, 10, 20]}
+              rowsPerPageOptions={[5, 10, 15, 20]}
               pagination
-              {...users}
+              {...groups}
               components={{ Toolbar: GridToolbar }}
 
 
@@ -189,11 +158,11 @@ const Users = () => {
             <Box sx={style}>
               <div className="create-project-moldel-container">
                 <div className="project-model-header">
-                  <h3>Add User</h3>
+                  <h3>Add Group</h3>
                 </div>
                 <hr />
                 <div className='create-project-model-form-container'>
-                  <AddUser
+                  <AddGroups
                     Cancel={handleClose}
                   />
                 </div>
@@ -202,7 +171,7 @@ const Users = () => {
             </Box>
           </Modal>
 
-          {/* Edit User Model */}
+          {/* Edit Group Model */}
 
           <Modal
             open={openedit}
@@ -213,36 +182,12 @@ const Users = () => {
             <Box sx={style}>
               <div className="create-project-moldel-container">
                 <div className="project-model-header">
-                  <h3>Edit User</h3>
+                  <h3>Edit Group</h3>
                 </div>
                 <hr />
                 <div className='create-project-model-form-container'>
-                  <EditUser
+                  <EditGroups
                     Cancel={handleCloseEdit}
-                  />
-                </div>
-
-              </div>
-            </Box>
-          </Modal>
-
-          {/* Import User Model */}
-
-          <Modal
-            open={openImportUser}
-            onClose={handleCloseImportUser}
-            aria-labelledby="modal-modal-title"
-            aria-describedby="modal-modal-description"
-          >
-            <Box sx={ImportUserStyle}>
-              <div className="create-project-moldel-container">
-                <div className="project-model-header">
-                  <h3>Import Users from CSV</h3>
-                </div>
-               
-                <div className='create-project-model-form-container'>
-                  <ImportUser
-                    Cancel={handleCloseImportUser}
                   />
                 </div>
 
@@ -257,4 +202,4 @@ const Users = () => {
   )
 }
 
-export default Users
+export default Gruops

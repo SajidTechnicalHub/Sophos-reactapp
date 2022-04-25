@@ -57,7 +57,7 @@ const LoginForm = () => {
                     
                     <div className='submit-login-btn'>
                       
-                    <button type="submit" className="login-form-btn mb-3">Signin</button>
+                    <button type="submit" className="login-form-btn mb-3">Sign In</button>
                     
                     <Link to="Forgot_Password">
                         <span className=''> Forgotten password?</span>
