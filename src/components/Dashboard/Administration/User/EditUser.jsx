@@ -90,7 +90,10 @@ const EditUser = (props) => {
                                 // className="form-control"
                                 required="required" >
                                 <option >User</option>
-                                <option >Admin</option>
+                                <option >Global Admin</option>
+                                <option >Project Admin</option>
+                                <option >Simulation Admin</option>
+                                <option >Global Reader</option>
                             </select>
                         </div>
                     </div>

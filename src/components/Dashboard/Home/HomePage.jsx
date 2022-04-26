@@ -3,8 +3,12 @@ import { Link, NavLink, Outlet } from 'react-router-dom'
 import Logo from './home.svg'
 import Intro from './Intro'
 import Feedback from './Feedback'
+import DonutChart from 'react-donut-chart';
+import { AdminChartsData, TotalUser, LineChartdata } from './HomePageData'
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import GaugeChart from "react-gauge-chart";
 const HomePage = () => {
-  
+
   const activeClass = {
     color: "#0c4160",
     borderBottom: "2px solid #0c4160",
@@ -28,7 +32,7 @@ const HomePage = () => {
       SetIsClick(true)
     }
 
- 
+
     if (feedBack === false) {
       setFeedBack(true)
       setIntro(false)
@@ -53,10 +57,10 @@ const HomePage = () => {
           </div>
           <div className="col-lg-6 mt-3 ">
             <h2>Welcome To PHISHCODE!</h2>
-            <p>A solid security awareness program is an integral part of any defense-in-depth strategy. 
-              PHISCODE educates and tests your end users through automated attack simulations, quality 
-              security awareness training, and actionable reporting metrics. PHISHCODE provides you with 
-              the flexibility and customization that 
+            <p>A solid security awareness program is an integral part of any defense-in-depth strategy.
+              PHISCODE educates and tests your end users through automated attack simulations, quality
+              security awareness training, and actionable reporting metrics. PHISHCODE provides you with
+              the flexibility and customization that
               your organization needs to facilitate a positive security awareness culture.</p>
 
             <div className='hpmepage-child-navbar mb-2'>
@@ -70,6 +74,58 @@ const HomePage = () => {
             </div>
           </div>
           <hr className='home-line' />
+          <div className="chart-section">
+            <div className="row">
+              <div className="col-lg-3 col-md-6 col-sm-12 col-12">
+                <div className="charts">
+                  <h5>Admin User Graph </h5>
+                  <DonutChart
+                    data={AdminChartsData}
+                    className='donut-chart'
+                  />
+                </div>
+              </div>
+              <div className="col-lg-3 col-md-6 col-sm-12 col-12">
+                <div className="charts">
+                  <h5>Total Users</h5>
+                  <DonutChart
+                    data={TotalUser}
+                    className='donut-chart'
+                  />
+                </div>
+              </div>
+              <div className="col-lg-3 col-md-6 col-sm-12 col-12">
+                <div className="charts">
+                  <h5>Sign-Ins by Admins</h5>
+                  <LineChart width={250} height={240} data={LineChartdata}
+                    className='line-chart'>
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="name" />
+                    <YAxis />
+                    <Tooltip />
+                    <Legend />
+                    {/* <Line type="monotone" dataKey="pv" stroke="#8884d8" /> */}
+                    <Line type="monotone" dataKey="Admin" stroke="#82ca9d" />
+                  </LineChart>
+                </div>
+              </div>
+              <div className="col-lg-3 col-md-6 col-sm-12 col-12">
+                <div className="charts">
+                  <h5> PhishCode Health Status</h5>
+                  {/* <GaugeChart id="gauge-chart" textColor="#333" /> */}
+                  <GaugeChart id="gauge-chart3"
+                    nrOfLevels={30}
+                    colors={["#FF5F6D", "#FFC371"]}
+                    arcWidth={0.3}
+                    percent={1}
+                    textColor="#1e334a"
+                    className='meter-chart'
+                  />
+
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </>
