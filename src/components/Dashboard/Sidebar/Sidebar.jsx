@@ -214,13 +214,15 @@ const Sidebar = () => {
 
               </Link>
             </div>
-            <br />
+            
           </div>
-          <hr className='sidebarLine' />
-          <div className="sidebarWrapper">
+          
+          <div className="sidebarWrapper  logout-margin">
+            <hr className='sidebarLine' />
+
             <div className="sidebarMenu">
               <Link to='logout'>
-                <div className="sidebarTitle logout-margin">
+                <div className="sidebarTitle">
 
                   <LoginOutlinedIcon className='sidebarListItemIcon' />
                   <span className='sidebarTitleText hideTitle' style={sidebar}>Logout</span>

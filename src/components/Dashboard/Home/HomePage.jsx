@@ -7,7 +7,24 @@ import DonutChart from 'react-donut-chart';
 import { AdminChartsData, TotalUser, LineChartdata } from './HomePageData'
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import GaugeChart from "react-gauge-chart";
+import {Doughnut} from 'react-chartjs-2';
+import { DoughnutData, DoughnutOptions, plugins } from './HomePageData'
+
+import {Chart, Title,  ArcElement} from 'chart.js'
+Chart.register(Title, ArcElement);
+
+// // export 'Labels' (imported as 'Labels') was not found in 'chart.js'
+//  (possible exports: Animation, Animations, ArcElement, BarController, BarElement,
+//    BasePlatform, BasicPlatform, BubbleController, CategoryScale, Chart,
+//     DatasetController, Decimation, DomPlatform, DoughnutController, Element, 
+//     Filler, Interaction, Legend, LineController, LineElement, LinearScale, 
+//     LogarithmicScale, PieController, PointElement, PolarAreaController, RadarController,
+//      RadialLinearScale, Scale, ScatterController, SubTitle, Ticks, TimeScale, 
+//      TimeSeriesScale, Title, Tooltip, _adapters, _detectPlatform, animator, 
+//      controllers, defaults, elements, layouts, plugins, registerables, registry,
+//       scales)
 const HomePage = () => {
+
 
   const activeClass = {
     color: "#0c4160",
@@ -79,10 +96,17 @@ const HomePage = () => {
               <div className="col-lg-3 col-md-6 col-sm-12 col-12">
                 <div className="charts">
                   <h5>Admin User Graph </h5>
+                  {/* <Doughnut 
+                    data={DoughnutData}
+                    options={DoughnutOptions}
+                    
+                    
+                  /> */}
                   <DonutChart
                     data={AdminChartsData}
                     className='donut-chart'
                   />
+                  
                 </div>
               </div>
               <div className="col-lg-3 col-md-6 col-sm-12 col-12">
@@ -115,7 +139,7 @@ const HomePage = () => {
                   {/* <GaugeChart id="gauge-chart" textColor="#333" /> */}
                   <GaugeChart id="gauge-chart3"
                     nrOfLevels={30}
-                    colors={["#FF5F6D", "#FFC371"]}
+                    colors={["rgb(33, 145, 33)", "green"]}
                     arcWidth={0.3}
                     percent={1}
                     textColor="#1e334a"

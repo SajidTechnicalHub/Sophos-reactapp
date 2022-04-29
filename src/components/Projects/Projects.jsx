@@ -48,11 +48,24 @@ const Projects = () => {
         );
       }
     },
-    { field: 'projectname', headerName: 'Project Name', width: 240, flex: true },
-    { field: 'url', headerName: 'URL', width: 240 },
-    { field: 'type', headerName: 'Type', width: 240 },
+    { field: 'projectname', headerName: 'Project Name', minWidth: 235, flex: true,
+    renderCell: (cellValues) => {
+      return (
+        <>
+          <div className="lead-column-block">
+            <img src={cellValues.row.imageUrl} alt="Project_Name" className='leader-img' />
+            {/* <Avatar className='avater leader-img'>{cellValues.row.projectname[0]}</Avatar> */}
+            {cellValues.row.projectname}
+          </div>
+        </>
+
+      );
+    }
+  },
+    { field: 'url', headerName: 'URL', minWidth: 235, flex: true },
+    { field: 'type', headerName: 'Type', minWidth: 235, flex: true },
     {
-      field: 'lead', headerName: 'Lead', width: 240,
+      field: 'lead', headerName: 'Lead', minWidth: 235, flex: true,
       renderCell: (cellValues) => {
         return (
           <>
@@ -165,7 +178,7 @@ const Projects = () => {
         <div className="project-list">
           <div style={{ height: 450, width: '95%' }}>
 
-            <DataGridPro
+            <DataGrid
               rows={Search(tableData)}
               columns={columns}
               // checkboxSelection

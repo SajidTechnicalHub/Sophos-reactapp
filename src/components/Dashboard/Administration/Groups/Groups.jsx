@@ -41,9 +41,9 @@ const Gruops = () => {
     //     );
     //   }
     // },
-    { field: 'Name', headerName: 'Name/Users', width: 365 },
-    { field: 'Description', headerName: 'Description', width: 365 },
-    { field: 'Total_User', headerName: 'Total_User', width: 150 },
+    { field: 'Name', headerName: 'Name/Users', minWidth: 365, flex: true },
+    { field: 'Description', headerName: 'Description', minWidth: 365, flex: true },
+    { field: 'Total_User', headerName: 'Total User', minWidth: 150, flex: true },
     {
       field: "action", headerName: 'Action', width: 100, sortable: false,
       renderCell: (cellValues) => {
@@ -67,8 +67,8 @@ const Gruops = () => {
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    width: "90%",
-    height: "95%",
+    width: "75%",
+    height: "80%",
     bgcolor: 'background.paper',
     border: '2px solid #000',
     overflow: 'scroll',
@@ -121,7 +121,7 @@ const Gruops = () => {
               >
 
                 <option>Show All Groups</option>
-                <option>Add Groups</option>
+                <option>AD Groups</option>
               </select>
             </div>
             <Button variant="contained" onClick={handleOpen} size="small" className='add-users-btn'>Add Group</Button>

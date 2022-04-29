@@ -28,32 +28,39 @@
 }
 .users-header-contents{
     display: flex;
-    /* flex-direction: row; */
+   
     justify-content: space-between;
     align-items: center;
 }
 /* ****************** Add User Dropdown start***************** */
 .users-header-contents .dropdown{
     padding-right: 30px;
-    /* background-color: #1e334a; */
+    
     
 }
 .users-header-contents .btn-secondary,
 .users-header-contents .btn-secondary:focus,
 .users-header-contents .btn-secondary:hover{
     
-    background-color: #1e334a;
+    /* background-color: #1e334a; */
+    background-color: #1976d2;
 }
 .users-header-contents .dropdown .dropdown-menu{
-    border: 2px solid black;
+    /* border: 2px solid black; */
     padding: 0px;
+}
+.users-header-contents .dropdown .dropdown-menu .dropdown-item:hover{
+    background-color: rgb(241, 135, 64)!important;
+    color: #fff!important;
 }
 
 .users-header-contents .dropdown .dropdown-menu .dropdown-item{
     
-    background-color: #1e334a;
-    color: #fff!important;
-    font-size: 15px;
+    /* background-color: #1e334a; */
+    background-color: white;
+    color: #1e334a!important;
+    font-size: 13px;
+  
 }
 /* ************************************************************ */
 .users-header-contents h5{
@@ -76,13 +83,21 @@
     font-size: 20px!important;
 }
 .users-search select{
-    background-color: #1e334a;
-    color: white;
+    background-color: #1976d2;
+    color: #fff;
     padding: 8px 10px;
     border-radius: 3px;
     margin-left: 15px;
     font-size: 13px;
+    border: none!important;
+    
+    
    
+}
+.users-search select option{
+    background-color: #fff!important;
+    color: #1e334a;
+    
 }
 .users-input-search{
     margin-left: 30px;

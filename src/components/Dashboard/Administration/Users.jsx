@@ -18,6 +18,7 @@ import { UserList } from './UserData'
 import AddUser from './User/AddUser'
 import EditUser from './User/EditUser';
 import ImportUser from './User/ImportUser';
+import {Doughnut} from 'react-chartjs-2';
 const Users = () => {
   const handleDelete = (id) => {
     console.log(id)
@@ -47,12 +48,12 @@ const Users = () => {
         );
       }
     },
-    { field: 'Name', headerName: 'Name', width: 220 },
-    { field: 'Email', headerName: 'Email', width: 220 },
-    { field: 'Groups', headerName: 'Groups', width: 220 },
-    { field: 'Role', headerName: 'Role', width: 220, },
+    { field: 'Name', headerName: 'Name', minWidth: 220, flex: true },
+    { field: 'Email', headerName: 'Email', minWidth: 220, flex: true },
+    { field: 'Groups', headerName: 'Groups', minWidth: 220, flex: true },
+    { field: 'Role', headerName: 'Role', minWidth: 220, flex: true },
     {
-      field: "action", headerName: 'Action', width: 100, sortable: false,
+      field: "action", headerName: 'Action', Width: 100, sortable: false,
       renderCell: (cellValues) => {
         return (
           <>
@@ -74,8 +75,8 @@ const Users = () => {
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    width: "90%",
-    height: "95%",
+    width: "75%",
+    height: "80%",
     bgcolor: 'background.paper',
     border: '2px solid #000',
     overflow: 'scroll',
@@ -139,12 +140,11 @@ const Users = () => {
               <select
                 name=""
                 id=""
-                className='user-manu'
-              >
+                >
 
-                <option>All Users</option>
-                <option>Admin Users</option>
-                <option>Active Directory Users</option>
+                <option >All Users</option>
+                <option >Admin Users</option>
+                <option >Active Directory Users</option>
               </select>
             </div>
             {/* <Button variant="contained" onClick={handleOpen} size="small" className='add-users-btn'>ADD USER</Button> */}
