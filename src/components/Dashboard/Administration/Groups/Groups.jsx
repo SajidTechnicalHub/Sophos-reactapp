@@ -11,8 +11,12 @@ import './Groups.css'
 import { GroupsList } from './GroupsData';
 import AddGroups from './AddGroups'
 import EditGroups from './EditGroups';
+import useWindowDimensions from '../../../useWindowDimensions';
+
 
 const Gruops = () => {
+ const { height, width } = useWindowDimensions();
+
   const handleDelete = (id) => {
 
     setGroups(groups.filter((item) => item.id !== id))
@@ -76,6 +80,20 @@ const Gruops = () => {
     display: 'block'
     // p: 4,
   };
+  const mobilestyle = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: "90%",
+    height: "95%",
+    bgcolor: 'background.paper',
+    border: '2px solid #000',
+    overflow: 'scroll',
+    boxShadow: 24,
+    display: 'block'
+    // p: 4,
+  }
 
   const [groups, setGroups] = useState(GroupsList)
   const [pageSize, setPageSize] = useState(5);
@@ -155,7 +173,7 @@ const Gruops = () => {
             aria-labelledby="modal-modal-title"
             aria-describedby="modal-modal-description"
           >
-            <Box sx={style}>
+            <Box sx={ width<=992 ? mobilestyle : style}>
               <div className="create-project-moldel-container">
                 <div className="project-model-header">
                   <h3>Add Group</h3>
@@ -179,7 +197,7 @@ const Gruops = () => {
             aria-labelledby="modal-modal-title"
             aria-describedby="modal-modal-description"
           >
-            <Box sx={style}>
+            <Box sx={ width<=992 ? mobilestyle : style}>
               <div className="create-project-moldel-container">
                 <div className="project-model-header">
                   <h3>Edit Group</h3>

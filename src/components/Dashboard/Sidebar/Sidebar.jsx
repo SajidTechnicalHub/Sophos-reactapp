@@ -121,7 +121,7 @@ const Sidebar = () => {
                   <CottageOutlinedIcon className='sidebarListItemIcon' />
 
                   <span className='leftErrow'>
-                    <Link to='Home' className='sidebarTitleText hideTitle ' style={sidebar}>Home</Link>
+                    <span className='sidebarTitleText hideTitle ' style={sidebar}>Home</span>
                     {isErrow ?
                       <span className=' hideTitle ' onClick={SidebarEvent}><ArrowLeftOutlinedIcon className='leftErrowStyle' /></span>
                       : <span className=' hideTitle ' onClick={SidebarEvent}><ArrowRightIcon className='leftErrowStyle' /></span>

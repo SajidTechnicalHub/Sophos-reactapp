@@ -1,0 +1,50 @@
+.learging-hub-section .users-search {
+    margin-bottom: 0px!important;
+    border: none!important;
+    
+    
+}
+.learging-hub-section .users-search .users-search-icon{
+    left: 180px!important;
+    top: 25px!important;
+}
+
+.learging-hub-section .users-header-contents {
+    justify-content: end!important;
+    margin-right: 10px!important;
+    
+}
+
+
+
+.learning-hub-title{
+    padding: 20px 20px 0px 20px;
+}
+.learning-hub-title p{
+    margin-bottom: -20px;
+}
+.learning-video-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.learning-video{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.learning-video-row{
+    padding:0px  30px;
+
+}
+.learning-video-details{
+    text-align: center;
+}
+.video-thumbnail{
+    width: 150px;
+    height: 150px;
+   
+}

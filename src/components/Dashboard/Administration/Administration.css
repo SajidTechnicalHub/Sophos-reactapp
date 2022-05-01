@@ -1,6 +1,7 @@
 .users-container{
     margin-bottom: 50px;
     background-color: white;
+    min-height: 100vh;
     height: fit-content;    
     width: 100%;
     border-radius: 5px;
@@ -287,3 +288,84 @@
         left: 15px!important;
     }
 }
+
+/* *************Delete user model Start ********************* */
+.delete-user-section{
+    position: relative;
+}
+.delete-user-section p{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.delete-user-section input{
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 0px 20px;
+    width: 90%;
+    border-radius: 5px;
+    padding: 3px;
+}
+.delete-user-info{
+    width: 100%;
+    min-height: 50px;
+    height: fit-content;
+    background-color: rgb(236, 207, 127);
+    /* color: #fff; */
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    /* padding-right: 20px; */
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
+}
+.delete-user-btn{
+    width: 90%;
+}
+.delete-disable{
+    width: 100%;
+    color: rgb(160, 9, 9);   
+    background-color: rgb(233, 240, 232); 
+    margin-left: 20px;
+    margin-top: 10px;
+    padding: 5px;
+    border-radius: 5px;
+}
+.delete{
+    width: 100%;
+    color: rgb(160, 9, 9);
+    background-color: #fff; 
+    /* background-color: rgb(160, 9, 9);    */
+    border:  2px solid rgb(160, 9, 9)!important;
+    margin-left: 20px;
+    margin-top: 10px;
+    padding: 5px;
+    border-radius: 5px;
+}
+.delete:hover{
+    width: 100%;
+    color: white;
+    /* background-color: rgb(233, 240, 232);  */
+    background-color: rgb(160, 9, 9);   
+    margin-left: 20px;
+    margin-top: 10px;
+    padding: 5px;
+    border-radius: 5px;
+}
+.delete-close-btn{
+    position: absolute;
+    top: 20px;
+    right: 5px;
+    font-size: 25px!important;
+
+}
+.delete-close-btn:hover{
+    position: absolute;
+    top: 20px;
+    right: 5px;
+    font-size: 25px!important;
+    color: blue;
+    cursor: pointer;
+}
+/* ********************************************************* */

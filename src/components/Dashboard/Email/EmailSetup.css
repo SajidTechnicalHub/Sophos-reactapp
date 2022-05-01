@@ -1,0 +1,48 @@
+.email-featred {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 100px 100px 0 0;
+    border-color: #2c80db transparent transparent transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+.email-card{
+    position: relative;
+    z-index: 2;
+}
+.email-featured text{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.rotate {
+
+    transform: rotate(-45deg);
+  
+  
+    /* Legacy vendor prefixes that you probably don't need... */
+  
+    /* Safari */
+    -webkit-transform: rotate(-45deg);
+  
+    /* Firefox */
+    -moz-transform: rotate(-45deg);
+  
+    /* IE */
+    -ms-transform: rotate(-45deg);
+  
+    /* Opera */
+    -o-transform: rotate(-45deg);
+  
+    /* Internet Explorer */
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+    position: absolute;
+    top: 25px;
+    left: 0;
+    z-index: 3;
+    color: #fff;
+  
+  }
