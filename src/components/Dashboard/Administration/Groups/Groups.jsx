@@ -12,7 +12,7 @@ import { GroupsList } from './GroupsData';
 import AddGroups from './AddGroups'
 import EditGroups from './EditGroups';
 import useWindowDimensions from '../../../useWindowDimensions';
-
+import DeleteGroups from './DeleteGroups';
 
 const Gruops = () => {
  const { height, width } = useWindowDimensions();
@@ -58,7 +58,8 @@ const Gruops = () => {
                 <EditIcon className='edit-icon' />
               </Link> */}
               <EditIcon className='edit-icon' onClick={handleOpenEdit} />
-              <DeleteIcon className='delete-icon' onClick={() => handleDelete(cellValues.row.id)} />
+              <DeleteIcon className='delete-icon' onClick={() => handleOpenDeleteGroup(cellValues.row.id, cellValues.row.Name)} />
+              {/* <DeleteIcon className='delete-icon' onClick={() => handleDelete(cellValues.row.id)} /> */}
             </div>
           </>
 
@@ -95,6 +96,37 @@ const Gruops = () => {
     // p: 4,
   }
 
+  const DeleteGroupStyle = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: "40%",
+    height: "60%",
+    bgcolor: 'background.paper',
+    border: '1px solid #000',
+    overflow: 'scroll',
+    boxShadow: 24,
+    display: 'block',
+    borderRadius:'5px'
+    // p: 4,
+  }
+  const DeleteGroupStyle1 = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: "90%",
+    height: "95%",
+    bgcolor: 'background.paper',
+    border: '1px solid #000',
+    overflow: 'scroll',
+    boxShadow: 24,
+    display: 'block',
+    borderRadius:'5px'
+    // p: 4,
+  }
+
   const [groups, setGroups] = useState(GroupsList)
   const [pageSize, setPageSize] = useState(5);
   const [q, setQ] = useState("")
@@ -109,6 +141,22 @@ const Gruops = () => {
   const handleOpenEdit = () => setOpenEdit(true);
   const handleCloseEdit = () => setOpenEdit(false);
 
+   //Handle Delete user Model
+   const [deletedUserData, setDeletedUserData] = useState({
+    id: '',
+    name: '',
+  })
+  const [openDeleteUser, setOpenDeleteUser] = useState(false);
+  const handleOpenDeleteGroup = (id, name) => {
+    setOpenDeleteUser(true);
+    console.log(id)
+    console.log(name)
+    setDeletedUserData({
+      id: id,
+      name: name
+    })
+  }
+  const handleCloseDeleteGroup = () => setOpenDeleteUser(false);
 
 
   return (
@@ -210,6 +258,23 @@ const Gruops = () => {
                 </div>
 
               </div>
+            </Box>
+          </Modal>
+
+          {/* Delete Groups Model */}
+          <Modal
+            open={openDeleteUser}
+            onClose={handleCloseDeleteGroup}
+            aria-labelledby="modal-modal-title"
+            aria-describedby="modal-modal-description"
+          >
+            <Box sx={width >= 992 ?DeleteGroupStyle :DeleteGroupStyle1}>
+              <DeleteGroups
+                Cancel={handleCloseDeleteGroup}
+                Delete={handleOpenDeleteGroup}
+                DeletedData={deletedUserData}
+                DeleteUser={handleDelete}
+              />
             </Box>
           </Modal>
         </div>

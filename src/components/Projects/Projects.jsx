@@ -18,8 +18,11 @@ import { RowData } from './ProjectData';
 import { DataGridPro } from '@mui/x-data-grid-pro';
 import ReactFileReader from 'react-file-reader';
 import EditProject from './EditProject'
+import useWindowDimensions from '../useWindowDimensions'
+import DeleteProject from './DeleteProject'
 
 const Projects = () => {
+  const { height, width } = useWindowDimensions();
   const handleDelete = (id) => {
 
     setTableData(tableData.filter((item) => item.id !== id))
@@ -89,8 +92,8 @@ const Projects = () => {
                 <EditIcon className='edit-icon' />
               </Link> */}
               <EditIcon className='edit-icon' onClick={handleOpenEdit} />
-              
-              <DeleteIcon className='delete-icon' onClick={() => handleDelete(cellValues.row.id)} />
+              <DeleteIcon className='delete-icon' onClick={() => handleOpenDeleteProject(cellValues.row.id, cellValues.row.projectname)} />
+              {/* <DeleteIcon className='delete-icon' onClick={() => handleDelete(cellValues.row.id)} /> */}
             </div>
           </>
 
@@ -113,6 +116,37 @@ const Projects = () => {
     // p: 4,
   };
 
+  const DeleteProjectStyle = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: "40%",
+    height: "60%",
+    bgcolor: 'background.paper',
+    border: '1px solid #000',
+    overflow: 'scroll',
+    boxShadow: 24,
+    display: 'block',
+    borderRadius:'5px'
+    // p: 4,
+  }
+  const DeleteProjectStyle1 = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: "90%",
+    height: "95%",
+    bgcolor: 'background.paper',
+    border: '1px solid #000',
+    overflow: 'scroll',
+    boxShadow: 24,
+    display: 'block',
+    borderRadius:'5px'
+    // p: 4,
+  }
+
   const [tableData, setTableData] = useState(RowData)
   const [pageSize, setPageSize] = React.useState(5);
   const [q, setQ] = useState("")
@@ -129,26 +163,24 @@ const Projects = () => {
   const handleCloseEdit = () => setOpenEdit(false);
 
 
-  // useEffect(() => {
-  //   fetch("https://jsonplaceholder.typicode.com/posts")
-  //     .then((data) => data.json())
-  //     .then((data) => setTableData(data))
-  // }, [])
-  // console.log(tableData)
-
-  // Upload CSV file
-  // *******************************
-
-  const handleFiles = files => {
-    var reader = new FileReader();
-    reader.onload = function (e) {
-      // Use reader.result
-      alert(reader.result)
-    }
-    reader.readAsText(files[0]);
+  //Handle Delete user Model
+  const [deletedProjectData, setDeletedProjectData] = useState({
+    id: '',
+    name: '',
+  })
+  const [openDeleteUser, setOpenDeleteUser] = useState(false);
+  const handleOpenDeleteProject = (id, name) => {
+    setOpenDeleteUser(true);
+    console.log(id)
+    console.log(name)
+    setDeletedProjectData({
+      id: id,
+      name: name
+    })
   }
+  const handleCloseDeleteProject = () => setOpenDeleteUser(false);
 
-  // **************************************
+
   return (
     <>
 
@@ -238,6 +270,24 @@ const Projects = () => {
                 </div>
 
               </div>
+            </Box>
+          </Modal>
+
+           {/* Delete Project Model */}
+
+          <Modal
+            open={openDeleteUser}
+            onClose={handleCloseDeleteProject}
+            aria-labelledby="modal-modal-title"
+            aria-describedby="modal-modal-description"
+          >
+            <Box sx={width >= 992 ? DeleteProjectStyle : DeleteProjectStyle1}>
+              <DeleteProject
+                Cancel={handleCloseDeleteProject}
+                Delete={handleOpenDeleteProject}
+                DeletedData={deletedProjectData}
+                DeleteUser={handleDelete}
+              />
             </Box>
           </Modal>
         </div>
