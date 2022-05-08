@@ -11,16 +11,26 @@ import { Link } from 'react-router-dom';
 const LearningHub = () => {
   const [q, setQ] = useState("")
   const [videoList, setVideoList] = useState(Videolist)
+  // const [users, setUsers] = useState()
+
+  const Search = (users) => {
+    return users.filter(
+      (row) =>
+        row.Name.toLowerCase().indexOf(q) > -1 ||
+        row.Name.indexOf(q) > -1
+
+    );
+  }
   return (
     <>
 
       <div className="breadcrumb">
-        <span className='breadcrumb-items'>Learging Hub</span>
+        <span className='breadcrumb-items'>PhishCode Training Hub</span>
 
       </div>
       <div className="users-container learging-hub-section">
         <div className="learning-hub-title">
-          <h2>PhishCode Training Hub </h2>
+          {/* <h2>PhishCode Training Hub </h2> */}
           <p>PhishCode integrate testing and training in a simple, and easy way.
             PhishCode provides elite cyber cyber security awaeness for your end-users.</p>
         </div>
@@ -31,6 +41,7 @@ const LearningHub = () => {
             <TextField id="standard-basic" label="Search" variant="standard"
               value={q}
               onChange={(e) => setQ(e.target.value)}
+              
             />
 
           </div>
@@ -43,14 +54,24 @@ const LearningHub = () => {
               return (
                 <>
                   <div className="col-lg-3 col-md-6 col-sm-12 col-12 g-2 " key={currEl.id} >
-                    <div className="learning-video-container">
-                      <Link to=''>
-                        <div className="learning-video">
-                          <img src={currEl.url} className="video-thumbnail" alt={currEl.name} />
-                        </div>
-                      </Link>
-                      <div className="learning-video-details">{currEl.details}</div>
+
+                    <div className="card text-center email-card">
+                      <div className='email-featred'></div>
+                      <span className="rotate">{currEl.type}</span>
+
+                      <div className="card-body ">
+                        <a href={currEl.videoUrl} target='_blank'>
+                          <div className="learning-video">
+
+                            <img src={currEl.url} className="video-thumbnail" alt={currEl.name} />
+
+                          </div>
+                          <div className="learning-video-details">{currEl.details}</div>
+                        </a>
+                      </div>
+
                     </div>
+
                   </div>
                 </>
               )

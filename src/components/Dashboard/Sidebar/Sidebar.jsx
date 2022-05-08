@@ -164,7 +164,7 @@ const Sidebar = () => {
 
                   </li>
                 </Link>
-                <Link to='roles'>
+                {/* <Link to='roles'>
                   <li className="sidebarListItem role-margin-buttom ">
 
 
@@ -172,7 +172,7 @@ const Sidebar = () => {
                     <span className='sidebarTitleText hideTitle' style={sidebar}> Roles</span>
 
                   </li>
-                </Link>
+                </Link> */}
               </ul>
               <Link to='emailSetup'>
                 <div className="sidebarTitle">
@@ -201,7 +201,7 @@ const Sidebar = () => {
                 <div className="sidebarTitle">
 
                   <HubOutlinedIcon className='sidebarListItemIcon' />
-                  <span className='sidebarTitleText hideTitle' style={sidebar}>Learning Hub</span>
+                  <span className='sidebarTitleText hideTitle' style={sidebar}>Training Hub</span>
 
                 </div>
               </Link>

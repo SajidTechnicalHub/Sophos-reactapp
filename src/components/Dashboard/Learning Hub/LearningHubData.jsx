@@ -5,37 +5,49 @@ export const Videolist = [
     {
         id:1,
         name:'learning hub',
+        type:'Featured',
         url: thumbnail,
-        details: 'Getting started with the Microsoft 365 security center'
+        videoUrl:'https://www.youtube.com/watch?v=gV1Dwr8zxQU&list=PLEBq7bfZmjyqRYMNCaWdnq_5AVPDwdGjn',
+        details: 'How to Investigate Using Microsoft 365 Defender'
     },
     {
         id:2,
         name:'learning hub',
+        type:'Featured',
         url:thumbnail,
-        details: 'Getting started with the Microsoft 365 security center'
+        videoUrl:'https://www.youtube.com/watch?v=gV1Dwr8zxQU&list=PLEBq7bfZmjyqRYMNCaWdnq_5AVPDwdGjn',
+        details: 'How to Investigate Using Microsoft 365 Defender'
     },
     {
         id:3,
         name:'learning hub',
+        type:'Featured',
         url:thumbnail3,
+        videoUrl:'https://www.youtube.com/watch?v=gV1Dwr8zxQU&list=PLEBq7bfZmjyqRYMNCaWdnq_5AVPDwdGjn',
         details: 'How to Investigate Using Microsoft 365 Defender'
     },
     {
         id:4,
         name:'learning hub',
+        type:'Featured',
         url:thumbnail3,
+        videoUrl:'https://www.youtube.com/watch?v=gV1Dwr8zxQU&list=PLEBq7bfZmjyqRYMNCaWdnq_5AVPDwdGjn',
         details: 'How to Investigate Using Microsoft 365 Defender'
     },
     {
         id:5,
         name:'learning hub',
+        type:'Featured',
         url:thumbnail4,
+        videoUrl:'https://www.youtube.com/watch?v=gV1Dwr8zxQU&list=PLEBq7bfZmjyqRYMNCaWdnq_5AVPDwdGjn',
         details: 'Microsoft 365 Defender Basic Training'
     },
     {
         id:6,
         name:'learning hub',
+        type:'Featured',
         url:thumbnail4,
-        details: 'Getting started with the Microsoft 365 security center'
+        videoUrl:'https://www.youtube.com/watch?v=gV1Dwr8zxQU&list=PLEBq7bfZmjyqRYMNCaWdnq_5AVPDwdGjn',
+        details: 'ow to Investigate Using Microsoft 365 Defender'
     },
 ]
