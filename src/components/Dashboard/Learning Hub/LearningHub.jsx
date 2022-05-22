@@ -50,7 +50,15 @@ const LearningHub = () => {
         <hr />
         <div className="row learning-video-row">
           {
-            videoList.map((currEl) => {
+            videoList.filter((val)=>{
+              if(q == ''){
+                
+                return val 
+              }
+              else if(val.details.toLowerCase().includes(q.toLocaleLowerCase())){
+                return val
+              }
+            }).map((currEl) => {
               return (
                 <>
                   <div className="col-lg-3 col-md-6 col-sm-12 col-12 g-2 " key={currEl.id} >

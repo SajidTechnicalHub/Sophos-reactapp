@@ -11,12 +11,23 @@
 }
 .email-card{
     position: relative;
-    z-index: 2;
+    z-index: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 0; /* number of lines to show */
+    -webkit-box-orient: vertical;
+    max-height: 160px;
+}
+.card-footer .btn{
+    font-size: 15px!important;
+    color: blue!important;
 }
 .email-featured text{
     position: absolute;
     top: 0;
     left: 0;
+    
 }
 .rotate {
 
@@ -40,11 +51,11 @@
     /* Internet Explorer */
     filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
     position: absolute;
-    top: 25px;
-    left: 0;
+    top: 20px;
+    left: 8px;
     z-index: 3;
     color: #fff;
-  
+    
   }
 
   .email-card .video-thumbnail{
@@ -60,4 +71,12 @@
     /* margin-bottom: 0px!important; */
    
     
+}
+.card-header-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+ .title{
+    font-size: 13px;
 }

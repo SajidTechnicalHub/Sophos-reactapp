@@ -44,10 +44,10 @@ export const Videolist = [
     },
     {
         id:6,
-        name:'learning hub',
+        name:'Services',
         type:'Featured',
         url:thumbnail4,
         videoUrl:'https://www.youtube.com/watch?v=gV1Dwr8zxQU&list=PLEBq7bfZmjyqRYMNCaWdnq_5AVPDwdGjn',
-        details: 'ow to Investigate Using Microsoft 365 Defender'
+        details: 'How to Investigate Using Microsoft 365 Defender'
     },
 ]

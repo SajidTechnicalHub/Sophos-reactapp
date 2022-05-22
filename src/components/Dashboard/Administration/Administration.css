@@ -110,7 +110,7 @@
     width: 230px!important;
 }
 .add-users-btn{
-    background-color: #1e334a!important;
+    /* background-color: #1e334a!important; */
     text-transform: capitalize!important;
     margin-right: 30px!important;
     padding: 6px 10px!important;

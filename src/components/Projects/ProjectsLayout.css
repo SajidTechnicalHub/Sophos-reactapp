@@ -43,8 +43,9 @@
     align-items: center;
 }
 .project-create-btn{
-    background-color: #1e334a!important;
-    /* text-transform: capitalize!important; */
+    /* background-color: #1e334a!important; */
+    /* background-color: blue!important; */
+    text-transform: capitalize!important;
     margin-right: 30px!important;
     /* padding: 6px 10px!important; */
     /* margin-bottom: 7px!important; */

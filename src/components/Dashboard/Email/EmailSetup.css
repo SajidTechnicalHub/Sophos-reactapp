@@ -1,0 +1,38 @@
+.email-action-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:3px;
+}
+.email-edit-icon-container{
+    height: 30px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1bbc9b;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.email-edit-icon{
+    color: #fff;
+    font-size: 15px!important;
+
+}
+.email-delete-icon-container{
+    height: 30px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.email-delete-icon{
+    color: #fff;
+    font-size: 15px!important;
+
+}
