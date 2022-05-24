@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/Sophos-reactapp/static/css/main.a993a4b5.css",
-    "main.js": "/Sophos-reactapp/static/js/main.8e32df98.js",
+    "main.css": "/Sophos-reactapp/static/css/main.5da04121.css",
+    "main.js": "/Sophos-reactapp/static/js/main.aadb5c83.js",
     "static/media/video2.png": "/Sophos-reactapp/static/media/video2.176d5514df7cdfae6eba.png",
     "static/media/video1.png": "/Sophos-reactapp/static/media/video1.0058338bb926e8ccdcc6.png",
     "static/media/video3.png": "/Sophos-reactapp/static/media/video3.d050104f00608ca8e9b0.png",
     "static/media/home.svg": "/Sophos-reactapp/static/media/home.43bf1326f7bcf3faba576a76c44a1417.svg",
     "index.html": "/Sophos-reactapp/index.html",
-    "main.a993a4b5.css.map": "/Sophos-reactapp/static/css/main.a993a4b5.css.map",
-    "main.8e32df98.js.map": "/Sophos-reactapp/static/js/main.8e32df98.js.map"
+    "main.5da04121.css.map": "/Sophos-reactapp/static/css/main.5da04121.css.map",
+    "main.aadb5c83.js.map": "/Sophos-reactapp/static/js/main.aadb5c83.js.map"
   },
   "entrypoints": [
-    "static/css/main.a993a4b5.css",
-    "static/js/main.8e32df98.js"
+    "static/css/main.5da04121.css",
+    "static/js/main.aadb5c83.js"
   ]
 }
