@@ -1,6 +1,10 @@
 import React from 'react'
 import './Templates.css'
-const Templates = () => {
+import Button from '@mui/material/Button';
+const Templates = (props) => {
+  const CancelEvent = () => {
+    props.Cancel()
+}
   return (
     <>
       <div className='template-container'>
@@ -33,6 +37,11 @@ const Templates = () => {
           <p>This email was sent to (First Name) (Last Name).</p>
           <div className="template-title">Linked<span className='template-title-icon'>In</span></div>
           <br />
+
+        </div>
+        <div className="template-cancel-btn">
+        <Button variant="contained" onClick={CancelEvent} size="small" className='project-create-btn'>Cancel</Button>
+
         </div>
 
       </div>

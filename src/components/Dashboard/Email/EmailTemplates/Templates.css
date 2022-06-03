@@ -4,8 +4,13 @@
     min-height: 100vh;
     height: fit-content;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     /* margin: 50px 100px; */
+}
+.template-cancel-btn{
+    display: flex;
+    justify-content: end;
 }
 .template-body{
     width: 90%;

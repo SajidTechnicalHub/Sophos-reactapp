@@ -6,6 +6,7 @@
     width: 100%;
     border-radius: 5px;
     background-color: #fff;
+    padding: 0px 3px;
 }
 .users-top-header{
     display: flex;

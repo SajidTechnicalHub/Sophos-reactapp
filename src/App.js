@@ -26,6 +26,7 @@ import Projects from "./components/Projects/Projects";
 import ProjectLayout from './components/Projects/ProjectLayout'
 import Project from './components/Projects/Project'
 import EditProject from "./components/Projects/EditProject";
+import AddCompaigns from './components/Dashboard/Compaigns/AddCompaigns'
 function App() {
   return (
     <div className="container-flude">
@@ -54,11 +55,14 @@ function App() {
           <Route path="emailSetup" element={<EmailSetup />} />
           <Route path="emailTemplates" element={<EmailTemplates />} />
           <Route path="compaigns" element={<Compaigns />} />
+          <Route path="compaign" element={<AddCompaigns />} />
           <Route path="learninghub" element={<LearningHub />} />
           <Route path="settings" element={<Settings />} />
           <Route path="logout" element={<Logout />} />
 
         </Route>
+
+        
         <Route path="Sophos-reactapp/projects" element={<ProjectLayout />} >
           <Route index element={<Projects/>} />
           <Route path="projects" element={<Projects/>} />
