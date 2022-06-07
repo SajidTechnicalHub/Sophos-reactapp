@@ -1,7 +1,7 @@
 export const CompaignList = [
     {
         id:1,
-        CompaignType:'Active Compaigns',
+        CompaignType:'Current Compaigns',
         CompaignList: 'There are no active compaign.'
     },
     
@@ -13,13 +13,13 @@ export const CompaignList = [
 
     {
         id:3,
-        CompaignType:'Compaigns Drafts',
+        CompaignType:'Drafts Compaigns',
         CompaignList: 'There are no dtaft compaign.'
     },
     {
         id:4,
-        CompaignType:'Past Compaigns',
-        CompaignList: 'There are no past compaign.'
+        CompaignType:'All Compaigns',
+        CompaignList: 'There are no compaign.'
     },
 ]
 

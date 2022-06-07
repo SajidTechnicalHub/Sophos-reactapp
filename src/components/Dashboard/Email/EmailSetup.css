@@ -36,3 +36,11 @@
     font-size: 15px!important;
 
 }
+.create-email-profile-form{
+    
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* align-items: center; */
+    
+}

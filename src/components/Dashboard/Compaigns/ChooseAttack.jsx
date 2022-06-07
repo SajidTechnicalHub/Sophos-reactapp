@@ -120,53 +120,44 @@ const ChooseAttack = () => {
 
   return (
     <>
-    
+
 
       <div className="users-container p-3">
-          
-        <div className="users-header">
-          <div className="users-header-contents">
-            {/* <h5>All Users</h5> */}
-            <div className="users-search">
-              <SearchIcon className='users-search-icon' />
-              <input
-                type="text"
-                value={q}
-                onChange={(e) => setQ(e.target.value)}
-                placeholder='Search Here.'
-                className='users-input-search' />
-
-              <select
-                name=""
-                id=""
-                className='user-manu'
-              >
-                <option>All Attacks</option>
-                <option>Credential Harvest</option>
-                <option>Drive-By URL</option>
-                <option>Malware Attack</option>
-                <option>Link to Malware</option>
-                <option>OAuth Consent Grant</option>
-              </select>
-
-              <select
-                name=""
-                id=""
-                className='user-manu'
-              >
-                <option>All Dificulties Level</option>
-                <option>Moderate</option>
-                <option>Hard</option>
-                <option>Easy</option>
-                
-              </select>
-
-            </div>
-            {/* <Button variant="contained"  size="small" className='add-users-btn'>Add Group</Button> */}
-
+        <div className="compaign-attack-header">
+          <div className='choose-attack-title'>
+            <label htmlFor="name" className="form-label">Choose Attack</label>
+            <p className='language-text'>Make edits to the content of this campaign to tailor it for your users.</p>
           </div>
-          <hr />
+          <div className="users-search">
+
+            <SearchIcon className='users-search-icon' />
+            <input
+              type="text"
+              value={q}
+              onChange={(e) => setQ(e.target.value)}
+              placeholder='Search Here.'
+              className='users-input-search' />
+
+            <select
+              name=""
+              id=""
+              className='user-manu'
+            >
+              <option>All Attacks</option>
+              <option>Credential Harvest</option>
+              <option>Drive-By URL</option>
+              <option>Malware Attack</option>
+              <option>Link to Malware</option>
+              <option>OAuth Consent Grant</option>
+            </select>
+          </div>
+          
         </div>
+        <hr />
+        {/* <div className="users-header">
+          
+          <hr />
+        </div> */}
 
         <div className="row">
           {
@@ -196,12 +187,12 @@ const ChooseAttack = () => {
                         <div className='email-featred'></div>
                         <span className="rotate"><div>{currentElem.featured}</div></span>
 
-                        <div className="card-body email-card " style={{cursor: 'pointer'}} onClick={handleOpen}>
+                        <div className="card-body email-card " style={{ cursor: 'pointer' }} onClick={handleOpen}>
                           {currentElem.template}
 
                         </div>
-                        <div className={activeClass == currentElem.id  ? "select-choose-attack" : "card-footer"} onClick={e => setActiveClass(currentElem.id)}>
-                          <span className=' btn title'  > {activeClass != currentElem.id  ? currentElem.attack : <div className='choose-attack-block'><DoneIcon fontSize='small' /><div >Attack Choosen</div></div>}</span>
+                        <div className={activeClass == currentElem.id ? "select-choose-attack" : "card-footer"} onClick={e => setActiveClass(currentElem.id)}>
+                          <span className=' btn title'  > {activeClass != currentElem.id ? currentElem.attack : <div className='choose-attack-block'><DoneIcon fontSize='small' /><div >Attack Choosen</div></div>}</span>
 
                         </div>
                       </div>

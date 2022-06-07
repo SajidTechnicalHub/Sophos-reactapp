@@ -124,7 +124,7 @@ const SignUpForm = () => {
                 {/* After Next Button */}
                 <div className='' style={next}>
                     <div className="mb-3">
-                        <label htmlFor="job_role" className="form-label">Job Rol<span className='estaric'>*</span></label>
+                        <label htmlFor="job_role" className="form-label">Job Role<span className='estaric'>*</span></label>
                         <select type="text"
                             name="job_role"
                             value={input.job_role}
@@ -153,7 +153,7 @@ const SignUpForm = () => {
                     </div>
 
                     <div className="mb-3">
-                        <label htmlFor="phone" className="form-label">Phone Numbe<span className='estaric'>*</span></label>
+                        <label htmlFor="phone" className="form-label">Phone Number<span className='estaric'>*</span></label>
                         <input type="text"
                             name="phone"
                             value={input.phone}
@@ -163,7 +163,7 @@ const SignUpForm = () => {
                         />
                     </div>
                     <div className="mb-3">
-                        <label htmlFor="company" className="form-label">Compan<span className='estaric'>*</span></label>
+                        <label htmlFor="company" className="form-label">Company<span className='estaric'>*</span></label>
                         <input type="text"
                             name="company"
                             value={input.company}
@@ -178,7 +178,7 @@ const SignUpForm = () => {
 
                     <div className='' style={afternext}>
                         <div className="mb-3">
-                            <label htmlFor="industry" className="form-label">Industr<span className='estaric'>*</span></label>
+                            <label htmlFor="industry" className="form-label">Industry<span className='estaric'>*</span></label>
                             <select type="text"
                                 name="industry"
                                 value={input.industry}
@@ -212,7 +212,7 @@ const SignUpForm = () => {
                         </div>
 
                         <div className="mb-3">
-                            <label htmlFor="company_size" className="form-label">Company Siz<span className='estaric'>*</span></label>
+                            <label htmlFor="company_size" className="form-label">Company Size<span className='estaric'>*</span></label>
                             <input type="number"
                                 name="company_size"
                                 value={input.company_size}
@@ -223,7 +223,7 @@ const SignUpForm = () => {
                             />
                         </div>
                         <div className="mb-3">
-                            <label htmlFor="country" className="form-label">Countr<span className='estaric'>*</span></label>
+                            <label htmlFor="country" className="form-label">Country<span className='estaric'>*</span></label>
                             <select type="text"
                                 name="country"
                                 value={input.country}
@@ -469,7 +469,7 @@ const SignUpForm = () => {
 
 
                         <div className="mb-3">
-                            <label htmlFor="state" className="form-label">Stat<span className='estaric'>*</span></label>
+                            <label htmlFor="state" className="form-label">State<span className='estaric'>*</span></label>
                             <input type="text"
                                 name="state"
                                 value={input.state}
@@ -479,7 +479,7 @@ const SignUpForm = () => {
                             />
                         </div>
                         <div className="mb-3">
-                            <label htmlFor="zip_code" className="form-label">Zip Cod<span className='estaric'>*</span></label>
+                            <label htmlFor="zip_code" className="form-label">Zip Code<span className='estaric'>*</span></label>
                             <input type="text"
                                 name="zip_code"
                                 value={input.zip_code}

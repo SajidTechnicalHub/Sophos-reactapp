@@ -53,8 +53,10 @@ const Compaigns = () => {
                 className='user-manu'
               >
 
-                <option value='compaign'> All Compaign</option>
-                <option value='groups'>AD Groups</option>
+                <option value='compaign'> All Compaigns</option>
+                <option value='phishing'>Phishing</option>
+                <option value='harvesting'>Credential Harvesting</option>
+                <option value='attachment'>Attachment</option>
               </select>
             </div>
             <Link to='/Sophos-reactapp/admin/compaign'>
@@ -70,7 +72,7 @@ const Compaigns = () => {
                 <>
                   <div key={index}></div>
                   {
-                    currentElement.CompaignType == 'Past Compaigns' ?
+                    currentElement.CompaignType == 'All Compaigns' ?
                       <div>
                         <div className='compaign-type'>{currentElement.CompaignType}</div>
                         <br />

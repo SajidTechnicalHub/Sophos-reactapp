@@ -311,8 +311,9 @@
     width: 100%;
     min-height: 50px;
     height: fit-content;
-    background-color: rgb(236, 207, 127);
-    /* color: #fff; */
+    /* background-color: rgb(236, 207, 127); */
+    background-color: #1e334a;
+    color: #fff;
     display: flex;
     /* justify-content: center; */
     align-items: center;

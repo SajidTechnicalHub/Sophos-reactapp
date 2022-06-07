@@ -11,7 +11,8 @@ import AttachFileIcon from '@material-ui/icons/AttachFile';
 import ChooseAttack from './ChooseAttack';
 import Customize from './Customize/Customize'
 import useWindowDimensions from '../../useWindowDimensions';
-
+import BugReportIcon from '@material-ui/icons/BugReport';
+import SecurityIcon from '@material-ui/icons/Security';
 
 const steps = ['Get Started', 'Choose Attack', 'Customize', 'Enroll Users', 'Review & Schedule'];
 const MobileSteps = ['', '', '', '', ''];
@@ -33,6 +34,18 @@ const CompaignType = [
         id: 3,
         icon: <AttachFileIcon />,
         name: 'Attachment',
+        desc: 'Lure targeted user to open a attachment within an email.',
+    },
+    {
+        id: 4,
+        icon: <BugReportIcon />,
+        name: 'Malware Attack',
+        desc: 'Lure targeted user to open a attachment within an email.',
+    },
+    {
+        id: 5,
+        icon: <SecurityIcon />,
+        name: 'Oauth Concent Grant',
         desc: 'Lure targeted user to open a attachment within an email.',
     },
 
@@ -232,9 +245,7 @@ const AddCompaigns = () => {
                             activeStep == 1 ?
                                 <div className='stepper-body'>
                                     <div className="mb-4 ">
-                                        <label htmlFor="name" className="form-label">Choose Attack</label>
-                                        <p className='language-text'>Make edits to the content of this campaign to tailor it for your users.</p>
-                                        <hr />
+                                       
                                         <ChooseAttack />
                                     </div>
 
