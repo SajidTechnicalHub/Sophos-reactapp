@@ -3,8 +3,9 @@ import SearchIcon from '@mui/icons-material/Search';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import './Compaigns.css'
-import { CompaignList, PastCompaign } from './CompaignData';
+import { CompaignList, PastCompaignList } from './CompaignData';
 import { Link } from 'react-router-dom';
+import PastCompaign from './PastCompaign'
 
 // import useWindowDimensions from '../../../useWindowDimensions';
 
@@ -52,8 +53,8 @@ const Compaigns = () => {
                 className='user-manu'
               >
 
-                <option>All Compaign</option>
-                <option>AD Groups</option>
+                <option value='compaign'> All Compaign</option>
+                <option value='groups'>AD Groups</option>
               </select>
             </div>
             <Link to='/Sophos-reactapp/admin/compaign'>
@@ -73,7 +74,8 @@ const Compaigns = () => {
                       <div>
                         <div className='compaign-type'>{currentElement.CompaignType}</div>
                         <br />
-                        <table class="table table-hover table-borderless  table-sm">
+                        <PastCompaign />
+                        {/* <table class="table table-hover table-borderless  table-sm table-responsive">
                           <thead>
                             <tr className='table-light border'>
 
@@ -100,7 +102,7 @@ const Compaigns = () => {
                             })
                             }
                           </tbody>
-                        </table>
+                        </table> */}
 
 
                       </div> :

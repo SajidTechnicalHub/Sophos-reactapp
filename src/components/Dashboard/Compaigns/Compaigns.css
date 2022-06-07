@@ -11,6 +11,13 @@
 .compaign-content-section{
     padding: 30px;
 }
+
+@media(max-width:700px){
+    .compaign-content-section{
+        padding: 5px!important;
+    }
+}
+
 .compaign-type, .compaign-list{
     font-size: 30;
 
@@ -21,10 +28,12 @@
 }
 .stepper-header{
     height: 70px;
-    /* background-color: blue; */
+    /* width: 100%; */
     margin-top: -15px;
-    /* margin-bottom: 20px; */
+   
     border-bottom: 1px solid grey;
+   
+    
 }
 .stepper-body{
     min-height: 68vh;

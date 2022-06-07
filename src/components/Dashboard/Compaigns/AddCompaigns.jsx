@@ -9,8 +9,13 @@ import TrendingUpIcon from '@material-ui/icons/TrendingUp';
 import SettingsIcon from '@material-ui/icons/Settings';
 import AttachFileIcon from '@material-ui/icons/AttachFile';
 import ChooseAttack from './ChooseAttack';
+import Customize from './Customize/Customize'
+import useWindowDimensions from '../../useWindowDimensions';
+
 
 const steps = ['Get Started', 'Choose Attack', 'Customize', 'Enroll Users', 'Review & Schedule'];
+const MobileSteps = ['', '', '', '', ''];
+
 const CompaignType = [
     {
         id: 1,
@@ -35,6 +40,8 @@ const CompaignType = [
 
 
 const AddCompaigns = () => {
+
+    const { height, width } = useWindowDimensions();
     const [input, setInput] = useState({
 
         name: ''
@@ -102,27 +109,55 @@ const AddCompaigns = () => {
     };
     return (
         <Box sx={{ width: '100%' }}>
-            <Stepper activeStep={activeStep} className='stepper-header'>
-                {steps.map((label, index) => {
-                    const stepProps = {};
-                    const labelProps = {};
-                    if (isStepOptional(index)) {
+            {/* orientation="vertical" */}
+            <Stepper activeStep={activeStep} className='stepper-header' >
 
-                        // I comment the optional
+                {
+                    width > 992 ?
+                        steps.map((label, index) => {
+                            const stepProps = {};
+                            const labelProps = {};
+                            if (isStepOptional(index)) {
 
-                        // labelProps.optional = (
-                        //     <Typography variant="caption">Optional</Typography>
-                        // );
-                    }
-                    if (isStepSkipped(index)) {
-                        stepProps.completed = false;
-                    }
-                    return (
-                        <Step key={label} {...stepProps}>
-                            <StepLabel {...labelProps}>{label}</StepLabel>
-                        </Step>
-                    );
-                })}
+                                // I comment the optional
+
+                                // labelProps.optional = (
+                                //     <Typography variant="caption">Optional</Typography>
+                                // );
+                            }
+                            if (isStepSkipped(index)) {
+                                stepProps.completed = false;
+                            }
+                            return (
+                                <Step key={label} {...stepProps}>
+                                    <StepLabel {...labelProps}>{label}</StepLabel>
+                                </Step>
+                            );
+                        }) :
+
+
+                        MobileSteps.map((label, index) => {
+                            const stepProps = {};
+                            const labelProps = {};
+                            if (isStepOptional(index)) {
+
+                                // I comment the optional
+
+                                // labelProps.optional = (
+                                //     <Typography variant="caption">Optional</Typography>
+                                // );
+                            }
+                            if (isStepSkipped(index)) {
+                                stepProps.completed = false;
+                            }
+                            return (
+                                <Step key={label} {...stepProps}>
+                                    <StepLabel {...labelProps}>{label}</StepLabel>
+                                </Step>
+                            );
+                        })
+                }
+
             </Stepper>
             {activeStep === steps.length ? (
                 <React.Fragment>
@@ -182,8 +217,8 @@ const AddCompaigns = () => {
                                         <label htmlFor="name" className="form-label">Choose Language</label>
                                         <p className='language-text'>This will be language of your email and training materials.</p>
                                         <div className="compaign-language">
-                                            <select class="form-select" aria-label="Default select example">
-                                                <option selected>Select Language</option>
+                                            <select className="form-select" aria-label="Default select example">
+                                                <option value="language">Select Language</option>
                                                 <option value="English">English</option>
                                                 <option value="Urdu">Urdu</option>
 
@@ -211,6 +246,7 @@ const AddCompaigns = () => {
                                             <label htmlFor="name" className="form-label">Customze</label>
                                             <p className='language-text'>To help disguise your campaign, you may select up to 5 attacks and
                                                 each enrolled user will receive one randomly selected email.</p>
+                                            <Customize />
                                         </div>
                                     </div> :
                                     // ***************Enroll Users Step*********************
