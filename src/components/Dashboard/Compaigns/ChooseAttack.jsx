@@ -4,10 +4,10 @@ import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import useWindowDimensions from '../../useWindowDimensions'
-import './EmailTemplates.css'
+
 import img from '../Learning Hub/Images/video1.png'
-import Templates from './EmailTemplates/Templates';
-import TemplatesModel from './EmailTemplates/TemplatesModel';
+import Templates from '../Email/EmailTemplates/Templates';
+import DoneIcon from '@material-ui/icons/Done';
 
 
 const EmailTemplateData = [
@@ -21,7 +21,7 @@ const EmailTemplateData = [
     btn: 'Click to see more',
     type: 'Hard',
     featured: 'Featured',
-    days: '2 Days ago'
+    attack: 'Choose this attack'
 
   },
   {
@@ -34,7 +34,7 @@ const EmailTemplateData = [
     btn: 'Click to see more',
     type: 'Moderate',
     featured: 'Featured',
-    days: '3 Days ago'
+    attack: 'Choose this attack'
 
   },
   {
@@ -47,7 +47,7 @@ const EmailTemplateData = [
     btn: 'Click to see more',
     type: 'Simple',
     featured: 'New',
-    days: '2 Days ago'
+    attack: 'Choose this attack'
 
   },
   {
@@ -60,7 +60,7 @@ const EmailTemplateData = [
     btn: 'Click to see more',
     type: 'Moderate',
     featured: 'Simple',
-    days: '5 Days ago'
+    attack: 'Choose this attack'
 
   },
   {
@@ -73,12 +73,12 @@ const EmailTemplateData = [
     btn: 'Click to see more',
     type: 'Hard',
     featured: 'Featured',
-    days: '2 Days ago'
+    attack: 'Choose this attack'
 
   },
 
 ]
-const EmailTemplates = () => {
+const ChooseAttack = () => {
   const [q, setQ] = useState("")
   // const { height, width } = useWindowDimensions();
   const style = {
@@ -116,14 +116,14 @@ const EmailTemplates = () => {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
+  const [activeClass, setActiveClass] = useState()
+
   return (
     <>
-      <div className="breadcrumb ">
-        <span className='breadcrumb-items'>Email Templates</span>
-
-      </div>
+    
 
       <div className="users-container p-3">
+          
         <div className="users-header">
           <div className="users-header-contents">
             {/* <h5>All Users</h5> */}
@@ -147,6 +147,18 @@ const EmailTemplates = () => {
                 <option>Malware Attack</option>
                 <option>Link to Malware</option>
                 <option>OAuth Consent Grant</option>
+              </select>
+
+              <select
+                name=""
+                id=""
+                className='user-manu'
+              >
+                <option>All Dificulties Level</option>
+                <option>Moderate</option>
+                <option>Hard</option>
+                <option>Easy</option>
+                
               </select>
 
             </div>
@@ -184,15 +196,13 @@ const EmailTemplates = () => {
                         <div className='email-featred'></div>
                         <span className="rotate"><div>{currentElem.featured}</div></span>
 
-                        <div className="card-body email-card">
+                        <div className="card-body email-card " style={{cursor: 'pointer'}} onClick={handleOpen}>
                           {currentElem.template}
 
-                          {/* <h6 className="card-title">{currentElem.title}</h6>
-                          <p className="card-text">{currentElem.description}</p> */}
-                          {/* <a href="#" className="btn btn-primary">{currentElem.btn}</a> */}
                         </div>
-                        <div className="card-footer">
-                          <span className=' btn title' onClick={handleOpen} > View this Attack Payload</span>
+                        <div className={activeClass == currentElem.id  ? "select-choose-attack" : "card-footer"} onClick={e => setActiveClass(currentElem.id)}>
+                          <span className=' btn title'  > {activeClass != currentElem.id  ? currentElem.attack : <div className='choose-attack-block'><DoneIcon fontSize='small' /><div >Attack Choosen</div></div>}</span>
+
                         </div>
                       </div>
                       <Modal
@@ -233,4 +243,4 @@ const EmailTemplates = () => {
   )
 }
 
-export default EmailTemplates
+export default ChooseAttack

@@ -59,8 +59,7 @@
     border-radius: 5px;
     cursor: pointer;
 }
-.compaign-type-block:hover,
-.compaign-type-block:active{
+.compaign-type-block:hover{
     display: flex;
     /* justify-content: center; */
     align-items: center;
@@ -70,6 +69,11 @@
     padding: 5px 10px;
     border-radius: 5px;
     cursor: pointer;
+}
+.compaign-type-block-active{
+   
+    background-color: rgb(205, 228, 241);
+    
 }
 .compaign-type-icon-block{
     height: 30px;
@@ -103,4 +107,23 @@
 }
 .compaign-language {
   width: 200px;
+}
+
+/* **********Choose Attack************ */
+.select-choose-attack{
+    color: #fff;
+    background-color: blue;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.select-choose-attack .title{
+    color: #fff!important;
+    font-size: 14px!important;
+    font-weight: bold;
+}
+.choose-attack-block{
+    display: flex;
+    gap:3px;
 }

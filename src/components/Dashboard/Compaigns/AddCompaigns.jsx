@@ -8,6 +8,7 @@ import Typography from '@mui/material/Typography';
 import TrendingUpIcon from '@material-ui/icons/TrendingUp';
 import SettingsIcon from '@material-ui/icons/Settings';
 import AttachFileIcon from '@material-ui/icons/AttachFile';
+import ChooseAttack from './ChooseAttack';
 
 const steps = ['Get Started', 'Choose Attack', 'Customize', 'Enroll Users', 'Review & Schedule'];
 const CompaignType = [
@@ -29,7 +30,9 @@ const CompaignType = [
         name: 'Attachment',
         desc: 'Lure targeted user to open a attachment within an email.',
     },
+
 ]
+
 
 const AddCompaigns = () => {
     const [input, setInput] = useState({
@@ -43,6 +46,15 @@ const AddCompaigns = () => {
             return { ...input, [name]: value }
         })
     }
+
+    const selectedBlock = (id) => {
+        console.log(id)
+
+
+
+    }
+
+    const [activeClass, setActiveClass] = useState()
 
     const [activeStep, setActiveStep] = React.useState(0);
     const [skipped, setSkipped] = React.useState(new Set());
@@ -150,7 +162,7 @@ const AddCompaigns = () => {
                                         CompaignType.map((currentElement, index) => {
                                             return (
                                                 <>
-                                                    <div className="compaign-type-block" key={index}>
+                                                    <div className={activeClass == currentElement.id ? "compaign-type-block compaign-type-block-active" : "compaign-type-block"} onClick={e => setActiveClass(currentElement.id)} key={index}>
                                                         <div className="compaign-type-icon-block">
                                                             <span className='compaign-type-icon'>{currentElement.icon}</span>
                                                         </div>
@@ -164,6 +176,7 @@ const AddCompaigns = () => {
                                             )
                                         })
                                     }
+
 
                                     <div className="mb-4 ">
                                         <label htmlFor="name" className="form-label">Choose Language</label>
@@ -185,16 +198,20 @@ const AddCompaigns = () => {
                                 <div className='stepper-body'>
                                     <div className="mb-4 ">
                                         <label htmlFor="name" className="form-label">Choose Attack</label>
-                                        <p className='language-text'>To help disguise your campaign, you may select up to 5 attacks and 
-                                        each enrolled user will receive one randomly selected email.</p>
-                                        
+                                        <p className='language-text'>Make edits to the content of this campaign to tailor it for your users.</p>
+                                        <hr />
+                                        <ChooseAttack />
                                     </div>
-                                    
+
                                 </div> :
                                 // ***************Customize Step*********************
                                 activeStep == 2 ?
                                     <div className='stepper-body'>
-                                        <h6>Customize</h6>
+                                        <div className="mb-4 ">
+                                            <label htmlFor="name" className="form-label">Customze</label>
+                                            <p className='language-text'>To help disguise your campaign, you may select up to 5 attacks and
+                                                each enrolled user will receive one randomly selected email.</p>
+                                        </div>
                                     </div> :
                                     // ***************Enroll Users Step*********************
                                     activeStep == 3 ?
@@ -217,7 +234,7 @@ const AddCompaigns = () => {
                         <Box sx={{ flex: '1 1 auto' }} />
                         {isStepOptional(activeStep) && (
                             <Button color="inherit" onClick={handleSkip} sx={{ mr: 1 }}>
-                                Skip
+                                {/* Skip */}
                             </Button>
                         )}
 
