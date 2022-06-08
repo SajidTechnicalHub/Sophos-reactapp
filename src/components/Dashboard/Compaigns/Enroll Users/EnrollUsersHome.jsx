@@ -4,10 +4,8 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import AttackEmail from './AttackEmail';
-import RemainderEmail from './RemainderEmail';
-import CaughtLanding from './CaughtLanding';
-import AttackEmailTemplate from './AttackEmailTemplate';
+import EnrollUser from './EnrollUsers'
+import EnrollGroups from './EnrollGroups'
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -42,7 +40,7 @@ function a11yProps(index) {
   };
 }
 
-export default function Customize() {
+export default function EnrollUsersHome() {
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
@@ -51,26 +49,21 @@ export default function Customize() {
 
   return (
     <Box sx={{ width: '100%' }}>
-      <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+      <Box sx={{ borderBottom: 1, borderColor: 'divider'}}>
         <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
-          <Tab label="Attack Email" {...a11yProps(0)} />
-          <Tab label="Remainder Email" {...a11yProps(1)} />
-          <Tab label="Caught Landing" {...a11yProps(2)} />
+          <Tab label="Users" {...a11yProps(0)} />
+          <Tab label="Groups" {...a11yProps(1)} />
+          
 
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
-        <AttackEmail />
-        <AttackEmailTemplate/>
+        <EnrollUser />
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <RemainderEmail />
-        <AttackEmailTemplate/>
+        <EnrollGroups />
       </TabPanel>
-      <TabPanel value={value} index={2}>
-        <CaughtLanding />
-        <AttackEmailTemplate/>
-      </TabPanel>
+      
     </Box>
   );
 }

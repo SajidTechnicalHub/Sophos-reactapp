@@ -13,9 +13,9 @@ import Customize from './Customize/Customize'
 import useWindowDimensions from '../../useWindowDimensions';
 import BugReportIcon from '@material-ui/icons/BugReport';
 import SecurityIcon from '@material-ui/icons/Security';
+import EnrollUsersHome from './Enroll Users/EnrollUsersHome';
 
 const steps = ['Get Started', 'Choose Attack', 'Customize', 'Enroll Users', 'Review & Schedule'];
-const MobileSteps = ['', '', '', '', ''];
 
 const CompaignType = [
     {
@@ -123,52 +123,30 @@ const AddCompaigns = () => {
     return (
         <Box sx={{ width: '100%' }}>
             {/* orientation="vertical" */}
-            <Stepper activeStep={activeStep} className='stepper-header' >
+            <Stepper activeStep={activeStep} alternativeLabel className='stepper-header' >
 
                 {
-                    width > 992 ?
-                        steps.map((label, index) => {
-                            const stepProps = {};
-                            const labelProps = {};
-                            if (isStepOptional(index)) {
+                    steps.map((label, index) => {
+                        const stepProps = {};
+                        const labelProps = {};
+                        if (isStepOptional(index)) {
 
-                                // I comment the optional
+                            // I comment the optional
 
-                                // labelProps.optional = (
-                                //     <Typography variant="caption">Optional</Typography>
-                                // );
-                            }
-                            if (isStepSkipped(index)) {
-                                stepProps.completed = false;
-                            }
-                            return (
-                                <Step key={label} {...stepProps}>
-                                    <StepLabel {...labelProps}>{label}</StepLabel>
-                                </Step>
-                            );
-                        }) :
+                            // labelProps.optional = (
+                            //     <Typography variant="caption">Optional</Typography>
+                            // );
+                        }
+                        if (isStepSkipped(index)) {
+                            stepProps.completed = false;
+                        }
+                        return (
+                            <Step key={label} {...stepProps}>
+                                <StepLabel {...labelProps}><span className='stepper-label'>{label}</span></StepLabel>
+                            </Step>
+                        );
+                    })
 
-
-                        MobileSteps.map((label, index) => {
-                            const stepProps = {};
-                            const labelProps = {};
-                            if (isStepOptional(index)) {
-
-                                // I comment the optional
-
-                                // labelProps.optional = (
-                                //     <Typography variant="caption">Optional</Typography>
-                                // );
-                            }
-                            if (isStepSkipped(index)) {
-                                stepProps.completed = false;
-                            }
-                            return (
-                                <Step key={label} {...stepProps}>
-                                    <StepLabel {...labelProps}>{label}</StepLabel>
-                                </Step>
-                            );
-                        })
                 }
 
             </Stepper>
@@ -245,7 +223,7 @@ const AddCompaigns = () => {
                             activeStep == 1 ?
                                 <div className='stepper-body'>
                                     <div className="mb-4 ">
-                                       
+
                                         <ChooseAttack />
                                     </div>
 
@@ -254,7 +232,7 @@ const AddCompaigns = () => {
                                 activeStep == 2 ?
                                     <div className='stepper-body'>
                                         <div className="mb-4 ">
-                                            <label htmlFor="name" className="form-label">Customze</label>
+                                            <label htmlFor="name" className="form-label">Customize</label>
                                             <p className='language-text'>To help disguise your campaign, you may select up to 5 attacks and
                                                 each enrolled user will receive one randomly selected email.</p>
                                             <Customize />
@@ -263,7 +241,26 @@ const AddCompaigns = () => {
                                     // ***************Enroll Users Step*********************
                                     activeStep == 3 ?
                                         <div className='stepper-body'>
-                                            <h6>Enroll Users</h6>
+                                            <label htmlFor="name" className="form-label">Enroll Users</label>
+                                            <div className="enroll-users-block">
+                                                <span className='enroll-users-text enroll-users-text-bold '>Choose which users will receive this campaign below</span>
+                                                <span className='enroll-users-text'>Note: Users must have an email address in order to be
+                                                    added to a campaign. Public domain email addresses, such as gmail.com and yahoo.com, are not permitted for use. Also, users that are not part of a verified domain will not be added. If a group contains
+                                                    users with unverified domains, only those with verified domain will be enrolled.</span>
+                                            </div>
+                                            <div className="auto-enroll-new-new-block">
+                                                <div className="auto-enroll-block">
+
+                                                    <div class="form-check form-switch">
+                                                        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" />
+                                                        {/* <label class="form-check-label" for="flexSwitchCheckDefault">Default switch checkbox input</label> */}
+                                                    </div>
+
+                                                    <span className='auto-enroll-user-text'>Auto-enroll new users to this campaign</span>
+                                                </div>
+                                                <div className="auto-enroll-user-link"><a href=''> Learn more about this feature</a></div>
+                                            </div>
+                                            <EnrollUsersHome />
                                         </div> :
                                         // ***************eview and Schedule Step*********************
                                         <div className='stepper-body'>Review and Schedule</div>
