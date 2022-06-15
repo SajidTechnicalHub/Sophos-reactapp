@@ -1,6 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Templates from '../../Email/EmailTemplates/Templates'
+import EditEmailTemplate from './EditEmailTemplate'
+
 const AttackEmailTemplate = () => {
+    const [editBtn, setEditBtn ] = useState(false)
+    // const [editBtnToggle, setEditBtnToggle] = useState(true)
+
+    const handleEditBtn = () =>{
+
+        if(editBtn == true){
+            setEditBtn(false)
+        }else{
+            setEditBtn(true)
+        }
+    } 
+    const temp ={
+            template:<Templates />
+        }
+    
   return (
     <>
      <div className="attack-email-edit-block">
@@ -8,10 +25,13 @@ const AttackEmailTemplate = () => {
                     <div className="col-lg-8 order-class-2">
                         <div class="card text-center">
                             <div class="card-header">
-                                <span className='edit-text'> Edit</span>
+                                <span className='edit-text' onClick={handleEditBtn}> {editBtn ? 'Close' : 'Edit'} </span>
                             </div>
                             <div class="card-body edit-attack-template-block">
-                                < Templates />
+                              {
+                                  editBtn ? <EditEmailTemplate /> : < Templates />  
+                              }  
+                                
                                 
                             </div>
                             <div class="card-footer text-muted">

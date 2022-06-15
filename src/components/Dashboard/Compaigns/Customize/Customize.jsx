@@ -52,7 +52,13 @@ export default function Customize() {
   return (
     <Box sx={{ width: '100%' }}>
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-        <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
+        <Tabs
+          value={value}
+          onChange={handleChange}
+          variant="scrollable"
+          scrollButtons="auto"
+          aria-label="scrollable auto tabs example">
+            
           <Tab label="Attack Email" {...a11yProps(0)} />
           <Tab label="Remainder Email" {...a11yProps(1)} />
           <Tab label="Caught Landing" {...a11yProps(2)} />
@@ -61,15 +67,15 @@ export default function Customize() {
       </Box>
       <TabPanel value={value} index={0}>
         <AttackEmail />
-        <AttackEmailTemplate/>
+        <AttackEmailTemplate />
       </TabPanel>
       <TabPanel value={value} index={1}>
         <RemainderEmail />
-        <AttackEmailTemplate/>
+        <AttackEmailTemplate />
       </TabPanel>
       <TabPanel value={value} index={2}>
         <CaughtLanding />
-        <AttackEmailTemplate/>
+        <AttackEmailTemplate />
       </TabPanel>
     </Box>
   );

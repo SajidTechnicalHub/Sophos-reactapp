@@ -1,29 +1,5 @@
-export const CompaignList = [
-    {
-        id:1,
-        CompaignType:'Current Compaigns',
-        CompaignList: 'There are no active compaign.'
-    },
-    
-    {
-        id:2,
-        CompaignType:'Upcoming Compaigns',
-        CompaignList: 'There are no upcoming compaign.'
-    },
 
-    {
-        id:3,
-        CompaignType:'Drafts Compaigns',
-        CompaignList: 'There are no dtaft compaign.'
-    },
-    {
-        id:4,
-        CompaignType:'All Compaigns',
-        CompaignList: 'There are no compaign.'
-    },
-]
-
-export const PastCompaignList = [
+export const AllCompaignList = [
     {
        id:1,
         Name:'Compaign Name',

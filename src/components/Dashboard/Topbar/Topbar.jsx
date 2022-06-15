@@ -1,5 +1,6 @@
 
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import './Topbar.css'
 import img from './user1.png'
 const Topbar = () => {
@@ -43,8 +44,9 @@ const Topbar = () => {
                 User Name
               </button>
               <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li><a  className="dropdown-item" href="#">Profile</a></li>
-                <li><a  className="dropdown-item" href="#">Settings</a></li>
+              <Link to='settings'><li className="dropdown-item">Profile</li></Link>
+              <Link to=''><li className="dropdown-item">Health and Care</li></Link>
+                <Link to=''><li className="dropdown-item">Logout</li></Link>
               </ul>
             </div>
         </div>

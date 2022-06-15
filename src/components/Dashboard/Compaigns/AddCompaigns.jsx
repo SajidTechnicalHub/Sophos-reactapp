@@ -14,19 +14,22 @@ import useWindowDimensions from '../../useWindowDimensions';
 import BugReportIcon from '@material-ui/icons/BugReport';
 import SecurityIcon from '@material-ui/icons/Security';
 import EnrollUsersHome from './Enroll Users/EnrollUsersHome';
+import { Link, useNavigate } from 'react-router-dom';
+import EnhancedEncryptionIcon from '@mui/icons-material/EnhancedEncryption';
+import LinkIcon from '@mui/icons-material/Link';
 
 const steps = ['Get Started', 'Choose Attack', 'Customize', 'Enroll Users', 'Review & Schedule'];
 
 const CompaignType = [
     {
         id: 1,
-        icon: <TrendingUpIcon />,
-        name: 'Phishing',
+        icon: <LinkIcon />,
+        name: 'Drive-By URL',
         desc: 'Lure targeted user to click on a link in an email.',
     },
     {
         id: 2,
-        icon: <SettingsIcon />,
+        icon: <EnhancedEncryptionIcon />,
         name: 'Credential Harvesting',
         desc: 'Lure targeted user to enter credentials into a fack website. Note no passwords are collected.',
     },
@@ -53,7 +56,7 @@ const CompaignType = [
 
 
 const AddCompaigns = () => {
-
+    let navigate = useNavigate();
     const { height, width } = useWindowDimensions();
     const [input, setInput] = useState({
 
@@ -153,7 +156,8 @@ const AddCompaigns = () => {
             {activeStep === steps.length ? (
                 <React.Fragment>
                     <Typography sx={{ mt: 2, mb: 1 }}>
-                        All steps completed - you&apos;re finished
+                        {/* All steps completed - you&apos;re finished */}
+                        {navigate("/Sophos-reactapp/admin/compaigns")}
                     </Typography>
                     <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
                         <Box sx={{ flex: '1 1 auto' }} />
@@ -266,7 +270,7 @@ const AddCompaigns = () => {
                                         <div className='stepper-body'>Review and Schedule</div>
 
                     }
-                    <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
+                    <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }} className='stepper-back-button'>
                         <Button
                             color="inherit"
                             disabled={activeStep === 0}
@@ -282,7 +286,7 @@ const AddCompaigns = () => {
                             </Button>
                         )}
 
-                        <Button onClick={handleNext}>
+                        <Button onClick={handleNext} className='stepper-next-button'>
                             {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
                         </Button>
                     </Box>

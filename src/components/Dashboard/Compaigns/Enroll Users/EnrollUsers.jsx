@@ -17,7 +17,7 @@ const EnrollUsers = () => {
   const [q, setQ] = useState("")
   const [q1, setQ1] = useState("")
   const [checkbox, setCheckbox] = useState()
-  const [state, setState] = useState({
+  const [state, setState1] = useState({
     checkedA: false,
     checkedB: false,
     checkedC: false
@@ -26,7 +26,7 @@ const EnrollUsers = () => {
   });
 
   const handleChange = (event) => {
-    setState({ ...state, [event.target.name]: event.target.checked });
+    setState1({ ...state, [event.target.name]: event.target.checked });
 
   };
   return (

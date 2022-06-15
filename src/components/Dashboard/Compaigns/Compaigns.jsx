@@ -1,14 +1,51 @@
 import React, { useState, useEffect } from 'react'
 import SearchIcon from '@mui/icons-material/Search';
+import PropTypes from 'prop-types';
+import Tabs from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab';
+import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import './Compaigns.css'
-import { CompaignList, PastCompaignList } from './CompaignData';
 import { Link } from 'react-router-dom';
-import PastCompaign from './PastCompaign'
+import AllCompaign from './Compaign Tabs/PastCompaign'
+import CurrentCompaign from './Compaign Tabs/CurrentCompaign';
+import ScheduleCompaing from './Compaign Tabs/ScheduleCompaing';
 
 // import useWindowDimensions from '../../../useWindowDimensions';
 
+function TabPanel(props) {
+  const { children, value, index, ...other } = props;
+
+  return (
+    <div
+      role="tabpanel"
+      hidden={value !== index}
+      id={`simple-tabpanel-${index}`}
+      aria-labelledby={`simple-tab-${index}`}
+      {...other}
+    >
+      {value === index && (
+        <Box sx={{ p: 3 }}>
+          <Typography>{children}</Typography>
+        </Box>
+      )}
+    </div>
+  );
+}
+
+TabPanel.propTypes = {
+  children: PropTypes.node,
+  index: PropTypes.number.isRequired,
+  value: PropTypes.number.isRequired,
+};
+
+function a11yProps(index) {
+  return {
+    id: `simple-tab-${index}`,
+    'aria-controls': `simple-tabpanel-${index}`,
+  };
+}
 const Compaigns = () => {
   // const { height, width } = useWindowDimensions();
   const [q, setQ] = useState("")
@@ -18,6 +55,12 @@ const Compaigns = () => {
   //   setGroups(groups.filter((item) => item.id !== id))
 
   // }
+  const [value, setValue] = React.useState(0);
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+
   const Search = (groups) => {
     return groups.filter(
       (row) =>
@@ -65,61 +108,34 @@ const Compaigns = () => {
           </div>
           {/* <hr /> */}
         </div>
+
         <div className='compaign-content-section'>
-          {
-            CompaignList.map((currentElement, index) => {
-              return (
-                <>
-                  <div key={index}></div>
-                  {
-                    currentElement.CompaignType == 'All Compaigns' ?
-                      <div>
-                        <div className='compaign-type'>{currentElement.CompaignType}</div>
-                        <br />
-                        <PastCompaign />
-                        {/* <table class="table table-hover table-borderless  table-sm table-responsive">
-                          <thead>
-                            <tr className='table-light border'>
 
-                              <th scope="col">Name</th>
-                              <th scope="col">Type</th>
-                              <th scope="col">End Date</th>
-                              <th scope="col">Recepients</th>
+          <Box sx={{ width: '100%' }}>
+            <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+              <Tabs
+                value={value}
+                onChange={handleChange}
+                variant="scrollable"
+                scrollButtons="auto"
+                aria-label="scrollable auto tabs example"
+              >
+                <Tab label="Current Compaign" {...a11yProps(0)} />
+                <Tab label="Schedule Compaign" {...a11yProps(1)} />
+                <Tab label="All Compaign" {...a11yProps(2)} />
 
-                            </tr>
-                          </thead>
-                          <tbody>
-                            {PastCompaign.map((pastComp, index) => {
-                              return (
-                                <>
-                                  <tr key={index}>
-
-                                    <td>{pastComp.Name}</td>
-                                    <td>{pastComp.Type}</td>
-                                    <td>{pastComp.EndDate}</td>
-                                    <td>{pastComp.Recepients}</td>
-                                  </tr>
-                                </>
-                              )
-                            })
-                            }
-                          </tbody>
-                        </table> */}
-
-
-                      </div> :
-                      <div>
-                        <div className='compaign-type'>{currentElement.CompaignType}</div>
-                        <hr />
-                        <div className='compaign-list'>{currentElement.CompaignList}</div>
-                      </div>
-                  }
-
-                </>
-              )
-            })
-
-          }
+              </Tabs>
+            </Box>
+            <TabPanel value={value} index={0}>
+              <CurrentCompaign />
+            </TabPanel>
+            <TabPanel value={value} index={1}>
+              <ScheduleCompaing />
+            </TabPanel>
+            <TabPanel value={value} index={2}>
+              <AllCompaign />
+            </TabPanel>
+          </Box>
 
         </div>
       </div>

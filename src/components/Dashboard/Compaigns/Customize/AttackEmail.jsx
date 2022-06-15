@@ -58,15 +58,25 @@ const AttackEmail = () => {
                     </div>
 
                     <div className="mb-4 input-field-block">
-                        <label htmlFor="fromemail" className="form-label">From Name<span className='estaric'>*</span></label>
-                        <input type="email"
+                        <label htmlFor="fromemail" className="form-label">Dimain Name<span className='estaric'>*</span></label>
+                        {/* <input type="email"
                             name="fromemail"
                             value={input.fromemail}
                             onChange={InputEvent}
                             // className="form-control"
                             required="required"
                             placeholder='smtp.gmail.com'
-                        />
+                        /> */}
+                        <select 
+                        name="fromemail"
+                        value={input.fromemail}
+                        onChange={InputEvent}
+                        required="required"
+                        >
+                            <option>--Select Domain Name--</option>
+                            <option>Domain_name@gmail.com</option>
+                            <option>Domain_name@outlook.com</option>
+                        </select>
 
                     </div>
 
