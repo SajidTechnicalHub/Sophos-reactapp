@@ -1,0 +1,270 @@
+.dashboard{
+    padding: 10px!important;
+}
+.dashboard-header{
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    /* gap: 2px; */
+    border: 1px solid lightgray;
+}
+.dashboard hr{
+    margin: 0px!important;
+    margin-bottom: 2px!important;
+}
+/* .dashboard-active-compaigns{
+    padding: 20px;
+} */
+.dashboard-active-compaigns-header{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 10px 0px 10px;
+    color: gray;
+    font-size: 18px;
+}
+.dashboard-avtive-compaigns hr{
+    margin-left: 10px!important;
+    margin-right: 10px!important;
+    margin-top: 5px!important;
+    margin-bottom: 5px!important;
+}
+.dashboard-active-compaigns-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* margin-left: 10px; */
+    padding: 10px;
+}
+.dashboard-active-compaigns-container-heading-block{
+    display: flex;
+    justify-content: center;
+    gap:5px;
+}
+.dashboard-active-compaigns-container-heading-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+    border: 1px solid blue;
+    border-radius: 50%;
+    color: blue;
+    margin-top: 6px;
+}
+.dashboard-active-compaigns-container-heading-text{
+    display: flex;
+    flex-direction: column;
+    gap:2px;
+}
+.dashboard-active-compaigns-container-block{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 30px;
+}
+.dashboard-active-compaigns-container-block1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+.dashboard-active-compaigns-container-blocks{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    /* padding: 20px; */
+    gap:10px;
+
+}
+.dashboard-active-compaigns-container-blocks-circle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    /* border: 1px solid grey; */
+    /* border-radius: 50%; */
+}
+.dashboard-active-compaigns-container-blocks-text{
+    color: gray;
+    font-size: 14px;
+}
+.dashboard-active-compaigns-container-heading-text .heading-text{
+    color: #0d6efd;
+    font-size: 20px;
+}
+.dashboard-active-compaigns-container-heading-text .date-text{
+    color: grey;
+}
+/* .dashboard-active-compaigns-container-heading-text .date-text,
+.dashboard-active-compaigns-container-heading-text .owner-text{
+    font-size: 14px;
+} */
+.hide-icon{
+    display: none;
+}
+.dashboard-right-errow{
+    cursor: pointer;
+}
+@media(max-width:992px){
+    .dashboard{
+        padding: 0px!important;
+    }
+    .dashboard-active-compaigns-header-heading,
+    .dashboard-active-compaigns-header a{
+        font-size: 13px;
+    }
+    .dashboard-active-compaigns-container{
+       flex-direction: column!important;
+        padding: 5px!important;
+        gap: 10px!important;
+    }
+    .dashboard-active-compaigns-container-blocks-circle{
+      
+        width: 30px!important;
+        height: 30px!important;
+       
+    }
+    .dashboard-active-compaigns-container-block1{
+        flex-direction: column!important;
+    }
+    
+}
+/* *******************Simulation Trainig Section********************* */
+.simulation-training-block{
+    display: flex;
+    justify-content: space-between;
+
+    /* border: 1px solid lightgray; */
+    gap: 10px;
+}
+.simulation-block,
+.training-block{
+    border: 1px solid lightgray;
+    width: 100%;
+}
+/* .training-block{
+    padding: 5px 0px;
+} */
+.simulation-title{
+    width: 100%;
+    border: 1px solid lightgray;
+    padding: 10px;
+    font-weight: bold;
+}
+.simulation-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:  5px 10px;
+    /* margin-right: 30px; */
+}
+.simulation-btn{
+    background-color: lightgray;
+    padding:5px 10px;
+    margin:0px 10px 10px 10px;
+    border: none;
+}
+.simulation-btn-margin{
+    margin-top: 47px;
+}
+.simulation-content-header{
+    font-weight: bold;
+}
+.simulatiion-content-header-text{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:  10px 10px;
+    /* align-items: center; */
+}
+@media(max-width:992px){
+    .simulation-content-header{
+        font-size: 13px!important;
+    }
+    .simulatiion-content-header-text{
+       font-size: 13px!important;
+    }
+}
+/* **************Traning Start**************** */
+
+.training-title{
+    font-weight: bold;
+    padding: 10px;
+}
+.training-block h3{
+    margin: 10px 20px;
+    margin-bottom: 20px;
+}
+.progress{
+    margin: 0px 20px!important;
+}
+.training-block p{
+    margin: 0px 20px;
+}
+.training-status{
+    display: flex;
+    justify-content: space-around;
+    margin: 20px;
+}
+.training-status-1{
+    width: 20px;
+    height: 20px;
+    border: 1px solid lightgray;
+    background-color: blue;
+}
+.training-status-2{
+    width: 20px;
+    height: 20px;
+    border: 1px solid lightgray;
+    background-color: lightgray;
+}
+.traning-status-block{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* ************Simulation Recomended and Coverage section*************** */
+.simulation-recomended-container{
+    height: 350px;
+    overflow: auto;
+}
+.simulation-coverage-title{
+    font-weight: bold;
+    border: 1px solid lightgray;
+    width: 100%;
+    padding: 10px;
+}
+.simulation-recomendation-title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.simulation-recomended{
+    border: 1px solid lightgray;
+    padding: 10px;
+}
+.simulation-recomended-type-block hr{
+    margin: 0px!important;
+}
+.simulation-recomended-type-block{
+    display: flex;
+    flex-direction: column;
+
+}
+.simulation-recomended-type{
+    font-weight: bold;
+}
+.simulation-recomended-details{
+    font-size: 13px;
+    color: gray;
+}
+.simulatiion-recomended-header-text{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:  5px 10px;
+    /* align-items: center; */
+}
