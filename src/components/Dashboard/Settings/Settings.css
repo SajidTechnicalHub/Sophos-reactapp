@@ -93,6 +93,13 @@
     justify-content: space-between;
     align-items: center;
 }
+.setting-tabs{
+    display: flex!important;
+    flex-direction: row!important;
+    gap:5px;
+    margin-bottom: -10px!important;
+}
+
 @media(max-width:500px){
     .account-setting-photo-block{
         width: 100%!important;

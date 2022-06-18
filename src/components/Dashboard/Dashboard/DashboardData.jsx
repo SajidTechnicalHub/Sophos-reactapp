@@ -1,5 +1,6 @@
 
 import StartIcon from '@mui/icons-material/Start';
+import AccessTimeOutlinedIcon from '@mui/icons-material/AccessTimeOutlined';
 
 export const ActiveCompaignList = [
     {
@@ -7,7 +8,7 @@ export const ActiveCompaignList = [
         name: 'February Fishing Test',
         date: 'Started February 9, 2022',
         owner: 'Flex Strive',
-        icon: <StartIcon />,
+        icon: <AccessTimeOutlinedIcon />,
         sendEmail: 114,
         emailOpen: 4,
         finishedTraining: 5,
@@ -18,7 +19,7 @@ export const ActiveCompaignList = [
         name: 'Demo',
         date: 'Started February 9, 2022',
         owner: 'Flex Strive',
-        icon: <StartIcon />,
+        icon: <AccessTimeOutlinedIcon />,
         sendEmail: 114,
         emailOpen: 4,
         finishedTraining: 5,
@@ -29,7 +30,7 @@ export const ActiveCompaignList = [
         name: 'February Fishing Test',
         date: 'Started February 9, 2022',
         owner: 'Flex Strive',
-        icon: <StartIcon />,
+        icon: <AccessTimeOutlinedIcon />,
         sendEmail: 114,
         emailOpen: 4,
         finishedTraining: 5,
@@ -40,7 +41,7 @@ export const ActiveCompaignList = [
         name: 'Demo',
         date: 'Started February 9, 2022',
         owner: 'Flex Strive',
-        icon: <StartIcon />,
+        icon: <AccessTimeOutlinedIcon />,
         sendEmail: 114,
         emailOpen: 4,
         finishedTraining: 5,

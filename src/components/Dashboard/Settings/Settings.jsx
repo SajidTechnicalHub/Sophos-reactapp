@@ -11,6 +11,9 @@ import { Link } from 'react-router-dom';
 import AccountSettings from './AccountSettings';
 import HelpSupport from './HelpSupport';
 import License from './License';
+import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
+import HelpCenterIcon from '@mui/icons-material/HelpCenter';
+import KeyIcon from '@mui/icons-material/Key';
 
 // import useWindowDimensions from '../../../useWindowDimensions';
 
@@ -76,9 +79,9 @@ const Settings = () => {
                 scrollButtons="auto"
                 aria-label="scrollable auto tabs example"
               >
-                <Tab  label="Account & Settings" {...a11yProps(0)} />
-                <Tab label="Help & Support" {...a11yProps(1)} />
-                <Tab label="License" {...a11yProps(2)} />
+                <Tab className='setting-tabs' icon={<ManageAccountsIcon />}   label="Account & Settings" {...a11yProps(0)} />
+                <Tab className='setting-tabs' icon={<HelpCenterIcon />}   label="Help & Support" {...a11yProps(1)} />
+                <Tab className='setting-tabs' icon={<KeyIcon />}  label="License"  {...a11yProps(2)} />
 
               </Tabs>
             </Box>
