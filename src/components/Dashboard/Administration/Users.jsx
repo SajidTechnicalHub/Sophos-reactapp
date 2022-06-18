@@ -2,23 +2,17 @@
 import React, { useState, useEffect } from 'react'
 import SearchIcon from '@mui/icons-material/Search';
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
 import Modal from '@mui/material/Modal';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { DataGrid, GridToolbar } from '@mui/x-data-grid';
 import EditIcon from '@mui/icons-material/Edit';
-import StarOutlineIcon from '@mui/icons-material/StarOutline';
 import StarIcon from '@mui/icons-material/Star';
 import { Link } from 'react-router-dom';
-import { Avatar } from '@mui/material';
-import CreateProject from '../../Projects/CreateProject';
-import { RowData } from '../../Projects/ProjectData';
 import './Administration.css'
 import { UserList } from './UserData'
 import AddUser from './User/AddUser'
 import EditUser from './User/EditUser';
 import ImportUser from './User/ImportUser';
-import { Doughnut } from 'react-chartjs-2';
 import useWindowDimensions from '../../useWindowDimensions';
 import DeleteUser from './User/DeleteUser';
 
