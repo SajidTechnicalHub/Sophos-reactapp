@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './Dashboard.css'
-import ActiveCompaigns from './ActiveCompaigns';
+import CurrentCompaigns from './CurrentCompaigns';
 import Simulation from './Simulation';
 import Training from './Training';
 import SimulationCverage from './SimulationCoverage';
@@ -19,16 +19,16 @@ const Dashboard = () => {
 
         <div className="dashboard-header">
           <span>PhishCode dashboards provide insights into campaign results on user susceptibility
-            and allow you to measure overall risk levels across your entire organization.</span>
-          <span><a href="">Learn More</a></span>
+            and allow you to measure overall risk levels across your entire organization. <span><a href="">Learn More</a></span></span>
+
           <hr />
-
-          {/* **********Active Compaigns start**************** */}
+          <br />
+          {/* **********Current Compaigns start**************** */}
           <div className="dashboard-avtive-compaigns">
-            <ActiveCompaigns />
+            <CurrentCompaigns />
           </div>
-          {/* **********Active Compaigns End**************** */}
-
+          {/* **********Current Compaigns End**************** */}
+          <br />
           {/* <div className="simulation-training-block"> */}
           <div className="row">
             <div className="col-lg-8">

@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 import CircularProgress from '@mui/material/CircularProgress';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import {ActiveCompaignList} from './DashboardData'
+import {CurrentCompaignList} from './DashboardData'
 
 
 
@@ -65,9 +65,9 @@ CircularProgressWithLabel.propTypes = {
 // }, []);
 
 
-const ActiveCompaigns = () => {
+const CurrentCompaigns = () => {
 
-    const [count, setCount] = useState(ActiveCompaignList.length)
+    const [count, setCount] = useState(CurrentCompaignList.length)
     // **********circle progress hooks start*****************
 
     const [progress, setProgress] = React.useState(28);
@@ -78,12 +78,12 @@ const ActiveCompaigns = () => {
     return (
         <>
             <div className="dashboard-active-compaigns-header">
-                <span className="dashboard-active-compaigns-header-heading">3 of {count} Active Compaings</span>
-                <Link to="/Sophos-reactapp/admin/activeCompaigns">See all</Link>
+                <span className="dashboard-active-compaigns-header-heading">3 of {count} Current Compaings</span>
+                <Link to="/Sophos-reactapp/admin/currentCompaigns">See all</Link>
             </div>
             <hr />
             {
-                ActiveCompaignList.map((value, index) => {
+                CurrentCompaignList.map((value, index) => {
                     
                     return (
                         <>
@@ -92,21 +92,22 @@ const ActiveCompaigns = () => {
                             <div className="dashboard-active-compaigns-container" key={value.id}>
                                 <div className="dashboard-active-compaigns-container-heading-block">
                                     <div className="dashboard-active-compaigns-container-heading-icon">
-                                        <StartIcon fontSize="small" />
+                                        {/* <StartIcon fontSize="small" /> */}
+                                        
+                                        <img src={value.icon} className='current-compaign-icon' alt="" />
                                     </div>
                                     <div className="dashboard-active-compaigns-container-heading-text">
                                         <span className='heading-text'>{value.name}</span>
-                                        <span className='date-text'>Started {value.date}</span>
+                                        <span className='date-text'>Started: {value.date}</span>
                                         <span className='owner-text'>Owner: {value.owner}</span>
                                     </div>
                                 </div>
 
                                 <div className="dashboard-active-compaigns-container-block">
-
                                     <div className="dashboard-active-compaigns-container-block1">
                                         <div className="dashboard-active-compaigns-container-blocks">
                                             <span className='dashboard-active-compaigns-container-blocks-circle'> <CircularProgressWithLabel value={progress} style={{
-                                                color: "green", height: '50px',
+                                                color: "#00FFAB", height: '50px',
                                                 width: '50px',
                                             }} /></span>
                                             <span className='dashboard-active-compaigns-container-blocks-text'> {value.sendEmail} Emails send</span>
@@ -114,7 +115,7 @@ const ActiveCompaigns = () => {
                                         <div className="dashboard-active-compaigns-container-blocks">
                                             <span className='dashboard-active-compaigns-container-blocks-circle'>
                                                 <CircularProgressWithLabel value={progress1} style={{
-                                                    color: "red", height: '50px',
+                                                    color: "#F77E21", height: '50px',
                                                     width: '50px',
                                                 }} />
                                             </span>
@@ -126,7 +127,7 @@ const ActiveCompaigns = () => {
                                         <div className="dashboard-active-compaigns-container-blocks">
                                             <span className='dashboard-active-compaigns-container-blocks-circle'>
                                                 <CircularProgressWithLabel value={progress2} style={{
-                                                    color: "green", height: '50px',
+                                                    color: "#990000", height: '50px',
                                                     width: '50px',
                                                 }} />
                                             </span>
@@ -136,17 +137,13 @@ const ActiveCompaigns = () => {
                                         <div className="dashboard-active-compaigns-container-blocks ">
                                             <span className='dashboard-active-compaigns-container-blocks-circle'>
                                                 <CircularProgressWithLabel value={progress3} style={{
-                                                    color: "orange", height: '50px',
+                                                    color: "#00A1F1", height: '50px',
                                                     width: '50px',
                                                 }} />
                                             </span>
                                             <span className='dashboard-active-compaigns-container-blocks-text'> {value.finishedTraining} Finished Training</span>
                                         </div>
-                                        {/* <div className={fishSeeAll ? 'hide-icon' : ''}>
-                                            <Tooltip title="See All">
-                                                <ArrowRightAltIcon fontSize='large' className='dashboard-right-errow' onClick={() => setFishSeeAll(true)} />
-                                            </Tooltip>
-                                        </div> */}
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -164,4 +161,4 @@ const ActiveCompaigns = () => {
     )
 }
 
-export default ActiveCompaigns
+export default CurrentCompaigns

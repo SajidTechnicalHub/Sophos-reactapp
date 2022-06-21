@@ -27,7 +27,7 @@ import ProjectLayout from './components/Projects/ProjectLayout'
 import Project from './components/Projects/Project'
 import EditProject from "./components/Projects/EditProject";
 import AddCompaigns from './components/Dashboard/Compaigns/AddCompaigns'
-import AllActiveCompaigns from "./components/Dashboard/Dashboard/AllActiveCompaigns";
+import AllCurrentCompaigns from "./components/Dashboard/Dashboard/AllCurrentCompaigns";
 function App() {
   return (
     <div className="container-flude">
@@ -50,7 +50,7 @@ function App() {
           <Route index element={<HomePage />} />
           <Route path="Home" element={<HomePage />} />
           <Route path="dashboard" element={<Dashboard />} />
-          <Route path="activeCompaigns" element={<AllActiveCompaigns/>} />
+          <Route path="currentCompaigns" element={<AllCurrentCompaigns/>} />
           <Route path="users" element={<Users />} />
           <Route path="groups" element={<Groups />} />
           <Route path="roles" element={<Roles />} />

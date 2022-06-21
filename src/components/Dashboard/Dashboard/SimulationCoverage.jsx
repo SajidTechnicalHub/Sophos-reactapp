@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom';
 
 const SimulationCverage = () => {
 
@@ -27,7 +28,8 @@ const SimulationCverage = () => {
                 </div>
             </div>
 
-            <button className='simulation-btn'>View Simulation Coverage Report</button>
+            {/* <button className='simulation-btn'>View Simulation Coverage Report</button> */}
+            <Link to=''> <span className='simulation-btn'>View Simulation Coverage Report</span></Link>
 
         </>
     )

@@ -28,8 +28,8 @@ function MyApp() {
       }}
     >
 
-      <Profile />
-      <PasswordChange />
+      {/* <Profile />
+      <PasswordChange /> */}
       <div className="light-dark-mode">
         <span> <DarkModeIcon /> {theme.palette.mode} Mode </span>
         <IconButton sx={{ ml: 1 }} onClick={colorMode.toggleColorMode} color="inherit">
@@ -65,12 +65,14 @@ const AccountSettings = () => {
   return (
     <>
       <div className="account-setting-container">
-        <ColorModeContext.Provider value={colorMode}>
+        {/* <ColorModeContext.Provider value={colorMode}>
           <ThemeProvider theme={theme}>
             <MyApp />
 
           </ThemeProvider>
-        </ColorModeContext.Provider>
+        </ColorModeContext.Provider> */}
+        <Profile />
+      <PasswordChange />
 
       </div>
     </>

@@ -1,14 +1,14 @@
 
 import StartIcon from '@mui/icons-material/Start';
-import AccessTimeOutlinedIcon from '@mui/icons-material/AccessTimeOutlined';
+import RowingIcon from '@mui/icons-material/Rowing';
 
-export const ActiveCompaignList = [
+export const CurrentCompaignList = [
     {
         id: 1,
         name: 'February Fishing Test',
         date: 'Started February 9, 2022',
         owner: 'Flex Strive',
-        icon: <AccessTimeOutlinedIcon />,
+        icon: '../phishCodeIcon1.png',
         sendEmail: 114,
         emailOpen: 4,
         finishedTraining: 5,
@@ -19,7 +19,7 @@ export const ActiveCompaignList = [
         name: 'Demo',
         date: 'Started February 9, 2022',
         owner: 'Flex Strive',
-        icon: <AccessTimeOutlinedIcon />,
+        icon: '../phishCodeIcon1.png',
         sendEmail: 114,
         emailOpen: 4,
         finishedTraining: 5,
@@ -30,7 +30,7 @@ export const ActiveCompaignList = [
         name: 'February Fishing Test',
         date: 'Started February 9, 2022',
         owner: 'Flex Strive',
-        icon: <AccessTimeOutlinedIcon />,
+        icon: '../phishCodeIcon1.png',
         sendEmail: 114,
         emailOpen: 4,
         finishedTraining: 5,
@@ -41,7 +41,7 @@ export const ActiveCompaignList = [
         name: 'Demo',
         date: 'Started February 9, 2022',
         owner: 'Flex Strive',
-        icon: <AccessTimeOutlinedIcon />,
+        icon: '../phishCodeIcon1.png',
         sendEmail: 114,
         emailOpen: 4,
         finishedTraining: 5,

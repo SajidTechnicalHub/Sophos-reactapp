@@ -6,7 +6,7 @@
     display: flex;
     flex-direction: column;
     /* gap: 2px; */
-    border: 1px solid lightgray;
+    /* border: 1px solid lightgray; */
 }
 .dashboard hr{
     margin: 0px!important;
@@ -46,10 +46,11 @@
     align-items: center;
     width: 25px;
     height: 25px;
-    border: 1px solid blue;
+    /* border: 1px solid blue;
     border-radius: 50%;
     color: blue;
-    margin-top: 6px;
+    margin-top: 6px; */
+    margin-top: -1px;
 }
 .dashboard-active-compaigns-container-heading-text{
     display: flex;
@@ -152,6 +153,8 @@
     border: 1px solid lightgray;
     padding: 10px;
     font-weight: bold;
+    color: #fff;
+    background-color: #071330;
 }
 .simulation-content{
     display: flex;
@@ -161,22 +164,31 @@
     /* margin-right: 30px; */
 }
 .simulation-btn{
-    background-color: lightgray;
-    padding:5px 10px;
+    /* background-color: lightgray; */
+    /* padding:10px 0px; */
+    padding-bottom: 10px;
     margin:0px 10px 10px 10px;
     border: none;
 }
-.simulation-btn-margin{
-    margin-top: 47px;
-}
+/* .simulation-btn-margin{
+    margin-top: 100px!important;
+} */
+
 .simulation-content-header{
     font-weight: bold;
 }
-.simulatiion-content-header-text{
+.simulation-content-header-text{
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding:  10px 10px;
+    /* align-items: center; */
+}
+.simulation-content-header-text a:hover{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* padding:  10px 0px; */
     /* align-items: center; */
 }
 @media(max-width:992px){
@@ -191,7 +203,12 @@
 
 .training-title{
     font-weight: bold;
+    border: 1px solid lightgray;
+    width: 100%;
     padding: 10px;
+    font-size: 15px;
+    color: #fff;
+    background-color: #071330;
 }
 .training-block h3{
     margin: 10px 20px;
@@ -236,15 +253,20 @@
     border: 1px solid lightgray;
     width: 100%;
     padding: 10px;
+    color: #fff;
+    background-color: #071330;
 }
 .simulation-recomendation-title{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    
 }
 .simulation-recomended{
     border: 1px solid lightgray;
     padding: 10px;
+    color: #fff;
+    background-color: #071330;
 }
 .simulation-recomended-type-block hr{
     margin: 0px!important;
@@ -267,4 +289,8 @@
     align-items: center;
     padding:  5px 10px;
     /* align-items: center; */
+}
+.current-compaign-icon{
+    height:23px;
+    width:23px;
 }

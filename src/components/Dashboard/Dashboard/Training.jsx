@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 const Training = () => {
 
@@ -27,7 +28,7 @@ const Training = () => {
                 </div>
             </div>
 
-            <button className='simulation-btn'>View Training Completion Report</button>
+           <Link to=''> <span className='simulation-btn'>View Training Completion Report</span></Link>
 
         </>
     )

@@ -53,8 +53,8 @@ const Simulation = () => {
                         {
                             index >= 0 && index <=2 ?
                             <div>
-                            <div className="simulatiion-content-header-text" key={value.id}>
-                               <a href=""> <span>{value.name}</span></a>
+                            <div className="simulation-content-header-text" key={value.id}>
+                               <Link to=""> <span>{value.name}</span></Link>
                                 <span>{value.type}</span>
                                 <span>{value.status}</span>
                             </div>
@@ -69,8 +69,8 @@ const Simulation = () => {
                 })
             }
            
-
-            <button className=' simulation-btn simulation-btn-margin '>View All Simulations</button>
+            <br />
+            <span className=' simulation-btn'> <Link to=''>View All Simulations</Link></span>
         </>
     );
 }
