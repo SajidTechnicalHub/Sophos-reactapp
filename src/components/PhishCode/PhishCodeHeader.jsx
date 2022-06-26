@@ -1,7 +1,11 @@
 import React from 'react'
 import {NavLink, Link} from 'react-router-dom'
-
-const Header = () => {
+const PhishCodeHeader = (props) => {
+  
+    const executeScroll1 = () => props.execute1()
+    const executeScroll2 = () => props.execute2()
+    const executeScroll3 = () => props.execute3()
+    const executeScroll4 = () => props.execute4()
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-dark header-bg-color">
@@ -16,24 +20,27 @@ const Header = () => {
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav ms-auto ">
+              
             <li className="nav-item">
                 {/* <a  className="nav-link " aria-current="page" href="/">Features</a> */}
-                <Link to='/Sophos-reactapp' className=" nav-link">Documentation</Link>
-                
+                <span to='/Sophos-reactapp' className=" nav-link" onClick={executeScroll1}>Section-1</span>
               </li>
               <li className="nav-item">
-                
-                <Link to='/Sophos-reactapp/projects' className=" nav-link">Projects</Link>
+                {/* <a  className="nav-link " aria-current="page" href="/">Features</a> */}
+                <span to='/Sophos-reactapp' className=" nav-link" onClick={executeScroll2}>Section-2</span>
               </li>
               <li className="nav-item">
-                
-                <Link to='/Sophos-reactapp/admin' className=" nav-link">Dashboard</Link>
+                {/* <a  className="nav-link " aria-current="page" href="/">Features</a> */}
+                <span to='/Sophos-reactapp' className=" nav-link" onClick={executeScroll3}>Section-3</span>
               </li>
-              
+              <li className="nav-item">
+                {/* <a  className="nav-link " aria-current="page" href="/">Features</a> */}
+                <span to='/Sophos-reactapp' className=" nav-link" onClick={executeScroll4}>Section-4</span>
+              </li>
+
               <li className="nav-item">
                 {/* <a  className="nav-link " aria-current="page" href="/">Features</a> */}
                 <Link to='/Sophos-reactapp' className=" nav-link">Features</Link>
-                
               </li>
               <li className="nav-item ">
                 {/* <a className="nav-link active" href="/">Free Trail</a> */}
@@ -56,4 +63,4 @@ const Header = () => {
   )
 }
 
-export default Header
+export default PhishCodeHeader

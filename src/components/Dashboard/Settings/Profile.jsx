@@ -62,7 +62,7 @@ const Profile = () => {
           </div>
 
           <div className="row">
-            <div className="col-lg-8">
+            <div className="col-lg-6">
               <div className="mb-4 input-field-block ">
                 <label htmlFor="username" className="form-label">User Name<span className='estaric'>*</span></label>
                 <input type="text"

@@ -60,8 +60,8 @@ export default function Customize() {
           aria-label="scrollable auto tabs example">
             
           <Tab label="Attack Email" {...a11yProps(0)} />
-          <Tab label="Remainder Email" {...a11yProps(1)} />
-          <Tab label="Caught Landing" {...a11yProps(2)} />
+          {/* <Tab label="Remainder Email" {...a11yProps(1)} />
+          <Tab label="Caught Landing" {...a11yProps(2)} /> */}
 
         </Tabs>
       </Box>
@@ -69,14 +69,14 @@ export default function Customize() {
         <AttackEmail />
         <AttackEmailTemplate />
       </TabPanel>
-      <TabPanel value={value} index={1}>
+      {/* <TabPanel value={value} index={1}>
         <RemainderEmail />
         <AttackEmailTemplate />
       </TabPanel>
       <TabPanel value={value} index={2}>
         <CaughtLanding />
         <AttackEmailTemplate />
-      </TabPanel>
+      </TabPanel> */}
     </Box>
   );
 }

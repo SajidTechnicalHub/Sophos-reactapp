@@ -21,7 +21,7 @@ const LoginForm = () => {
             email: '',
             password: ''
         })
-        navigate('/Sophos-reactapp/projects')
+        navigate('/Sophos-reactapp/login_code')
     }
     return (
         <>
@@ -50,16 +50,16 @@ const LoginForm = () => {
                          placeholder='Password'
                          />
                     </div>
-                    <div className="mb-3 form-check">
+                    {/* <div className="mb-3 form-check">
                         <input type="checkbox" className="form-check-input" id="Check1"/>
                             <label className="form-check-label" htmlFor="Check1">Check me out</label>
-                    </div>
+                    </div> */}
                     
                     <div className='submit-login-btn'>
                       
                     <button type="submit" className="login-form-btn mb-3">Sign In</button>
                     
-                    <Link to="Forgot_Password">
+                    <Link to="/Sophos-reactapp/Forgot_Password">
                         <span className=''> Forgotten password?</span>
                     </Link>
                     <hr className='login-form-line' />

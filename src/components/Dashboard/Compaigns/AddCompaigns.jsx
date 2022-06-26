@@ -53,11 +53,30 @@ const CompaignType = [
     },
 
 ]
+const nextAllowed = {
 
+    cursor: 'pointer',
+
+}
+const nextNotAllowed = {
+
+    // cursor: 'not-allowed', 
+    pointerEvents: 'none',
+}
 
 const AddCompaigns = () => {
+
     let navigate = useNavigate();
     const { height, width } = useWindowDimensions();
+
+    // *********handle Active Class in all steps**********
+    const [activeClass, setActiveClass] = useState()
+    const [activeClass1, setActiveClass1] = useState()
+    const [activeClass2, setActiveClass2] = useState()
+    const [activeClass3, setActiveClass3] = useState(0)
+    const [activeClass4, setActiveClass4] = useState()
+    // *********handle Active Class in all steps**********
+
     const [input, setInput] = useState({
 
         name: ''
@@ -77,7 +96,7 @@ const AddCompaigns = () => {
 
     }
 
-    const [activeClass, setActiveClass] = useState()
+
 
     const [activeStep, setActiveStep] = React.useState(0);
     const [skipped, setSkipped] = React.useState(new Set());
@@ -208,7 +227,7 @@ const AddCompaigns = () => {
                                     }
 
 
-                                    <div className="mb-4 ">
+                                    {/* <div className="mb-4 ">
                                         <label htmlFor="name" className="form-label">Choose Language</label>
                                         <p className='language-text'>This will be language of your email and training materials.</p>
                                         <div className="compaign-language">
@@ -219,7 +238,7 @@ const AddCompaigns = () => {
 
                                             </select>
                                         </div>
-                                    </div>
+                                    </div> */}
                                 </div>
                             </div> :
 
@@ -228,14 +247,17 @@ const AddCompaigns = () => {
                                 <div className='stepper-body'>
                                     <div className="mb-4 ">
 
-                                        <ChooseAttack />
+                                        <ChooseAttack
+                                            setActiveClass1={setActiveClass1}
+                                            activeClass1={activeClass1}
+                                        />
                                     </div>
 
                                 </div> :
                                 // ***************Customize Step*********************
                                 activeStep == 2 ?
-                                    <div className='stepper-body'>
-                                        <div className="mb-4 ">
+                                    <div className='stepper-body customize'>
+                                        <div className=" ">
                                             <label htmlFor="name" className="form-label">Customize</label>
                                             <p className='language-text'>To help disguise your campaign, you may select up to 5 attacks and
                                                 each enrolled user will receive one randomly selected email.</p>
@@ -247,7 +269,7 @@ const AddCompaigns = () => {
                                         <div className='stepper-body'>
                                             <label htmlFor="name" className="form-label">Enroll Users</label>
                                             <div className="enroll-users-block">
-                                                <span className='enroll-users-text enroll-users-text-bold '>Choose which users will receive this campaign below</span>
+                                                {/* <span className='enroll-users-text enroll-users-text-bold '>Choose which users will receive this campaign below</span> */}
                                                 <span className='enroll-users-text'>Note: Users must have an email address in order to be
                                                     added to a campaign. Public domain email addresses, such as gmail.com and yahoo.com, are not permitted for use. Also, users that are not part of a verified domain will not be added. If a group contains
                                                     users with unverified domains, only those with verified domain will be enrolled.</span>
@@ -264,7 +286,10 @@ const AddCompaigns = () => {
                                                 </div>
                                                 <div className="auto-enroll-user-link"><a href=''> Learn more about this feature</a></div>
                                             </div>
-                                            <EnrollUsersHome />
+                                            <EnrollUsersHome 
+                                             setActiveClass3={setActiveClass3}
+                                             activeClass3={activeClass3}
+                                            />
                                         </div> :
                                         // ***************eview and Schedule Step*********************
                                         <div className='stepper-body'>Review and Schedule</div>
@@ -286,9 +311,36 @@ const AddCompaigns = () => {
                             </Button>
                         )}
 
-                        <Button onClick={handleNext} className='stepper-next-button'>
-                            {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
-                        </Button>
+                        {/* handle next button for allowed or not allowed */}
+                        {
+                            activeStep === 0 ?
+                                <Button style={activeClass == null ? nextNotAllowed : nextAllowed} onClick={handleNext} className='stepper-next-button'>
+                                    {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
+                                </Button>
+                                :
+                                activeStep === 1 ?
+                                    <Button style={activeClass1 == null ? nextNotAllowed : nextAllowed} onClick={handleNext} className='stepper-next-button'>
+                                        {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
+                                    </Button>
+                                    :
+                                    activeStep === 2 ?
+                                        <Button style={activeClass == null ? nextNotAllowed : nextAllowed} onClick={handleNext} className='stepper-next-button'>
+                                            {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
+                                        </Button>
+                                        :
+                                        activeStep === 3 ?
+                                            <Button style={activeClass3 == 0 ? nextNotAllowed : nextAllowed} onClick={handleNext} className='stepper-next-button'>
+                                                {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
+                                            </Button>
+                                            :
+                                            activeStep === 4 ?
+                                                <Button style={activeClass == null ? nextNotAllowed : nextAllowed} onClick={handleNext} className='stepper-next-button'>
+                                                    {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
+                                                </Button>
+                                                :
+                                                <></>
+                        }
+
                     </Box>
                 </React.Fragment>
             )}

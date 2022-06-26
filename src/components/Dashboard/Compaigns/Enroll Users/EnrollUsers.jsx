@@ -13,10 +13,10 @@ import Favorite from '@material-ui/icons/Favorite';
 import FavoriteBorder from '@material-ui/icons/FavoriteBorder';
 import GroupIcon from '@mui/icons-material/Group';
 
-const EnrollUsers = () => {
+const EnrollUsers = (props) => {
   const [q, setQ] = useState("")
   const [q1, setQ1] = useState("")
-  const [checkbox, setCheckbox] = useState()
+  // const [checkbox, setCheckbox] = useState()
   const [state, setState1] = useState({
     checkedA: false,
     checkedB: false,
@@ -24,9 +24,20 @@ const EnrollUsers = () => {
 
 
   });
+  
 
   const handleChange = (event) => {
+
+    if(state.checkedB == false ){
+      props.setActiveClass(1)
+      setState1(state.checkedA = true)
+    }else{
+     props.setActiveClass(0)
+     setState1(state.checkedA = false)
+    }
+    // console.log(state.checkedB)
     setState1({ ...state, [event.target.name]: event.target.checked });
+     
 
   };
   return (
@@ -67,7 +78,7 @@ const EnrollUsers = () => {
               <div className="available-users">
 
                 <FormControlLabel
-                  disabled control={
+                  disabledControl control={
                     <Checkbox
                       checked={state.checkedA}
                       onChange={handleChange}
@@ -86,7 +97,7 @@ const EnrollUsers = () => {
         </div>
 
         <div className="enroll-user-errow-block">
-          <span className='enroll-errow-block'><ChevronRightIcon /></span>
+          <span className= {state.checkedA == true ? 'enroll-errow-block1': 'enroll-errow-block'}><ChevronRightIcon /></span>
           <span className='enroll-errow-block'><ChevronLeftIcon /></span>
         </div>
 

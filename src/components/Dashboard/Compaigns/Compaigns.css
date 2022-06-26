@@ -51,6 +51,8 @@
     color: #fff;
     text-transform: capitalize;
     /* z-index: 999!important; */
+    /* cursor: not-allowed!important; */
+    /* pointer-events: none; */
 }
 
 .stepper-back-button {
@@ -224,6 +226,11 @@
 
 .language-text {
     font-size: 14px;
+    
+}
+.customize .language-text {
+    margin-bottom: 0px!important;
+    
 }
 
 .compaign-language {
@@ -255,6 +262,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    max-height: 40px!important;
 }
 
 .choose-attack-title {
@@ -287,11 +295,21 @@
 }
 
 .attack-email-edit-block {
-    gap: 5px;
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    /* align-items: center; */
+    /* gap: 5px; */
+    width: 100%!important;
+    /* border: 1px solid black; */
 }
-
+.attack-email-edit-block .card {
+    
+    width: 100%!important;
+}
 .attack-email-edit-block .card-footer {
     min-height: 40px !important;
+    /* width: 100!important; */
 }
 
 .attack-email-edit-block .card-header {
@@ -347,13 +365,13 @@
         width: 100% !important;
     }
 
-    .order-class-2 {
+    /* .order-class-2 {
         order: 2;
     }
 
     .order-class-1 {
         order: 1;
-    }
+    } */
 
     .restore-product-default-body {
         padding: 0px 10px !important;
@@ -369,12 +387,9 @@
 
 .enroll-users-text {
     font-size: 12px;
-    color: gray;
+    color: red;
 }
 
-.enroll-users-text-bold {
-    font-weight: bold;
-}
 
 .auto-enroll-new-new-block {
     display: flex;
@@ -425,6 +440,13 @@
     background-color: darkgray;
     padding: 3px 10px;
     border-radius: 4px;
+}
+.enroll-errow-block1 {
+    color: #fff;
+    background-color: rgb(119, 17, 17);
+    padding: 3px 10px;
+    border-radius: 4px;
+    cursor: pointer;
 }
 
 .enroll-user-block .card {

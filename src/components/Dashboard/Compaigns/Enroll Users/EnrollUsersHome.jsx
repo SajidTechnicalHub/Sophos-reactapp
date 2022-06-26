@@ -40,7 +40,13 @@ function a11yProps(index) {
   };
 }
 
-export default function EnrollUsersHome() {
+export default function EnrollUsersHome(props) {
+
+  const [activeClass, setActiveClass] = React.useState(props.activeClass3)
+
+  props.setActiveClass3(activeClass)
+  // console.log(props.activeClass3)
+
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
@@ -58,7 +64,10 @@ export default function EnrollUsersHome() {
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
-        <EnrollUser />
+        <EnrollUser
+         setActiveClass={setActiveClass}
+        //  activeClass3={props.activeClass3}
+        />
       </TabPanel>
       <TabPanel value={value} index={1}>
         <EnrollGroups />

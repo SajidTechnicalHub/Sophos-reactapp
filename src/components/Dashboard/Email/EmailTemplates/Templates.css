@@ -6,7 +6,12 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     /* margin: 50px 100px; */
+}
+.template-container hr{
+    margin-top: 10px!important;
+    margin-bottom: 10px!important;
 }
 .template-cancel-btn{
     display: flex;
@@ -18,8 +23,8 @@
     height: fit-content;
     /* background-color: #f7f8fa; */
     /* border-radius: 5px; */
-    display: block;
-    /* flex-direction: column; */
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     text-align: center;
     

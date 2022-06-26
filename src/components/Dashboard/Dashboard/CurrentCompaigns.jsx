@@ -107,7 +107,7 @@ const CurrentCompaigns = () => {
                                     <div className="dashboard-active-compaigns-container-block1">
                                         <div className="dashboard-active-compaigns-container-blocks">
                                             <span className='dashboard-active-compaigns-container-blocks-circle'> <CircularProgressWithLabel value={progress} style={{
-                                                color: "#00FFAB", height: '50px',
+                                                color: "#00412B", height: '50px',
                                                 width: '50px',
                                             }} /></span>
                                             <span className='dashboard-active-compaigns-container-blocks-text'> {value.sendEmail} Emails send</span>

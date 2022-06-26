@@ -28,15 +28,28 @@ import Project from './components/Projects/Project'
 import EditProject from "./components/Projects/EditProject";
 import AddCompaigns from './components/Dashboard/Compaigns/AddCompaigns'
 import AllCurrentCompaigns from "./components/Dashboard/Dashboard/AllCurrentCompaigns";
+import LoginCode from "./components/Home/LoginCode";
+import PhishCodeLayout from "./components/PhishCode/PhishCodeLayout";
+import PhishCodeSection1 from './components/PhishCode/PhishCodeSection1'
+import PhishCodeSection2 from './components/PhishCode/PhishCodeSection2'
+import PhishCodeSection3 from './components/PhishCode/PhishCodeSection3'
 function App() {
   return (
     <div className="container-flude">
 
       <Routes>
-        <Route path="Sophos-reactapp" element={<HomeLayout />}>
+        <Route path="Sophos-reactapp" element={<PhishCodeLayout />}>
+          <Route index element={<PhishCodeSection1 />} />
+          <Route path="section1" element={<PhishCodeSection1 />} />
+          <Route path="section2" element={<PhishCodeSection2 />} />
+          <Route path="section3" element={<PhishCodeSection3 />} />
+        </Route>
+
+        <Route path="Sophos-reactapp/free_trile" element={<HomeLayout />}>
           <Route index element={<LoginForm />} />
           <Route path="login" element={<LoginForm />} />
           <Route path="signup" element={<SignUpForm />} />
+          <Route path="login_code" element={<LoginCode />} />
         </Route>
 
         <Route path="Sophos-reactapp/Forgot_Password" element={<ForgotPasswordLayout />}>
@@ -50,7 +63,7 @@ function App() {
           <Route index element={<HomePage />} />
           <Route path="Home" element={<HomePage />} />
           <Route path="dashboard" element={<Dashboard />} />
-          <Route path="currentCompaigns" element={<AllCurrentCompaigns/>} />
+          <Route path="currentCompaigns" element={<AllCurrentCompaigns />} />
           <Route path="users" element={<Users />} />
           <Route path="groups" element={<Groups />} />
           <Route path="roles" element={<Roles />} />
@@ -64,12 +77,12 @@ function App() {
 
         </Route>
 
-        
+
         <Route path="Sophos-reactapp/projects" element={<ProjectLayout />} >
-          <Route index element={<Projects/>} />
-          <Route path="projects" element={<Projects/>} />
-          <Route path="project" element={<Project/>} />
-          <Route path="edit_project/:id" element={<EditProject/>} />
+          <Route index element={<Projects />} />
+          <Route path="projects" element={<Projects />} />
+          <Route path="project" element={<Project />} />
+          <Route path="edit_project/:id" element={<EditProject />} />
         </Route>
         <Route path="/*" element={<Error />} />
 

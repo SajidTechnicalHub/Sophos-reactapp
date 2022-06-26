@@ -45,7 +45,7 @@ const Topbar = () => {
               </button>
               <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
               <Link to='settings'><li className="dropdown-item">Profile</li></Link>
-              <Link to=''><li className="dropdown-item">Health and Care</li></Link>
+              <Link to=''><li className="dropdown-item">Help and Support</li></Link>
                 <Link to=''><li className="dropdown-item">Logout</li></Link>
               </ul>
             </div>

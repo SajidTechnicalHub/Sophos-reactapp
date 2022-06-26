@@ -78,7 +78,7 @@ const EmailTemplateData = [
   },
 
 ]
-const ChooseAttack = () => {
+const ChooseAttack = (props) => {
   const [q, setQ] = useState("")
   // const { height, width } = useWindowDimensions();
   const style = {
@@ -116,7 +116,7 @@ const ChooseAttack = () => {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
-  const [activeClass, setActiveClass] = useState()
+  // const [activeClass, setActiveClass] = useState()
 
   return (
     <>
@@ -191,8 +191,8 @@ const ChooseAttack = () => {
                           {currentElem.template}
 
                         </div>
-                        <div className={activeClass == currentElem.id ? "select-choose-attack" : "card-footer"} onClick={e => setActiveClass(currentElem.id)}>
-                          <span className=' btn title'  > {activeClass != currentElem.id ? currentElem.attack : <div className='choose-attack-block'><DoneIcon fontSize='small' /><div >Attack Choosen</div></div>}</span>
+                        <div className={props.activeClass1 == currentElem.id ? "select-choose-attack" : "card-footer"} onClick={e => props.setActiveClass1(currentElem.id)}>
+                          <span className=' btn title'  > {props.activeClass1 != currentElem.id ? currentElem.attack : <div className='choose-attack-block'><DoneIcon fontSize='small' /><div >Attack Choosen</div></div>}</span>
 
                         </div>
                       </div>

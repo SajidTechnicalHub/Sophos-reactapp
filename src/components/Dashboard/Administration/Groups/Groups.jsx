@@ -166,7 +166,7 @@ const Gruops = () => {
         <span className='breadcrumb-items'>Groups</span>
 
       </div>
-      <div className="main-container">
+      <div className="users-container main-container">
 
         <div className="users-header">
           <div className="users-header-contents">

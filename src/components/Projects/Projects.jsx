@@ -51,20 +51,21 @@ const Projects = () => {
         );
       }
     },
-    { field: 'projectname', headerName: 'Project Name', minWidth: 235, flex: true,
-    renderCell: (cellValues) => {
-      return (
-        <>
-          <div className="lead-column-block">
-            <img src={cellValues.row.imageUrl} alt="Project_Name" className='leader-img' />
-            {/* <Avatar className='avater leader-img'>{cellValues.row.projectname[0]}</Avatar> */}
-            {cellValues.row.projectname}
-          </div>
-        </>
+    {
+      field: 'projectname', headerName: 'Project Name', minWidth: 235, flex: true,
+      renderCell: (cellValues) => {
+        return (
+          <>
+            <div className="lead-column-block">
+              <img src={cellValues.row.imageUrl} alt="Project_Name" className='leader-img' />
+              {/* <Avatar className='avater leader-img'>{cellValues.row.projectname[0]}</Avatar> */}
+              {cellValues.row.projectname}
+            </div>
+          </>
 
-      );
-    }
-  },
+        );
+      }
+    },
     { field: 'url', headerName: 'URL', minWidth: 235, flex: true },
     { field: 'type', headerName: 'Type', minWidth: 235, flex: true },
     {
@@ -128,7 +129,7 @@ const Projects = () => {
     overflow: 'scroll',
     boxShadow: 24,
     display: 'block',
-    borderRadius:'5px'
+    borderRadius: '5px'
     // p: 4,
   }
   const DeleteProjectStyle1 = {
@@ -143,7 +144,7 @@ const Projects = () => {
     overflow: 'scroll',
     boxShadow: 24,
     display: 'block',
-    borderRadius:'5px'
+    borderRadius: '5px'
     // p: 4,
   }
 
@@ -183,31 +184,26 @@ const Projects = () => {
 
   return (
     <>
-
-
       <div className="project-container">
+        <hr />
         <div className="project-header">
-          <hr />
+
           <div className="project-header-contents">
 
             <h5>All Projects</h5>
-            <Button variant="contained" onClick={handleOpen} size="small" className='project-create-btn'>Create Project</Button>
+            <div className='project-search-container'>
+              <div className="project-search">
+                <SearchIcon className='search-icon' />
+                <input type="text" value={q} onChange={(e) => setQ(e.target.value)} placeholder='Search Here.' className='search' />
 
+              </div>
+              <Button variant="contained" onClick={handleOpen} size="small" className='project-create-btn'>Create Project</Button>
+            </div>
           </div>
           <hr />
-          <div className="project-search">
-            <SearchIcon className='search-icon' />
-            <input type="text" value={q} onChange={(e) => setQ(e.target.value)} placeholder='Search Here.' className='search' />
-
-          </div>
-
-{/* Upload csv file */}
-          {/* <ReactFileReader handleFiles={handleFiles} fileTypes={'.csv'}>
-            <button className='btn'>Upload</button>
-          </ReactFileReader> */}
 
         </div>
-        <div className="project-list">
+        <div className="project-list" style={{ marginTop: '10px'}}>
           <div style={{ height: 450, width: '95%' }}>
 
             <DataGrid
@@ -241,14 +237,14 @@ const Projects = () => {
                 <hr />
                 <div className='create-project-model-form-container'>
                   <CreateProject
-                   Cancel={handleClose}
+                    Cancel={handleClose}
                   />
                 </div>
 
               </div>
             </Box>
           </Modal>
-          
+
           {/* Edit Project Model */}
 
           <Modal
@@ -265,7 +261,7 @@ const Projects = () => {
                 <hr />
                 <div className='create-project-model-form-container'>
                   <EditProject
-                   Cancel={handleCloseEdit}
+                    Cancel={handleCloseEdit}
                   />
                 </div>
 
@@ -273,7 +269,7 @@ const Projects = () => {
             </Box>
           </Modal>
 
-           {/* Delete Project Model */}
+          {/* Delete Project Model */}
 
           <Modal
             open={openDeleteUser}
