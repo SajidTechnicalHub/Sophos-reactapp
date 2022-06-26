@@ -80,3 +80,6 @@
  .title{
     font-size: 13px;
 }
+.email-template hr{
+    margin-top: -10px!important;
+}

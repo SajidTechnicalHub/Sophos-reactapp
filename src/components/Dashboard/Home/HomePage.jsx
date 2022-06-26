@@ -13,16 +13,6 @@ import { DoughnutData, DoughnutOptions, plugins } from './HomePageData'
 import {Chart, Title,  ArcElement} from 'chart.js'
 Chart.register(Title, ArcElement);
 
-// // export 'Labels' (imported as 'Labels') was not found in 'chart.js'
-//  (possible exports: Animation, Animations, ArcElement, BarController, BarElement,
-//    BasePlatform, BasicPlatform, BubbleController, CategoryScale, Chart,
-//     DatasetController, Decimation, DomPlatform, DoughnutController, Element, 
-//     Filler, Interaction, Legend, LineController, LineElement, LinearScale, 
-//     LogarithmicScale, PieController, PointElement, PolarAreaController, RadarController,
-//      RadialLinearScale, Scale, ScatterController, SubTitle, Ticks, TimeScale, 
-//      TimeSeriesScale, Title, Tooltip, _adapters, _detectPlatform, animator, 
-//      controllers, defaults, elements, layouts, plugins, registerables, registry,
-//       scales)
 const HomePage = () => {
 
 
@@ -96,12 +86,6 @@ const HomePage = () => {
               <div className="col-lg-3 col-md-6 col-sm-12 col-12">
                 <div className="charts">
                   <h5>Admin User Graph </h5>
-                  {/* <Doughnut 
-                    data={DoughnutData}
-                    options={DoughnutOptions}
-                    
-                    
-                  /> */}
                   <DonutChart
                     data={AdminChartsData}
                     className='donut-chart'
@@ -136,7 +120,6 @@ const HomePage = () => {
               <div className="col-lg-3 col-md-6 col-sm-12 col-12">
                 <div className="charts">
                   <h5> PhishCode Health Status</h5>
-                  {/* <GaugeChart id="gauge-chart" textColor="#333" /> */}
                   <GaugeChart id="gauge-chart3"
                     nrOfLevels={30}
                     colors={["rgb(33, 145, 33)", "green"]}

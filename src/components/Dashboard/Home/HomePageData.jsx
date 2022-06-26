@@ -9,13 +9,7 @@ export const AdminChartsData = [
     value: 7500,
     // isEmpty: true,
   },
-  {
-    label: 'Simula. Admin',
-    value: 8570,
-    // isEmpty: true, 
-
-
-  },
+  
   {
     label: ' Global Reader',
     value: 50,

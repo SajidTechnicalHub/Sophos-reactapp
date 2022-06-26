@@ -187,7 +187,7 @@ const EmailSetup = () => {
 
       </div>
       <div className="users-container">
-
+<hr />
         <div className="users-header">
           <div className="users-header-contents">
             {/* <h5>All Users</h5> */}

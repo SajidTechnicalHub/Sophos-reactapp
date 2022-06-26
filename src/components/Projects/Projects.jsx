@@ -107,6 +107,20 @@ const Projects = () => {
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
+    width: "70%",
+    height: "90%",
+    bgcolor: 'background.paper',
+    border: '2px solid #000',
+    overflow: 'scroll',
+    boxShadow: 24,
+    display: 'block'
+    // p: 4,
+  };
+  const mobilestyle = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
     width: "90%",
     height: "95%",
     bgcolor: 'background.paper',
@@ -115,7 +129,7 @@ const Projects = () => {
     boxShadow: 24,
     display: 'block'
     // p: 4,
-  };
+  }
 
   const DeleteProjectStyle = {
     position: 'absolute',
@@ -229,7 +243,7 @@ const Projects = () => {
             aria-labelledby="modal-modal-title"
             aria-describedby="modal-modal-description"
           >
-            <Box sx={style}>
+            <Box sx={width <= 992 ? mobilestyle : style}>
               <div className="create-project-moldel-container">
                 <div className="project-model-header">
                   <h3>Add Project</h3>
@@ -253,7 +267,7 @@ const Projects = () => {
             aria-labelledby="modal-modal-title"
             aria-describedby="modal-modal-description"
           >
-            <Box sx={style}>
+            <Box sx={width <= 992 ? mobilestyle : style}>
               <div className="create-project-moldel-container">
                 <div className="project-model-header">
                   <h3>Edit Project</h3>

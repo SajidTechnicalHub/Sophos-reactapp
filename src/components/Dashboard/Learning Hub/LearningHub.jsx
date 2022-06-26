@@ -37,12 +37,12 @@ const LearningHub = () => {
         <div className="users-header-contents">
           <div className="users-search">
             <SearchIcon className='users-search-icon' />
-
-            <TextField id="standard-basic" label="Search" variant="standard"
-              value={q}
-              onChange={(e) => setQ(e.target.value)}
-              
-            />
+            <input
+                type="text"
+                value={q}
+                onChange={(e) => setQ(e.target.value)}
+                placeholder='Search Here.'
+                className='users-input-search' />
 
           </div>
 
@@ -64,8 +64,8 @@ const LearningHub = () => {
                   <div className="col-lg-3 col-md-6 col-sm-12 col-12 g-2 " key={currEl.id} >
 
                     <div className="card text-center email-card">
-                      <div className='email-featred'></div>
-                      <span className="rotate">{currEl.type}</span>
+                      {/* <div className='email-featred'></div>
+                      <span className="rotate">{currEl.type}</span> */}
 
                       <div className="card-body ">
                         <a href={currEl.videoUrl} target='_blank'>

@@ -16,6 +16,7 @@
 .template-cancel-btn{
     display: flex;
     justify-content: end;
+    margin-top: 20px;
 }
 .template-body{
     width: 90%;

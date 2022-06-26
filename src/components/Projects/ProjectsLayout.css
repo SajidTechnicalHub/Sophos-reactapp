@@ -20,7 +20,10 @@
 .project-header{
     display: flex;
     flex-direction: column;
-    
+    /* height: 60px; */
+}
+.project-header hr{
+    margin-top: -8px!important;
 }
 .project-header-contents{
     display: flex;

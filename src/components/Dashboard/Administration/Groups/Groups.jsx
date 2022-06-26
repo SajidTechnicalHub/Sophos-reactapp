@@ -45,7 +45,7 @@ const Gruops = () => {
     //     );
     //   }
     // },
-    { field: 'Name', headerName: 'Name/Users', minWidth: 365, flex: true },
+    { field: 'Name', headerName: 'Name', minWidth: 365, flex: true },
     { field: 'Description', headerName: 'Description', minWidth: 365, flex: true },
     { field: 'Total_User', headerName: 'Total User', minWidth: 150, flex: true },
     {

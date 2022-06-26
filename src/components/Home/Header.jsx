@@ -39,14 +39,7 @@ const Header = () => {
                 {/* <a className="nav-link active" href="/">Free Trail</a> */}
                 <NavLink activeclassname='' className=" nav-link" to='/Sophos-reactapp/free_trile'>Free Trail</NavLink>
               </li>
-              <li className="nav-item ">
-                {/* <a className="nav-link " href="/">How to Buy</a> */}
-                <Link to='/Sophos-reactapp' className=" nav-link">How to Buy</Link>
-              </li>
-              <li className="nav-item ">
-                {/* <a className="nav-link " href="/">Get Pricing</a> */}
-                <Link to='/Sophos-reactapp' className=" nav-link">Get Pricing</Link>
-              </li>
+        
             </ul>
 
           </div>

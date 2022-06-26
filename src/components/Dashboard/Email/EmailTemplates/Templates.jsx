@@ -40,10 +40,10 @@ const Templates = (props) => {
             <br />
 
           </div>
-          <div className="template-cancel-btn">
-            {/* <Button variant="contained" onClick={CancelEvent} size="small" className='project-create-btn'>Cancel</Button> */}
+          {/* <div className="template-cancel-btn">
+            <Button variant="contained" onClick={CancelEvent} size="small" className='project-create-btn'>Cancel</Button>
 
-          </div>
+          </div> */}
         </div>
       </div>
     </>

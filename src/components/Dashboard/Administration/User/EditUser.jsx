@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import Button from '@mui/material/Button'
-
+import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
+import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 
 const EditUser = (props) => {
     let navigate = useNavigate();
@@ -48,9 +49,9 @@ const EditUser = (props) => {
         <>
 
             <form onSubmit={SubmitEvent} className='create-project-model-form input-field'>
-                <div className="row">
-                    <div className="col-lg-6">
-                        <div className="mb-4 input-field-block ">
+                <div className="row mt-2">
+                    <div className="col-lg-6 ">
+                        <div className="mb-2  input-field-block ">
                             <label htmlFor="username" className="form-label">Full Name<span className='estaric'>*</span></label>
                             <input type="text"
                                 name="username"
@@ -64,7 +65,7 @@ const EditUser = (props) => {
                         </div>
                     </div>
                     <div className="col-lg-6">
-                        <div className="mb-4 input-field-block">
+                        <div className="mb-2 input-field-block">
                             <label htmlFor="email" className="form-label">Email<span className='estaric'>*</span></label>
                             <input type="Email"
                                 name="email"
@@ -92,7 +93,6 @@ const EditUser = (props) => {
                                 <option >User</option>
                                 <option >Global Admin</option>
                                 <option >Project Admin</option>
-                                <option >Simulation Admin</option>
                                 <option >Global Reader</option>
                             </select>
                         </div>
@@ -101,26 +101,32 @@ const EditUser = (props) => {
 
                     </div>
                 </div>
+                <h5>Add Groups</h5>
+                <div className="user-model-container mb-5 ">
 
-                <div className="row mb-5 ">
-                    <h5>Add Groups</h5>
-                    <div className="col-lg-6">
+                    <div className=" block-width">
                         <h4>Available Groups</h4>
                         <div className='add-user-model-group-content'>
                             <input type="text" placeholder='Search' className='add-user-model-group-content-input' />
                             <div className="model-group-selection">
-                            
-                                <input type="checkbox" className='model-group-selection-checkbox'/>
+
+                                <input type="checkbox" className='model-group-selection-checkbox' />
                                 <label htmlFor="role" className="">Available Groups</label>
                             </div>
                         </div>
                     </div>
-                    <div className="col-lg-6">
+
+                    <div className="enroll-user-errow-block">
+                        <span className='enroll-errow-block'><ChevronRightIcon /></span>
+                        <span className='enroll-errow-block'><ChevronLeftIcon /></span>
+                    </div>
+
+                    <div className="block-width">
                         <h4>Assigned Groups</h4>
                         <div className='add-user-model-group-content'>
                             <input type="text" placeholder='Search' className='add-user-model-group-content-input' />
                             <div className="model-group-selection">
-                            
+
                                 <input type="checkbox" className='model-group-selection-checkbox' />
                                 <label htmlFor="role" className="">Assigned Groups</label>
                             </div>
@@ -134,7 +140,6 @@ const EditUser = (props) => {
 
 
             </form>
-
         </>
     )
 }

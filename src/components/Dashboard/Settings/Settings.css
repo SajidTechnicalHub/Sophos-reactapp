@@ -99,7 +99,21 @@
     gap:5px;
     margin-bottom: -10px!important;
 }
-
+.photo-change-btn{
+    text-transform: capitalize!important;
+    color: #071330!important;
+    
+}
+.photo-remove-btn{
+    text-transform: capitalize!important;
+    /* background-color: red!important; */
+    color: red!important;
+}
+.profile-container hr,
+.password-chande-container hr{
+    margin-top: 10px!important;
+    margin-bottom: 10px!important;
+}
 @media(max-width:500px){
     .account-setting-photo-block{
         width: 100%!important;

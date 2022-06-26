@@ -113,7 +113,11 @@ const EmailTemplates = () => {
   const { height, width } = useWindowDimensions();
   // Handle Create Model
   const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
+  const [templateName, setTemplateName] = useState('')
+  const handleOpen = (name) =>{
+     setOpen(true);
+     setTemplateName(name)
+  }
   const handleClose = () => setOpen(false);
 
   return (
@@ -123,8 +127,9 @@ const EmailTemplates = () => {
 
       </div>
 
-      <div className="users-container p-3">
-        <div className="users-header">
+      <div className="users-container">
+        <hr />
+        <div className="users-header email-template">
           <div className="users-header-contents">
             {/* <h5>All Users</h5> */}
             <div className="users-search">
@@ -174,27 +179,24 @@ const EmailTemplates = () => {
                       <div className="card-header ">
                         <div className='card-header-container'>
                           <div className='title'>{currentElem.title}</div>
-                          <div className='title'>{currentElem.type}</div>
+                          {/* <div className='title'>{currentElem.type}</div> */}
                         </div>
 
                       </div>
 
                       <div className="card text-center ">
 
-                        <div className='email-featred'></div>
-                        <span className="rotate"><div>{currentElem.featured}</div></span>
+                        {/* <div className='email-featred'></div>
+                        <span className="rotate"><div>{currentElem.featured}</div></span> */}
 
                         <div className="card-body email-card">
                           {currentElem.template}
-
-                          {/* <h6 className="card-title">{currentElem.title}</h6>
-                          <p className="card-text">{currentElem.description}</p> */}
-                          {/* <a href="#" className="btn btn-primary">{currentElem.btn}</a> */}
                         </div>
                         <div className="card-footer">
-                          <span className=' btn title' onClick={handleOpen} > View this Attack Payload</span>
+                          <span className=' btn title' onClick={() => handleOpen(currentElem.title)} > View this Attack Payload</span>
                         </div>
                       </div>
+
                       <Modal
                         open={open}
                         onClose={handleClose}
@@ -204,15 +206,16 @@ const EmailTemplates = () => {
                         <Box sx={width <= 992 ? mobilestyle : style}>
                           <div className="create-project-moldel-container">
                             <div className="project-model-header">
-                              <h3>Template Name</h3>
+                              <h3>{templateName}</h3>
                             </div>
                             <hr />
                             <div className='create-project-model-form-container'>
-                              <Templates
-                                Cancel={handleClose}
-                              />
+                              {currentElem.template}
                             </div>
+                            <div className="template-cancel-btn">
+                              <Button variant="contained" onClick={handleClose} size="small" className='project-create-btn'>Cancel</Button>
 
+                            </div>
                           </div>
                         </Box>
                       </Modal>

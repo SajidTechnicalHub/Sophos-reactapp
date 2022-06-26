@@ -27,12 +27,14 @@
     display: flex;
     flex-direction: column;
     padding: 0px 0px;
+    margin-bottom: -10px;
 }
 .users-header-contents{
     display: flex;
    
     justify-content: space-between;
     align-items: center;
+    margin-top: -10px;
 }
 /* ****************** Add User Dropdown start***************** */
 .users-header-contents .dropdown{
@@ -52,7 +54,8 @@
     padding: 0px;
 }
 .users-header-contents .dropdown .dropdown-menu .dropdown-item:hover{
-    background-color: rgb(241, 135, 64)!important;
+    /* background-color: rgb(241, 135, 64)!important; */
+    background-color: #071330!important;
     color: #fff!important;
 }
 
@@ -117,22 +120,29 @@
     padding: 6px 10px!important;
     margin-bottom: 7px!important;
 }
+.user-model-container{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
 .add-user-model-group-block{
     width: 100%;
-    height: 280px;
-    margin-bottom: 20px;
-    
-    
+    /* height: 480px; */
+    /* margin-bottom: 20px; */
 }
 
 .add-user-model-group-content{
     border: 1px solid rgb(153, 149, 149);
     /* width: 400px; */
-    height: 200px;
+    height: 270px;
     padding: 10px;
     overflow: auto;
     border-radius: 5px;
     
+}
+.block-width{
+    width: 100%;
+    /* height: 400px; */
 }
 .input-field-block{
     display: flex;
@@ -149,14 +159,15 @@
     border: 1px solid gray;
 }
 .input-field h5{
-    padding: 5px 10px;
+    padding-top: 5px;
     color: rgb(39, 36, 36);
     text-decoration: underline ;
+    margin-top: -35px;
 }
 .input-field h4{
-    padding: 5px 0px;
-    font-size: 20px;
-    
+    /* padding: 5px 0px; */
+    font-size: 16px;
+    /* margin-top: -10px!important; */
 }
 .add-user-model-group-content-input{
     height: 25px!important;
@@ -178,6 +189,11 @@
     display: flex;
     align-items: center;
     gap:5px;
+}
+@media(max-width:992px){
+    .user-model-container{
+        flex-direction: column!important;
+    }
 }
 /* ****************** Import User start***************** */
 .import-user ul li a{
@@ -234,6 +250,7 @@
         display: flex;
         flex-direction: column;
         padding: 0px 0px;
+        margin-bottom: 0px!important;
     }
     .users-header-contents{
         display: flex;
