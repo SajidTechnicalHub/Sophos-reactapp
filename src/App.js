@@ -45,7 +45,7 @@ function App() {
           <Route path="section3" element={<PhishCodeSection3 />} />
         </Route>
 
-        <Route path="Sophos-reactapp/free_trile" element={<HomeLayout />}>
+        <Route path="Sophos-reactapp/free_trail" element={<HomeLayout />}>
           <Route index element={<LoginForm />} />
           <Route path="login" element={<LoginForm />} />
           <Route path="signup" element={<SignUpForm />} />

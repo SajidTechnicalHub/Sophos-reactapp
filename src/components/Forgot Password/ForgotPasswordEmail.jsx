@@ -53,7 +53,7 @@ const ForgotPasswordEmail = () => {
 
                        
                     </div>
-                    <Link to="/Sophos-reactapp" className="back">
+                    <Link to="/Sophos-reactapp/free_trail" className="back">
                         <span className=''> Back to Login</span>
                     </Link>
                 </form>

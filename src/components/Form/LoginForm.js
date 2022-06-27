@@ -21,7 +21,7 @@ const LoginForm = () => {
             email: '',
             password: ''
         })
-        navigate('/Sophos-reactapp/login_code')
+        navigate('/Sophos-reactapp/free_trail/login_code')
     }
     return (
         <>

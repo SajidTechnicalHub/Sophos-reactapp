@@ -1,9 +1,9 @@
 
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom';
 
 const SignUpForm = () => {
-
+    let navigate = useNavigate()
     const [input, setInput] = useState({
         fname: '',
         username: '',
@@ -59,6 +59,7 @@ const SignUpForm = () => {
             country: ''
 
         })
+        navigate('/Sophos-reactapp/projects')
     }
     return (
         <>
@@ -108,7 +109,7 @@ const SignUpForm = () => {
                     </div>
                     <div className="nextLogin">
                         <span className="form-btn-next" onClick={NextChangeClass}>Next</span>
-                        <Link to="/Sophos-reactapp">
+                        <Link to="/Sophos-reactapp/free_trail">
                             <span className="btn submit-btn">Back to Login</span>
                         </Link>
                     </div>
@@ -498,7 +499,7 @@ const SignUpForm = () => {
                     </div>
                     <div className='submit-btn'>
                         <button type="submit" className="form-btn">Sign Up</button>
-                        <Link to="/Sophos-reactapp">
+                        <Link to="/Sophos-reactapp/free_trail">
                             <span className="btn submit-btn">Back to Login</span>
                         </Link>
                     </div>

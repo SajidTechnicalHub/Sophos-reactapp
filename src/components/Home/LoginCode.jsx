@@ -51,7 +51,7 @@ const LoginCode = () => {
                 </div>
                 <br />
                 <div className='verify-code'>
-                    <Link to="/Sophos-reactapp/login" className="back">
+                    <Link to="/Sophos-reactapp/free_trail" className="back">
                         <span > Back </span>
                     </Link>
                     <Link to="" className="back">

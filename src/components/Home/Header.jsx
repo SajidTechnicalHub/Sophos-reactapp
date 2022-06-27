@@ -37,7 +37,7 @@ const Header = () => {
               </li>
               <li className="nav-item ">
                 {/* <a className="nav-link active" href="/">Free Trail</a> */}
-                <NavLink activeclassname='' className=" nav-link" to='/Sophos-reactapp/free_trile'>Free Trail</NavLink>
+                <NavLink activeclassname='' className=" nav-link" to='/Sophos-reactapp/free_trail'>Free Trail</NavLink>
               </li>
         
             </ul>
