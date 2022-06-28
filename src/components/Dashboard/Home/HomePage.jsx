@@ -80,8 +80,9 @@ const HomePage = () => {
               {isClick ? <Intro /> : <Feedback />}
             </div>
           </div>
-          <hr className='home-line' />
+          {/* <hr className='home-line' /> */}
           <div className="chart-section">
+          <hr className='home-line' />
             <div className="row">
               <div className="col-lg-3 col-md-6 col-sm-12 col-12">
                 <div className="charts">

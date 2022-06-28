@@ -48,7 +48,10 @@
 
 
 }
-
+.main-logo{
+  height: 40px;
+  width: 200px;
+}
 .nav-item {
   margin-left: 20px !important;
 }

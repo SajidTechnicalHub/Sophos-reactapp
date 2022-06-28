@@ -1,5 +1,6 @@
 import React from 'react'
 import {NavLink, Link} from 'react-router-dom'
+import logo from '../PhishCode/logo.png'
 const PhishCodeHeader = (props) => {
   
     const executeScroll1 = () => props.execute1()
@@ -12,7 +13,8 @@ const PhishCodeHeader = (props) => {
         <div className="container-fluid">
           <Link to='/Sophos-reactapp' className="navbar-brand">
             <span className='header-title'>
-              <span className='header-logo'>Ph</span><h3>PhishCode</h3>
+              {/* <span className='header-logo'>Ph</span><h3>PhishCode</h3> */}
+              <img src={logo} className='main-logo' alt="logo" />
             </span>
             </Link>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

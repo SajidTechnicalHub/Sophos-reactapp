@@ -6,7 +6,7 @@ const Training = () => {
     return (
         <>
 
-            <div className="training-title">Fishing Awaireness Training Completion</div>
+            <div className="training-title">Phishing Awaireness Training Completion</div>
             
                 <h3>60% Users have complete training</h3>
                 <p>Awairness Training Status</p>

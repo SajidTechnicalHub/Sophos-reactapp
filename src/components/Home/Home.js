@@ -19,33 +19,33 @@ const Home = () => {
                                         <FontAwesomeIcon icon={faCheck}></FontAwesomeIcon>
                                     </span>
 
-                                    <p>Hundreds of realistic and challenging simulations</p>
+                                    <p>Run elite and realistic simulations</p>
                                 </span>
                                 <span className='check-icon'>
                                     <span className='check-icon-style'>
                                         <FontAwesomeIcon icon={faCheck}></FontAwesomeIcon>
                                     </span>
-                                    <p>Automated reporting on phishing and training results</p>
-                                </span>
-
-                                <span className='check-icon'>
-                                    <span className='check-icon-style'>
-                                        <FontAwesomeIcon icon={faCheck}></FontAwesomeIcon>
-                                    </span>
-                                    <p>Nine language options</p>
-                                </span>
-                                <span className='check-icon'>
-                                    <span className='check-icon-style'>
-                                        <FontAwesomeIcon icon={faCheck}></FontAwesomeIcon>
-                                    </span>
-                                    <p>Choice of international regions (United States, Ireland, Germany)</p>
+                                    <p>Effective security training videos</p>
                                 </span>
 
                                 <span className='check-icon'>
                                     <span className='check-icon-style'>
                                         <FontAwesomeIcon icon={faCheck}></FontAwesomeIcon>
                                     </span>
-                                    <p>SOC 2 compliant to safeguard customer data</p>
+                                    <p>Automated reporting on phishing and awareness training outcomes</p>
+                                </span>
+                                <span className='check-icon'>
+                                    <span className='check-icon-style'>
+                                        <FontAwesomeIcon icon={faCheck}></FontAwesomeIcon>
+                                    </span>
+                                    <p>MSSI's account management</p>
+                                </span>
+
+                                <span className='check-icon'>
+                                    <span className='check-icon-style'>
+                                        <FontAwesomeIcon icon={faCheck}></FontAwesomeIcon>
+                                    </span>
+                                    <p>24/7 support from experts</p>
                                 </span>
                             </div>
                         </div>

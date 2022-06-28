@@ -39,7 +39,7 @@ const EditGroups = (props) => {
     return (
         <>
 
-            <form onSubmit={SubmitEvent} className='create-project-model-form input-field'>
+            <form onSubmit={SubmitEvent} className='create-project-model-form input-field group-container'>
                 <div className="row">
                     <div className="col-lg-6">
                         <div className="mb-4 input-field-block ">

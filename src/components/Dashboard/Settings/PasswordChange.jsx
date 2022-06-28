@@ -28,9 +28,10 @@ const PasswordChange = () => {
   return (
     <>
       <div className="password-chande-container">
-        <h5 >Password Change</h5>
+        
         <div className="row">
-          <div className="col-lg-8">
+          <div className="col-lg-8 mobile-order-2">
+          <h5 >Password Change</h5>
             <form onSubmit={SubmitEvent} className='input-field'>
               <div className="mb-2 input-field-block ">
                 <label htmlFor="currentPassword" className="form-label">Current Password<span className='estaric'>*</span></label>
@@ -72,7 +73,7 @@ const PasswordChange = () => {
               <button className='account-setting-btn'>Save</button>
             </form>
           </div>
-          <div className="col-lg-4">
+          <div className="col-lg-4 mobile-order-1">
             <img src="../passwordChange.png" className='password-change-img' alt="img" />
           </div>
 

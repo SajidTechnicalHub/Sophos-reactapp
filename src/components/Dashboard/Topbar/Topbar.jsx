@@ -29,7 +29,8 @@ const Topbar = () => {
         <div className='topbarWrapper'>
           <span className="topbar-title">
             {/* <span className='topbar-logo'>Ph</span> */}
-            <h3>PhishCode</h3>
+            {/* <h3>PhishCode</h3> */}
+            <img src="./logo.png" className='main-logo' alt="logo" />
             <div className="topbar-vertical-line"></div>
             <span className="topbar-project-title">Project</span>
             

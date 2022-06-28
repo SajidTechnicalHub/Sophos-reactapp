@@ -119,6 +119,12 @@
         width: 100%!important;
         
     }
+    .mobile-order-1{
+        order: 1;
+    }
+    .mobile-order-2{
+        order: 2;
+    }
 }
 @media(max-width:992px){
     .license-content-block {

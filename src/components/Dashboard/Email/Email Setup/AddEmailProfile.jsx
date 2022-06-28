@@ -47,9 +47,9 @@ const AddEmailProfile = (props) => {
     return (
         <>
 
-            <form onSubmit={SubmitEvent} className='create-project-model-form input-field'>
+            <form onSubmit={SubmitEvent} className='create-project-model-form input-field '>
                 <div className="create-email-profile-form">
-                    <div className="mb-4 input-field-block ">
+                    <div className="mb-2 mt-2 input-field-block ">
                         <label htmlFor="profilename" className="form-label">Profile Name<span className='estaric'>*</span></label>
                         <input type="text"
                             name="profilename"
@@ -62,7 +62,7 @@ const AddEmailProfile = (props) => {
 
                     </div>
 
-                    <div className="mb-4 input-field-block">
+                    <div className="mb-2 input-field-block">
                         <label htmlFor="servername" className="form-label">Server Name<span className='estaric'>*</span></label>
                         <input type="text"
                             name="servername"
@@ -76,7 +76,7 @@ const AddEmailProfile = (props) => {
                     </div>
 
 
-                    <div className="mb-4 input-field-block ">
+                    <div className="mb-2 input-field-block ">
                         <label htmlFor="port" className="form-label">Port<span className='estaric'>*</span></label>
                         <input type="text"
                             name="port"
@@ -89,7 +89,7 @@ const AddEmailProfile = (props) => {
 
                     </div>
 
-                    <div className="mb-4 input-field-block">
+                    <div className="mb-2 input-field-block">
                         <label htmlFor="username" className="form-label">Username<span className='estaric'>*</span></label>
                         <input type="email"
                             name="username"
@@ -104,7 +104,7 @@ const AddEmailProfile = (props) => {
 
 
 
-                    <div className="mb-4 input-field-block ">
+                    <div className="mb-2 input-field-block ">
                         <label htmlFor="password" className="form-label">Password<span className='estaric'>*</span></label>
                         <input type="password"
                             name="password"
@@ -117,7 +117,7 @@ const AddEmailProfile = (props) => {
 
                     </div>
 
-                    <div className="mb-4 input-field-block">
+                    <div className="mb-2 input-field-block">
                         <label htmlFor="fromemail" className="form-label">From Email<span className='estaric'>*</span></label>
                         <input type="email"
                             name="fromemail"
