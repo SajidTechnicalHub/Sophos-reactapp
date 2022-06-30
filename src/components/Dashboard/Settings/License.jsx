@@ -44,14 +44,14 @@ const License = () => {
                     <br /><br />
                     {LicenseContents.map((value) => {
                         return (
-                            <>
-                                <span className='license-check-icon' key={value.id}>
+                            <React.Fragment key={value.id}>
+                                <span className='license-check-icon' >
                                     <span className='license-check-icon-style'>
                                         {value.icon}
                                     </span>
                                     <p>{value.details}</p>
                                 </span>
-                            </>
+                            </React.Fragment>
                         )
                     })}
 

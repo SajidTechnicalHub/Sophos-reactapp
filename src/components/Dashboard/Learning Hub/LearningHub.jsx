@@ -60,8 +60,8 @@ const LearningHub = () => {
               }
             }).map((currEl) => {
               return (
-                <>
-                  <div className="col-lg-3 col-md-6 col-sm-12 col-12 g-2 " key={currEl.id} >
+                <React.Fragment key={currEl.id}>
+                  <div className="col-lg-3 col-md-6 col-sm-12 col-12 g-2 "  >
 
                     <div className="card text-center email-card">
                       {/* <div className='email-featred'></div>
@@ -81,7 +81,7 @@ const LearningHub = () => {
                     </div>
 
                   </div>
-                </>
+                </React.Fragment>
               )
             })
           }

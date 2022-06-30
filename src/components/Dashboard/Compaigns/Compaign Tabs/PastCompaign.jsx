@@ -6,8 +6,8 @@ const columns = [
   //   { field: 'id', headerName: 'ID', width: 70 },
   { field: 'Name', headerName: 'Name', minWidth: 220, flex: true },
   { field: 'Type', headerName: 'Type', minWidth: 220, flex: true },
-  { field: 'EndDate', headerName: 'End Date', minWidth: 220, flex: true },
-  { field: 'Recepients', headerName: 'Recepients', minWidth: 210, flex: true },
+  { field: 'EndDate', headerName: 'Started Date', minWidth: 220, flex: true },
+  { field: 'Recepients', headerName: 'Owner', minWidth: 210, flex: true },
 
 
 ];

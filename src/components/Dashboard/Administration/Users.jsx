@@ -215,7 +215,7 @@ const Users = () => {
               </button>
               <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                 <li><a onClick={handleOpen} className="dropdown-item" href="#">Add User</a></li>
-                <li><a onClick={handleOpenImportUser} className="dropdown-item" href="#">Import User From CSV</a></li>
+                <li><a onClick={handleOpenImportUser} className="dropdown-item" href="#">Import User From CSV File</a></li>
               </ul>
             </div>
           </div>
@@ -298,7 +298,7 @@ const Users = () => {
             <Box sx={ImportUserStyle}>
               <div className="create-project-moldel-container">
                 <div className="project-model-header">
-                  <h3>Import Users from CSV</h3>
+                  <h3>Import Users from CSV File</h3>
                 </div>
 
                 <div className='create-project-model-form-container'>

@@ -186,14 +186,14 @@ const Sidebar = () => {
 
                   <ContactMailOutlinedIcon className='sidebarListItemIcon' />
 
-                  <span className='sidebarTitleText hideTitle' style={sidebar}>Email Templetes</span>
+                  <span className='sidebarTitleText hideTitle' style={sidebar}>Email Templates</span>
 
                 </div>
               </Link>
               <Link to='compaigns'>
                 <div className="sidebarTitle">
                   <AddBusinessOutlinedIcon className='sidebarListItemIcon' />
-                  <span className='sidebarTitleText hideTitle' style={sidebar}>Compaigns</span>
+                  <span className='sidebarTitleText hideTitle' style={sidebar}>Campaigns</span>
 
                 </div>
               </Link>
@@ -216,9 +216,10 @@ const Sidebar = () => {
             </div>
             
           </div>
-          
-          <div className="sidebarWrapper  logout-margin">
-            <hr className='sidebarLine' />
+          <div className="logout-margin">
+          <hr className='sidebarLine' />
+          <div className="sidebarWrapper ">
+           
 
             <div className="sidebarMenu">
               <Link to='logout'>
@@ -230,6 +231,7 @@ const Sidebar = () => {
                 </div>
               </Link>
             </div>
+          </div>
           </div>
         </div>
         <div className='mainpages' style={sidebarwidth}><Outlet /></div>

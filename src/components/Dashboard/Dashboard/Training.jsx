@@ -6,10 +6,10 @@ const Training = () => {
     return (
         <>
 
-            <div className="training-title">Phishing Awaireness Training Completion</div>
+            <div className="training-title">Phishing Awareness Training Completion</div>
             
-                <h3>60% Users have complete training</h3>
-                <p>Awairness Training Status</p>
+                <h3>60% Users have completed training</h3>
+                <p>Awareness Training Status</p>
                 <div className="progress">
                     <div className="progress-bar" role="progressbar" style={{ width: '60%' }} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">60%</div>
                 </div>

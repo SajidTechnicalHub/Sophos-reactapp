@@ -38,7 +38,7 @@ const Home = () => {
                                     <span className='check-icon-style'>
                                         <FontAwesomeIcon icon={faCheck}></FontAwesomeIcon>
                                     </span>
-                                    <p>MSSI's account management</p>
+                                    <p>MSSP's account management</p>
                                 </span>
 
                                 <span className='check-icon'>

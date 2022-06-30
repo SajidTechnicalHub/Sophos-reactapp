@@ -31,7 +31,7 @@ const Profile = () => {
     <>
       <div className="profile-container">
         <h5 >Profile</h5>
-        <p>This information will be displayed publicaly so be careful what you share. </p>
+        <p>This information will be displayed, on PhishCode top navigation. </p>
         <form onSubmit={SubmitEvent} className='input-field'>
           <div className="row">
             <div className="col-lg-6">

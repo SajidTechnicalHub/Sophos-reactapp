@@ -38,7 +38,7 @@ const SimulatioinList = [
 
 const Simulation = () => {
     return (
-        <>
+        <React.Fragment>
             <div className="simulation-title" >Current Simulation</div>
             <div className="simulation-content" >
                 <span className='simulation-content-header'>Smimulation Name</span>
@@ -49,11 +49,11 @@ const Simulation = () => {
             {
                 SimulatioinList.map((value, index) => {
                     return (
-                        <>
+                        <React.Fragment key={value.id}>
                         {
                             index >= 0 && index <=2 ?
                             <div>
-                            <div className="simulation-content-header-text" key={value.id}>
+                            <div className="simulation-content-header-text">
                                <Link to=""> <span>{value.name}</span></Link>
                                 <span>{value.type}</span>
                                 <span>{value.status}</span>
@@ -64,14 +64,14 @@ const Simulation = () => {
 
                         }
                             
-                        </>
+                        </React.Fragment>
                     )
                 })
             }
            
             <br />
             <span className=' simulation-btn'> <Link to=''>View All Simulations</Link></span>
-        </>
+        </React.Fragment>
     );
 }
 

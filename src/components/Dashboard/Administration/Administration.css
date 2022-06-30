@@ -1,11 +1,10 @@
 .users-container{
     margin-bottom: 50px;
     background-color: white;
-    min-height: 100vh;
+    /* min-height: 100vh; */
     height: fit-content;    
     width: 100%;
     border-radius: 5px;
-    /* background-color: #fff; */
     padding: 3px 3px;
 }
 .users-top-header{
@@ -159,7 +158,7 @@
     border: 1px solid gray;
 }
 .group-container  h5{
-    margin-top: -35px!important;
+    margin-top: -30px!important;
 }
 .input-field h5{
     padding-top: 5px;
@@ -197,6 +196,9 @@
     .user-model-container{
         flex-direction: column!important;
     }
+    .group-container  h5{
+        margin-top: -20px!important;
+    }
 }
 /* ****************** Import User start***************** */
 .import-user ul li a{
@@ -227,7 +229,7 @@
 .file-size{
     display: flex;
     flex-direction: column;
-    margin-top: 30px;
+    /* margin-top: 30px; */
     gap:3px;
     color: rgb(165, 156, 156);
     font-size: 13px;

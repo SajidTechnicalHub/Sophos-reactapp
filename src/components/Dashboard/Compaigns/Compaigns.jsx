@@ -73,7 +73,7 @@ const Compaigns = () => {
     <>
 
       <div className="breadcrumb">
-        <span className='breadcrumb-items'>Compaigns</span>
+        <span className='breadcrumb-items'>Campaigns</span>
 
       </div>
       <div className="compaign users-container">
@@ -96,14 +96,14 @@ const Compaigns = () => {
                 className='user-manu'
               >
 
-                <option value='compaign'> All Compaigns</option>
+                <option value='compaign'> All Campaigns</option>
                 <option value='phishing'>Phishing</option>
                 <option value='harvesting'>Credential Harvesting</option>
                 <option value='attachment'>Attachment</option>
               </select>
             </div>
             <Link to='/Sophos-reactapp/admin/compaign'>
-              <Button variant="contained" size="small" className='add-users-btn'>New Compaign</Button>
+              <Button variant="contained" size="small" className='add-users-btn'>New Campaign</Button>
             </Link>
           </div>
           {/* <hr /> */}
@@ -120,9 +120,9 @@ const Compaigns = () => {
                 scrollButtons="auto"
                 aria-label="scrollable auto tabs example"
               >
-                <Tab label="Current Compaign" {...a11yProps(0)} />
-                <Tab label="Schedule Compaign" {...a11yProps(1)} />
-                <Tab label="All Compaign" {...a11yProps(2)} />
+                <Tab label="Current Campaigns" {...a11yProps(0)} />
+                <Tab label="Schedule Campaigns" {...a11yProps(1)} />
+                <Tab label="All Campaigns" {...a11yProps(2)} />
 
               </Tabs>
             </Box>

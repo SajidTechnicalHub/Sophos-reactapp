@@ -40,9 +40,9 @@ const EditGroups = (props) => {
         <>
 
             <form onSubmit={SubmitEvent} className='create-project-model-form input-field group-container'>
-                <div className="row">
+                <div className="row mt-2">
                     <div className="col-lg-6">
-                        <div className="mb-4 input-field-block ">
+                        <div className="mb-2 input-field-block ">
                             <label htmlFor="groupname" className="form-label">Group Name<span className='estaric'>*</span></label>
                             <input type="text"
                                 name="username"

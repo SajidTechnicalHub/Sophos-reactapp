@@ -39,7 +39,7 @@ const LoginCode = () => {
                         onChange={InputEvent}
                         className="form-control"
                         required="required"
-                        placeholder='Please enter code here'
+                        placeholder='Enter Your Security Code'
                     />
 
                 </div>

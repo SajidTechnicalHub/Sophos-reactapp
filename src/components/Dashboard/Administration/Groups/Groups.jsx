@@ -15,12 +15,12 @@ import useWindowDimensions from '../../../useWindowDimensions';
 import DeleteGroups from './DeleteGroups';
 
 const Gruops = () => {
- const { height, width } = useWindowDimensions();
+  const { height, width } = useWindowDimensions();
 
   const handleDelete = (id) => {
 
     setGroups(groups.filter((item) => item.id !== id))
-    
+
   }
   const Search = (groups) => {
     return groups.filter(
@@ -108,7 +108,7 @@ const Gruops = () => {
     overflow: 'scroll',
     boxShadow: 24,
     display: 'block',
-    borderRadius:'5px'
+    borderRadius: '5px'
     // p: 4,
   }
   const DeleteGroupStyle1 = {
@@ -123,7 +123,7 @@ const Gruops = () => {
     overflow: 'scroll',
     boxShadow: 24,
     display: 'block',
-    borderRadius:'5px'
+    borderRadius: '5px'
     // p: 4,
   }
 
@@ -141,8 +141,8 @@ const Gruops = () => {
   const handleOpenEdit = () => setOpenEdit(true);
   const handleCloseEdit = () => setOpenEdit(false);
 
-   //Handle Delete user Model
-   const [deletedUserData, setDeletedUserData] = useState({
+  //Handle Delete user Model
+  const [deletedUserData, setDeletedUserData] = useState({
     id: '',
     name: '',
   })
@@ -179,7 +179,7 @@ const Gruops = () => {
                 onChange={(e) => setQ(e.target.value)}
                 placeholder='Search Here.'
                 className='users-input-search' />
-                
+
               <select
                 name=""
                 id=""
@@ -212,74 +212,75 @@ const Gruops = () => {
 
 
             />
+
           </div>
 
-          {/* Add User Model */}
-          <Modal
-            open={open}
-            onClose={handleClose}
-            aria-labelledby="modal-modal-title"
-            aria-describedby="modal-modal-description"
-          >
-            <Box sx={ width<=992 ? mobilestyle : style}>
-              <div className="create-project-moldel-container">
-                <div className="project-model-header">
-                  <h3>Add Group</h3>
-                </div>
-                <hr />
-                <div className='create-project-model-form-container'>
-                  <AddGroups
-                    Cancel={handleClose}
-                  />
-                </div>
 
-              </div>
-            </Box>
-          </Modal>
-
-          {/* Edit Group Model */}
-
-          <Modal
-            open={openedit}
-            onClose={handleCloseEdit}
-            aria-labelledby="modal-modal-title"
-            aria-describedby="modal-modal-description"
-          >
-            <Box sx={ width<=992 ? mobilestyle : style}>
-              <div className="create-project-moldel-container">
-                <div className="project-model-header">
-                  <h3>Edit Group</h3>
-                </div>
-                <hr />
-                <div className='create-project-model-form-container'>
-                  <EditGroups
-                    Cancel={handleCloseEdit}
-                  />
-                </div>
-
-              </div>
-            </Box>
-          </Modal>
-
-          {/* Delete Groups Model */}
-          <Modal
-            open={openDeleteUser}
-            onClose={handleCloseDeleteGroup}
-            aria-labelledby="modal-modal-title"
-            aria-describedby="modal-modal-description"
-          >
-            <Box sx={width >= 992 ?DeleteGroupStyle :DeleteGroupStyle1}>
-              <DeleteGroups
-                Cancel={handleCloseDeleteGroup}
-                Delete={handleOpenDeleteGroup}
-                DeletedData={deletedUserData}
-                DeleteUser={handleDelete}
-              />
-            </Box>
-          </Modal>
         </div>
       </div>
+      {/* Add User Model */}
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={width <= 992 ? mobilestyle : style}>
+          <div className="create-project-moldel-container">
+            <div className="project-model-header">
+              <h3>Add Group</h3>
+            </div>
+            <hr />
+            <div className='create-project-model-form-container'>
+              <AddGroups
+                Cancel={handleClose}
+              />
+            </div>
 
+          </div>
+        </Box>
+      </Modal>
+
+      {/* Edit Group Model */}
+
+      <Modal
+        open={openedit}
+        onClose={handleCloseEdit}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={width <= 992 ? mobilestyle : style}>
+          <div className="create-project-moldel-container">
+            <div className="project-model-header">
+              <h3>Edit Group</h3>
+            </div>
+            <hr />
+            <div className='create-project-model-form-container'>
+              <EditGroups
+                Cancel={handleCloseEdit}
+              />
+            </div>
+
+          </div>
+        </Box>
+      </Modal>
+
+      {/* Delete Groups Model */}
+      <Modal
+        open={openDeleteUser}
+        onClose={handleCloseDeleteGroup}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={width >= 992 ? DeleteGroupStyle : DeleteGroupStyle1}>
+          <DeleteGroups
+            Cancel={handleCloseDeleteGroup}
+            Delete={handleOpenDeleteGroup}
+            DeletedData={deletedUserData}
+            DeleteUser={handleDelete}
+          />
+        </Box>
+      </Modal>
 
     </>
   )

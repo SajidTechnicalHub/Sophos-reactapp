@@ -10,7 +10,6 @@ import HomePage from './components/Dashboard/Home/HomePage';
 import Dashboard from './components/Dashboard/Dashboard/Dashboard';
 import Users from "./components/Dashboard/Administration/Users";
 import Groups from "./components/Dashboard/Administration/Groups/Groups";
-import Roles from './components/Dashboard/Administration/Roles';
 import EmailSetup from './components/Dashboard/Email/EmailSetup';
 import EmailTemplates from './components/Dashboard/Email/EmailTemplates';
 import Compaigns from "./components/Dashboard/Compaigns/Compaigns";
@@ -66,7 +65,6 @@ function App() {
           <Route path="currentCompaigns" element={<AllCurrentCompaigns />} />
           <Route path="users" element={<Users />} />
           <Route path="groups" element={<Groups />} />
-          <Route path="roles" element={<Roles />} />
           <Route path="emailSetup" element={<EmailSetup />} />
           <Route path="emailTemplates" element={<EmailTemplates />} />
           <Route path="compaigns" element={<Compaigns />} />

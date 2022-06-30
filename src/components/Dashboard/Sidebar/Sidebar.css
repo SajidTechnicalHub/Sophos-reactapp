@@ -93,6 +93,7 @@
     color: #fff;
     height: 5px;
     margin-top: 0px;
+    margin-bottom: 2px!important;
     
 }
 .sidebarTitleText{
@@ -135,7 +136,10 @@
     
 }
 .logout-margin{
-    margin-top: 146px;
+    /* margin-top: 146px; */
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
 a{
     display: inline-block!;

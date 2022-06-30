@@ -69,12 +69,12 @@ const AllCurrentCompaigns = () => {
     return (
         <>
             <div className="breadcrumb">
-                <span className='breadcrumb-items'>All Current Compaigns</span>
+                <span className='breadcrumb-items'>All Current Campaigns</span>
 
             </div>
             <div className="users-container">
                 <div className="dashboard-active-compaigns-header">
-                    <span className="dashboard-active-compaigns-header-heading">{count} of {count} Current Compaings</span>
+                    <span className="dashboard-active-compaigns-header-heading">{count} of {count} Current Campaings</span>
                    <Link to='/Sophos-reactapp/admin/dashboard'> <span><ArrowBackIcon />Back</span></Link>
                 </div>
                 <hr />
@@ -82,7 +82,7 @@ const AllCurrentCompaigns = () => {
                     CurrentCompaignList.map((value, index) => {
                         
                         return (
-                            <>
+                            <React.Fragment key={value.id}>
                             
                                 <div className="dashboard-active-compaigns-container" key={value.id}>
                                     <div className="dashboard-active-compaigns-container-heading-block">
@@ -150,7 +150,7 @@ const AllCurrentCompaigns = () => {
                                 <hr />
 
 
-                            </>
+                            </React.Fragment>
 
                         )
                     })

@@ -44,7 +44,7 @@ const ForgotPasswordCode = () => {
                                 onChange={InputEvent}
                                 className="form-control"
                                 required="required"
-                                placeholder='Please enter your code here'
+                                placeholder='Enter Your Security Code'
                             />
 
                         </div>

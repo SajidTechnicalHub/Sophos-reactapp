@@ -78,7 +78,7 @@ const CurrentCompaigns = () => {
     return (
         <>
             <div className="dashboard-active-compaigns-header">
-                <span className="dashboard-active-compaigns-header-heading">3 of {count} Current Compaings</span>
+                <span className="dashboard-active-compaigns-header-heading">3 of {count} Current Campaings</span>
                 <Link to="/Sophos-reactapp/admin/currentCompaigns">See all</Link>
             </div>
             <hr />
@@ -86,10 +86,10 @@ const CurrentCompaigns = () => {
                 CurrentCompaignList.map((value, index) => {
                     
                     return (
-                        <>
+                        <React.Fragment key={value.id}>
                         {index >= 0 && index <= 2 ?
                     <div>
-                            <div className="dashboard-active-compaigns-container" key={value.id}>
+                            <div className="dashboard-active-compaigns-container" >
                                 <div className="dashboard-active-compaigns-container-heading-block">
                                     <div className="dashboard-active-compaigns-container-heading-icon">
                                         {/* <StartIcon fontSize="small" /> */}
@@ -150,7 +150,7 @@ const CurrentCompaigns = () => {
                             <hr />
                             </div>:
                         <div></div>}
-                        </>
+                        </React.Fragment>
                         
                     )
                 })

@@ -30,7 +30,7 @@ const PasswordChange = () => {
       <div className="password-chande-container">
         
         <div className="row">
-          <div className="col-lg-8 mobile-order-2">
+          <div className="col-lg-6 mobile-order-2">
           <h5 >Password Change</h5>
             <form onSubmit={SubmitEvent} className='input-field'>
               <div className="mb-2 input-field-block ">
@@ -73,7 +73,7 @@ const PasswordChange = () => {
               <button className='account-setting-btn'>Save</button>
             </form>
           </div>
-          <div className="col-lg-4 mobile-order-1">
+          <div className="col-lg-6 mobile-order-1">
             <img src="../passwordChange.png" className='password-change-img' alt="img" />
           </div>
 

@@ -31,9 +31,9 @@ const ImportUser = (props) => {
             // console.log(reader.result)
         }
         reader.readAsText(files[0]);
-        
+
     }
-    
+
     // **************************************
     return (
         <>
@@ -41,8 +41,8 @@ const ImportUser = (props) => {
                 <div className="row">
                     <div className="col-lg-6">
                         <p>The users to import new users requires setting of 'name' and 'email'.</p>
-                        <p>As optional fields you can add 'manager email', 'exchange login' and 'group'.</p>
-                        <p>If you have users who are in several groups you can add additional 'group' fields followed by a number. For example 'group1' and 'group2'.
+                        {/* <p>As optional fields you can add 'manager email', 'exchange login' and 'group'.</p> */}
+                        <p>If you have users who are in several groups you can add additional 'group' fields followed by a comma. For example, group 1, 'group 2.
                         </p>
                         <p>As a formatting example you can have a look at the following examples:
                         </p>
@@ -55,7 +55,7 @@ const ImportUser = (props) => {
                     </div>
                     <div className="col-lg-1 user-line-block">
                         <div className="import-user-line"></div>
-                        </div>
+                    </div>
                     <div className="col-lg-5">
                         <h5>CSV File</h5>
 
@@ -66,7 +66,7 @@ const ImportUser = (props) => {
                             </ReactFileReader>
                         </div>
                         <br />
-                        <div className="model-group-selection">
+                        {/* <div className="model-group-selection">
 
                             <input type="checkbox" className='model-group-selection-checkbox' />
                             <label htmlFor="role" className="">
@@ -76,7 +76,7 @@ const ImportUser = (props) => {
 
                             <input type="checkbox" className='model-group-selection-checkbox' />
                             <label htmlFor="role" className="">Give users access to Sophos Central Self Service.</label>
-                        </div>
+                        </div> */}
 
                         <div className="file-size">
                             <span>Max file size is 2MB</span>

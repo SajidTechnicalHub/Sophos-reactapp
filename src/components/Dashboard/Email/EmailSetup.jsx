@@ -59,10 +59,10 @@ const EmailSetup = () => {
               {/* <Link to={'/Sophos-reactapp/projects/edit_project/' + cellValues.row.id}>
                 <EditIcon className='edit-icon' />
               </Link> */}
-              <div className="email-edit-icon-container"  onClick={() => handleOpenEdit(cellValues.row.id, cellValues.row.name)} >
+              <div className="email-edit-icon-container" onClick={() => handleOpenEdit(cellValues.row.id, cellValues.row.name)} >
                 <EditIcon className='email-edit-icon' />
               </div>
-              <div className='email-delete-icon-container'  onClick={() => handleOpenDeleteEmailProfile(cellValues.row.id, cellValues.row.name)}>
+              <div className='email-delete-icon-container' onClick={() => handleOpenDeleteEmailProfile(cellValues.row.id, cellValues.row.name)}>
                 <DeleteIcon className='email-delete-icon' />
               </div>
               {/* <DeleteIcon className='delete-icon' onClick={() => handleDelete(cellValues.row.id)} /> */}
@@ -151,14 +151,14 @@ const EmailSetup = () => {
     name: '',
   })
 
-  const handleOpenEdit = (id, name) =>{
+  const handleOpenEdit = (id, name) => {
     setOpenEdit(true);
 
     setEditEmailProfileData({
       id: id,
       name: name
     })
-  } 
+  }
   const handleCloseEdit = () => setOpenEdit(false);
 
   //Handle Delete Model
@@ -187,7 +187,7 @@ const EmailSetup = () => {
 
       </div>
       <div className="users-container">
-<hr />
+        <hr />
         <div className="users-header">
           <div className="users-header-contents">
             {/* <h5>All Users</h5> */}
@@ -233,7 +233,7 @@ const EmailSetup = () => {
             aria-labelledby="modal-modal-title"
             aria-describedby="modal-modal-description"
           >
-            <Box sx={ width<=992 ? mobilestyle : style}>
+            <Box sx={width <= 992 ? mobilestyle : style}>
               <div className="create-project-moldel-container">
                 <div className="project-model-header">
                   <h3>Add Email Profile</h3>
@@ -257,7 +257,7 @@ const EmailSetup = () => {
             aria-labelledby="modal-modal-title"
             aria-describedby="modal-modal-description"
           >
-            <Box sx={ width<=992 ? mobilestyle : style}>
+            <Box sx={width <= 992 ? mobilestyle : style}>
               <div className="create-project-moldel-container">
                 <div className="project-model-header">
                   <h3>Edit Email Profile</h3>
@@ -281,7 +281,7 @@ const EmailSetup = () => {
             aria-labelledby="modal-modal-title"
             aria-describedby="modal-modal-description"
           >
-            <Box sx={width >= 992 ?DeleteGroupStyle :DeleteGroupStyle1}>
+            <Box sx={width >= 992 ? DeleteGroupStyle : DeleteGroupStyle1}>
               <DeleteEmailSetup
                 Cancel={handleCloseDeleteEmailProfile}
                 Delete={handleOpenDeleteEmailProfile}
