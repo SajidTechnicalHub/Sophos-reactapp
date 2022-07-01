@@ -11,7 +11,7 @@ const Templates = (props) => {
         <div className="template-body">
           <div>
             <div className="template-header">
-              <div className="template-title">Linked<span className='template-title-icon'>In</span></div>
+             <center><div className="template-title">Linked<span className='template-title-icon'>In</span></div></center> 
 
               <p><strong>(First Name), we're sorry to see you go.</strong></p>
               <br />
@@ -23,7 +23,7 @@ const Templates = (props) => {
               <p ><strong>You can reopen your account in most case if it's been closed less <br />
                 than 2 days, by clicking on the link below.</strong></p>
               <br />
-              <button className='btn btn-primary'>Reopen Your Account</button>
+              <center><button className='btn btn-primary'>Reopen Your Account</button></center>
               <hr />
               <p>LinkedIn is social network and online plateform for professionals. <a href=''>Learn More</a></p>
             </div>
@@ -36,14 +36,11 @@ const Templates = (props) => {
               </div>
             </div>
             <p>This email was sent to (First Name) (Last Name).</p>
-            <div className="template-title">Linked<span className='template-title-icon'>In</span></div>
+            <center><div className="template-title">Linked<span className='template-title-icon'>In</span></div></center> 
             <br />
 
           </div>
-          {/* <div className="template-cancel-btn">
-            <Button variant="contained" onClick={CancelEvent} size="small" className='project-create-btn'>Cancel</Button>
-
-          </div> */}
+          
         </div>
       </div>
     </>

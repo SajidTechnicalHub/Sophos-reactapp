@@ -97,9 +97,11 @@ const Compaigns = () => {
               >
 
                 <option value='compaign'> All Campaigns</option>
-                <option value='phishing'>Phishing</option>
-                <option value='harvesting'>Credential Harvesting</option>
-                <option value='attachment'>Attachment</option>
+                <option>Credential Harvest</option>
+                <option>Drive-By URL</option>
+                <option>Malware Attack</option>
+                <option>Link to Malware</option>
+                <option>OAuth Consent Grant</option>
               </select>
             </div>
             <Link to='/Sophos-reactapp/admin/compaign'>

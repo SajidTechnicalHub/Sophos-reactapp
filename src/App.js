@@ -32,6 +32,7 @@ import PhishCodeLayout from "./components/PhishCode/PhishCodeLayout";
 import PhishCodeSection1 from './components/PhishCode/PhishCodeSection1'
 import PhishCodeSection2 from './components/PhishCode/PhishCodeSection2'
 import PhishCodeSection3 from './components/PhishCode/PhishCodeSection3'
+import CampaignDetail from "./components/Dashboard/Dashboard/CampaignDetail";
 function App() {
   return (
     <div className="container-flude">
@@ -63,6 +64,7 @@ function App() {
           <Route path="Home" element={<HomePage />} />
           <Route path="dashboard" element={<Dashboard />} />
           <Route path="currentCompaigns" element={<AllCurrentCompaigns />} />
+          <Route path="campaignDetails/:id" element={<CampaignDetail />} />
           <Route path="users" element={<Users />} />
           <Route path="groups" element={<Groups />} />
           <Route path="emailSetup" element={<EmailSetup />} />

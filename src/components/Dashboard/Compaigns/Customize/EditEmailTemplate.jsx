@@ -5,6 +5,7 @@ import 'suneditor/dist/css/suneditor.min.css'; // Import Sun Editor's CSS File
 import Templates from '../../Email/EmailTemplates/Templates'
 // import Content from "./EditorDemo";
 import { ContentDemo, Content } from "./EditorDemo";
+import { LinkedInContent } from "./LinkedInTemplate";
 
 const EditEmailTemplate = ({initialValue}) => {
 

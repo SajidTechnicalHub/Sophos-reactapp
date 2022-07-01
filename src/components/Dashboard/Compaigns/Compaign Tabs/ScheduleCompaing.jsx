@@ -17,7 +17,7 @@ const columns = [
 export default function ScheduleCompaing() {
   return (
     <>
-      <div className='compaign-type'>Schedule Compaign</div>
+      <div className='compaign-type'>Schedule Campaigns</div>
       {/* <hr /> */}
       <div style={{ height: 380, width: '100%' }}>
         <DataGrid

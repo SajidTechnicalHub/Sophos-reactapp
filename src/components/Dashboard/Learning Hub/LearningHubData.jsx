@@ -8,7 +8,8 @@ export const Videolist = [
         type:'Featured',
         url: thumbnail,
         videoUrl:'https://www.youtube.com/watch?v=gV1Dwr8zxQU&list=PLEBq7bfZmjyqRYMNCaWdnq_5AVPDwdGjn',
-        details: 'How to Investigate Using Microsoft 365 Defender'
+        details: 'How to Investigate Using Microsoft 365 Defender',
+        time:'4 Min'
     },
     {
         id:2,
@@ -16,7 +17,8 @@ export const Videolist = [
         type:'Featured',
         url:thumbnail,
         videoUrl:'https://www.youtube.com/watch?v=gV1Dwr8zxQU&list=PLEBq7bfZmjyqRYMNCaWdnq_5AVPDwdGjn',
-        details: 'How to Investigate Using Microsoft 365 Defender'
+        details: 'How to Investigate Using Microsoft 365 Defender',
+        time:'4 Min'
     },
     {
         id:3,
@@ -24,7 +26,8 @@ export const Videolist = [
         type:'Featured',
         url:thumbnail3,
         videoUrl:'https://www.youtube.com/watch?v=gV1Dwr8zxQU&list=PLEBq7bfZmjyqRYMNCaWdnq_5AVPDwdGjn',
-        details: 'How to Investigate Using Microsoft 365 Defender'
+        details: 'How to Investigate Using Microsoft 365 Defender',
+        time:'4 Min'
     },
     {
         id:4,
@@ -32,7 +35,8 @@ export const Videolist = [
         type:'Featured',
         url:thumbnail3,
         videoUrl:'https://www.youtube.com/watch?v=gV1Dwr8zxQU&list=PLEBq7bfZmjyqRYMNCaWdnq_5AVPDwdGjn',
-        details: 'How to Investigate Using Microsoft 365 Defender'
+        details: 'How to Investigate Using Microsoft 365 Defender',
+        time:'4 Min'
     },
     {
         id:5,
@@ -48,6 +52,7 @@ export const Videolist = [
         type:'Featured',
         url:thumbnail4,
         videoUrl:'https://www.youtube.com/watch?v=gV1Dwr8zxQU&list=PLEBq7bfZmjyqRYMNCaWdnq_5AVPDwdGjn',
-        details: 'How to Investigate Using Microsoft 365 Defender'
+        details: 'How to Investigate Using Microsoft 365 Defender',
+        time:'4 Min'
     },
 ]

@@ -17,7 +17,7 @@ const columns = [
 export default function AllCompaign() {
   return (
     <>
-      <div className='compaign-type'>All Compaign</div>
+      <div className='compaign-type'>All Campaign</div>
       {/* <hr /> */}
       <div style={{ height: 380, width: '100%' }}>
         <DataGrid

@@ -191,7 +191,7 @@ const ChooseAttack = (props) => {
                           {currentElem.template}
 
                         </div>
-                        <div className={props.activeClass1 == currentElem.id ? "select-choose-attack" : "card-footer"} onClick={e => props.setActiveClass1(currentElem.id)}>
+                        <div className={props.activeClass1 == currentElem.id ? "select-choose-attack" : "card-footer"} onClick={e => props.handleChooseAttack(currentElem.id)}>
                           <span className=' btn title'  > {props.activeClass1 != currentElem.id ? currentElem.attack : <div className='choose-attack-block'><DoneIcon fontSize='small' /><div >Attack Choosen</div></div>}</span>
 
                         </div>

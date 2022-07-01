@@ -62,6 +62,7 @@ const nextNotAllowed = {
 
     // cursor: 'not-allowed', 
     pointerEvents: 'none',
+    color:'grey'
 }
 
 const AddCompaigns = () => {
@@ -89,10 +90,12 @@ const AddCompaigns = () => {
         })
     }
 
-    const selectedBlock = (id) => {
-        console.log(id)
-
-
+    const handleChooseAttack = (id) => {
+        if(activeClass1 == ''){
+            setActiveClass1(id)
+        }else{
+            setActiveClass1('')
+        }
 
     }
 
@@ -193,7 +196,7 @@ const AddCompaigns = () => {
                                 {/* <h6>Get Started</h6> */}
                                 {/* <p className="compaign-name">Name Your Compaign</p> */}
                                 <div className="mb-4 compaign-input-field-block ">
-                                    <label htmlFor="name" className="form-label">Name Your Compaign</label>
+                                    <label htmlFor="name" className="form-label">Name Your Campaign</label>
                                     <input type="text"
                                         name="name"
                                         value={input.name}
@@ -206,7 +209,7 @@ const AddCompaigns = () => {
                                 </div>
 
                                 <div className="mb-4 compaign-input-field-block ">
-                                    <label htmlFor="compaignType" className="form-label">Choose Compaign Type</label>
+                                    <label htmlFor="compaignType" className="form-label">Choose Campaign Type</label>
                                     {
                                         CompaignType.map((currentElement, index) => {
                                             return (
@@ -248,7 +251,7 @@ const AddCompaigns = () => {
                                     <div className="mb-4 ">
 
                                         <ChooseAttack
-                                            setActiveClass1={setActiveClass1}
+                                            handleChooseAttack={handleChooseAttack}
                                             activeClass1={activeClass1}
                                         />
                                     </div>
@@ -319,7 +322,7 @@ const AddCompaigns = () => {
                                 </Button>
                                 :
                                 activeStep === 1 ?
-                                    <Button style={activeClass1 == null ? nextNotAllowed : nextAllowed} onClick={handleNext} className='stepper-next-button'>
+                                    <Button style={activeClass1 == '' ? nextNotAllowed : nextAllowed} onClick={handleNext} className='stepper-next-button'>
                                         {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
                                     </Button>
                                     :

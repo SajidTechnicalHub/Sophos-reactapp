@@ -10,7 +10,7 @@
     z-index: 1;
 }
 .email-card{
-    position: relative;
+    /* position: relative; */
     z-index: 0;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -83,4 +83,27 @@
 }
 .email-template hr{
     margin-top: -10px!important;
+}
+@media(min-width:1800px){
+    .email-card{
+        
+        max-height: 330px!important;
+        /* margin-top: -100px!important; */
+        /* width: 70%!important; */
+    }
+    
+}
+@media(min-width:2500px){
+    .email-card{
+        
+        max-height: 380px!important;
+        
+    } 
+}
+@media(min-width:3000px){
+    .email-card{
+        
+        max-height: 450px!important;
+        
+    } 
 }
