@@ -14,15 +14,6 @@ const Topbar = () => {
     
   }, [setCurrentDateTime]);
 
-  // const [currentDateTime, setCurrentDateTime] = useState(() => new Date().toUTCString());
-  // useEffect(() => {
-  //   const secondsTimer = setInterval(() => {
-  //     setCurrentDateTime(new Date().toUTCString());
-  //   }, 1000);
-  //   return () => clearInterval(secondsTimer);
-    
-  // }, [setCurrentDateTime]);
-
   return (
     <>
       <div className='topbar'>
@@ -30,7 +21,7 @@ const Topbar = () => {
           <span className="topbar-title">
             {/* <span className='topbar-logo'>Ph</span> */}
             {/* <h3>PhishCode</h3> */}
-            <img src="../logo.png" className='main-logo' alt="logo" />
+            <img src="./logo.png" className='main-logo' alt="logo" />
             <div className="topbar-vertical-line"></div>
             <span className="topbar-project-title">Project</span>
             
@@ -46,7 +37,7 @@ const Topbar = () => {
               </button>
               <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
               <Link to='settings'><li className="dropdown-item">Profile</li></Link>
-              <Link to=''><li className="dropdown-item">Help and Support</li></Link>
+              <Link to='settings'><li className="dropdown-item">Help and Support</li></Link>
                 <Link to=''><li className="dropdown-item">Logout</li></Link>
               </ul>
             </div>

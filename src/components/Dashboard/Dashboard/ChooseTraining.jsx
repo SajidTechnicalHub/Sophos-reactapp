@@ -30,11 +30,6 @@ const ChooseTraining = () => {
   }
   return (
     <>
-
-      {/* <div className="breadcrumb">
-        <span className='breadcrumb-items'>Choose Training </span>
-
-      </div> */}
       <div className="users-container learging-hub-section">
         <div className="learning-hub-title">
           <h5>Choose Training</h5>

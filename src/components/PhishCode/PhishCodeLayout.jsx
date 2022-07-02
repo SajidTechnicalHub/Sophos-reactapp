@@ -1,5 +1,6 @@
 import React, {useRef} from 'react'
 import { Outlet } from "react-router-dom";
+import Footer from '../Dashboard/Footer/Footer';
 import PhishCodeHeader from './PhishCodeHeader';
 import './PhishCodeLayout.css'
 import PhishCodeSection1 from './PhishCodeSection1';
@@ -17,7 +18,7 @@ const PhishCodeLayout = () => {
     const executeScroll3 = () => myRef3.current.scrollIntoView()
     const executeScroll4 = () => myRef4.current.scrollIntoView()
     return (
-        <>
+        <React.Fragment>
             <PhishCodeHeader 
             execute1={executeScroll1}
             execute2={executeScroll2}
@@ -33,8 +34,8 @@ const PhishCodeLayout = () => {
             refProp={myRef3}/>
             <PhishCodeSection4 
             refProp={myRef4}/>
-
-        </>
+             <Footer />
+        </React.Fragment>
     )
 }
 

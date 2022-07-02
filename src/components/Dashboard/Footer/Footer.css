@@ -1,0 +1,59 @@
+.phishCode-footer{
+    width: 100%;
+    min-height: 100px;
+    height: fit-content;
+    Background-color: #244161;
+    /* backdrop-filter: saturate(180%) blur(20px); */
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+    padding: 20px 50px;
+}
+.phishCode-footer-contact-block{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.phishCode-copyright-block{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+    gap: 10px;
+}
+.phishCode-footer-social-icon-block{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+.phishCode-footer-contact-text,
+.phishCode-footer-social-icon,
+.phishCode-copyright-block-text{
+    color: #fff;
+}
+.footer-logo{
+    height: 40px;
+    width: 200px;
+  }
+@media(max-width:992px){
+    .phishCode-footer{
+        
+      
+        flex-direction: column!important;
+        
+        padding: 20px!important;
+        align-items: center!important; 
+        gap: 20px!important;
+    }
+    .phishCode-copyright-block{
+       
+        align-items: center!important;
+       
+    }
+    .phishCode-copyright-block-text{
+        text-align: center;
+    }
+}
