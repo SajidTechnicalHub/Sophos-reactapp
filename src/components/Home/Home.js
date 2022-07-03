@@ -32,8 +32,9 @@ const Home = () => {
                                     <span className='check-icon-style'>
                                         <FontAwesomeIcon icon={faCheck}></FontAwesomeIcon>
                                     </span>
-                                    <p>Automated reporting on phishing and awareness training outcomes</p>
+                                    <p><span></span>Automated reporting on phishing and awareness training outcomes</p>
                                 </span>
+                                
                                 <span className='check-icon'>
                                     <span className='check-icon-style'>
                                         <FontAwesomeIcon icon={faCheck}></FontAwesomeIcon>

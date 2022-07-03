@@ -6,14 +6,14 @@
     /* backdrop-filter: saturate(180%) blur(20px); */
     display: flex;
     justify-content: space-between;
-    /* align-items: center; */
+    align-items: center;
     padding: 20px 50px;
 }
 .phishCode-footer-contact-block{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
     gap: 10px;
 }
 .phishCode-copyright-block{
@@ -21,7 +21,7 @@
     flex-direction: column;
     justify-content: center;
     /* align-items: center; */
-    gap: 10px;
+    gap: 5px;
 }
 .phishCode-footer-social-icon-block{
     display: flex;
@@ -41,19 +41,23 @@
 @media(max-width:992px){
     .phishCode-footer{
         
-      
         flex-direction: column!important;
-        
-        padding: 20px!important;
-        align-items: center!important; 
+        justify-content: start!important;
+        padding: 5px 10px!important;
+        align-items: start!important; 
         gap: 20px!important;
     }
     .phishCode-copyright-block{
        
-        align-items: center!important;
+        justify-content: start!important;
        
     }
     .phishCode-copyright-block-text{
-        text-align: center;
+        /* text-align: center; */
+        justify-content: start!important;
     }
+    .footer-logo-block{
+        margin-left: -5px!important;
+    }
+    
 }
