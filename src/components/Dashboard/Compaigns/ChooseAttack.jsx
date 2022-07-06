@@ -119,14 +119,15 @@ const ChooseAttack = (props) => {
   // const [activeClass, setActiveClass] = useState()
 
   return (
-    <>
+    <React.Fragment>
 
 
-      <div className="users-container p-3">
+      <div className="users-container p-3 choose-attack-container">
         <div className="compaign-attack-header">
           <div className='choose-attack-title'>
-            <label htmlFor="name" className="form-label">Choose Attack</label>
-            <p className='language-text'>Make edits to the content of this campaign to tailor it for your users.</p>
+            <label htmlFor="name" className="form-label">Choose Attack Payload</label>
+            <p className='language-text'>Select an attack payload for a simulation technique. 
+            Make edits to the payload content of this campaign to tailor it for your users.</p>
           </div>
           <div className="users-search">
 
@@ -138,7 +139,10 @@ const ChooseAttack = (props) => {
               placeholder='Search Here.'
               className='users-input-search' />
 
-            <select
+            
+          </div>
+          <div className="choose-attack-select">
+          <select
               name=""
               id=""
               className='user-manu'
@@ -153,6 +157,7 @@ const ChooseAttack = (props) => {
           </div>
           
         </div>
+        
         <hr />
         {/* <div className="users-header">
           
@@ -177,15 +182,15 @@ const ChooseAttack = (props) => {
                       <div className="card-header ">
                         <div className='card-header-container'>
                           <div className='title'>{currentElem.title}</div>
-                          <div className='title'>{currentElem.type}</div>
+                          {/* <div className='title'>{currentElem.type}</div> */}
                         </div>
 
                       </div>
 
                       <div className="card text-center ">
 
-                        <div className='email-featred'></div>
-                        <span className="rotate"><div>{currentElem.featured}</div></span>
+                        {/* <div className='email-featred'></div>
+                        <span className="rotate"><div>{currentElem.featured}</div></span> */}
 
                         <div className="card-body email-card " style={{ cursor: 'pointer' }} onClick={handleOpen}>
                           {currentElem.template}
@@ -230,7 +235,7 @@ const ChooseAttack = (props) => {
         </div>
       </div>
 
-    </>
+    </React.Fragment>
   )
 }
 

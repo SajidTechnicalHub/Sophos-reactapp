@@ -18,7 +18,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import EnhancedEncryptionIcon from '@mui/icons-material/EnhancedEncryption';
 import LinkIcon from '@mui/icons-material/Link';
 
-const steps = ['Get Started', 'Choose Attack', 'Customize', 'Enroll Users', 'Review & Schedule'];
+const steps = ['Get Started', 'Choose Attack Payload', 'Customize', 'Enroll Target Users', 'Review & Schedule'];
 
 const CompaignType = [
     {
@@ -48,8 +48,8 @@ const CompaignType = [
     {
         id: 5,
         icon: <SecurityIcon />,
-        name: 'Oauth Concent Grant',
-        desc: 'Lure targeted user to open a attachment within an email.',
+        name: 'OAuth Concent Grant',
+        desc: 'Lure the targeted user to grant the application permissions over some of the target’s data.',
     },
 
 ]
@@ -203,18 +203,18 @@ const AddCompaigns = () => {
                                         onChange={InputEvent}
                                         // className="form-control"
                                         required="required"
-                                        placeholder='Compaign Name'
+                                        placeholder='Campaign Name'
                                     />
 
                                 </div>
 
                                 <div className="mb-4 compaign-input-field-block ">
-                                    <label htmlFor="compaignType" className="form-label">Choose Campaign Type</label>
+                                    <label htmlFor="compaignType" className="form-label">Select Technique</label>
                                     {
                                         CompaignType.map((currentElement, index) => {
                                             return (
-                                                <>
-                                                    <div className={activeClass == currentElement.id ? "compaign-type-block compaign-type-block-active" : "compaign-type-block"} onClick={e => setActiveClass(currentElement.id)} key={index}>
+                                                <React.Fragment key={currentElement.id}>
+                                                    <div className={activeClass == currentElement.id ? "compaign-type-block compaign-type-block-active" : "compaign-type-block"} onClick={e => setActiveClass(currentElement.id)} >
                                                         <div className="compaign-type-icon-block">
                                                             <span className='compaign-type-icon'>{currentElement.icon}</span>
                                                         </div>
@@ -224,7 +224,7 @@ const AddCompaigns = () => {
                                                         </div>
                                                     </div>
                                                     <br />
-                                                </>
+                                                </React.Fragment>
                                             )
                                         })
                                     }
@@ -262,20 +262,19 @@ const AddCompaigns = () => {
                                     <div className='stepper-body customize'>
                                         <div className=" ">
                                             <label htmlFor="name" className="form-label">Customize</label>
-                                            <p className='language-text'>To help disguise your campaign, you may select up to 5 attacks and
-                                                each enrolled user will receive one randomly selected email.</p>
+                                            <p className='language-text'>This pane helps you update the template and email profile according to your requirements.</p>
                                             <Customize />
                                         </div>
                                     </div> :
                                     // ***************Enroll Users Step*********************
                                     activeStep == 3 ?
                                         <div className='stepper-body'>
-                                            <label htmlFor="name" className="form-label">Enroll Users</label>
+                                            <label htmlFor="name" className="form-label">Enroll Target Users</label>
                                             <div className="enroll-users-block">
                                                 {/* <span className='enroll-users-text enroll-users-text-bold '>Choose which users will receive this campaign below</span> */}
-                                                <span className='enroll-users-text'>Note: Users must have an email address in order to be
-                                                    added to a campaign. Public domain email addresses, such as gmail.com and yahoo.com, are not permitted for use. Also, users that are not part of a verified domain will not be added. If a group contains
-                                                    users with unverified domains, only those with verified domain will be enrolled.</span>
+                                                <span className='enroll-users-text'>Note: You can only add those users in the campaigns who have organizational email addresses. 
+                                                Public email addresses (outlook.com, gmail.com, yahoo.com, etc.) are not allowed. 
+                                                If the groups contain public email address users, that user will not be part of the campaign.</span>
                                             </div>
                                             <div className="auto-enroll-new-new-block">
                                                 <div className="auto-enroll-block">

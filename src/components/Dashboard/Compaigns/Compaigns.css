@@ -252,7 +252,23 @@
     font-size: 14px !important;
     font-weight: bold;
 }
-
+.choose-attack-select select{
+    background-color: #1976d2;
+    color: #fff;
+    padding: 8px 10px;
+    border-radius: 3px;
+    margin-left: 15px;
+    font-size: 13px;
+    border: none!important;
+    
+    
+   
+}
+.choose-attack-select select option{
+    background-color: #fff!important;
+    color: #1e334a;
+    
+}
 .choose-attack-block {
     display: flex;
     gap: 3px;
@@ -262,23 +278,25 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    max-height: 40px!important;
+    /* height: 40px; */
+    height: fit-content;
 }
 
 .choose-attack-title {
     display: flex;
     flex-direction: column;
+    margin-top: -10px;
 }
 
 @media(max-width:992px) {
     .compaign-attack-header {
-        flex-direction: column;
+        flex-direction: column!important;
     }
 }
 
 /* **********Customize************ */
 .attack-eamil-form {
-    width: 50%;
+    width: 600px;
 }
 
 .attack-email-form-check {
@@ -359,6 +377,7 @@
     gap: 10px;
     padding-right: 5px;
 }
+
 
 @media(max-width:992px) {
     .attack-eamil-form {
@@ -482,6 +501,21 @@
 
 }
 
+.attack-email-container{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+.attack-email-verticle-line{
+    width: 2px;
+    height: 290px;
+    border: 1px solid grey;
+    background-color: grey;
+    
+}
+.email-filed-container{
+    min-width: 280px;
+}
 
 @media(max-width:992px) {
     .enroll-user-block .card {
@@ -496,4 +530,16 @@
     .enroll-user-block {
         flex-direction: column !important;
     }
+    .attack-email-container{
+        flex-direction: column!important;
+    }
+    .attack-email-verticle-line{
+        display: none!important;
+    }
+    .email-filed-container{
+        min-width: 200px!important;
+    }
+}
+.choose-attack-container hr{
+    margin-top: -10px!important;
 }

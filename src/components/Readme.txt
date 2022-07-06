@@ -1,3 +1,5 @@
 Basic information
 
-Background color: #071330;
+Main color: #071330;
+
+Header Color:  #244161;
