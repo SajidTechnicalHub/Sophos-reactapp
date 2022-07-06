@@ -9,10 +9,10 @@ import EditIcon from '@mui/icons-material/Edit';
 import StarIcon from '@mui/icons-material/Star';
 import { Link } from 'react-router-dom';
 import { UserList } from '../../Administration/UserData';
-
+import CloseIcon from '@mui/icons-material/Close';
 import useWindowDimensions from '../../../useWindowDimensions';
 import DeleteUser from '../../Administration/User/DeleteUser';
-
+import CachedIcon from '@mui/icons-material/Cached';
 
 const AllEnrollTargerUsers = () => {
   const { height, width } = useWindowDimensions();
@@ -21,21 +21,8 @@ const AllEnrollTargerUsers = () => {
     setUsers(users.filter((item) => item.id !== id))
     console.log(users)
   }
- 
-  const columns = [
-    {
-      field: 'Start', headerName: <StarIcon />, width: 50, sortable: false,
-      renderCell: (cellValues) => {
-        return (
-          <>
-            <div className="lead-column-block">
-              {cellValues.row.Star}
-            </div>
-          </>
 
-        );
-      }
-    },
+  const columns = [
     { field: 'Name', headerName: 'Name', minWidth: 220, flex: true },
     { field: 'Email', headerName: 'Email', minWidth: 220, flex: true },
     { field: 'Groups', headerName: 'Groups', minWidth: 220, flex: true },
@@ -46,11 +33,8 @@ const AllEnrollTargerUsers = () => {
         return (
           <>
             <div className="action-icon">
-              {/* <Link to={'/Sophos-reactapp/projects/edit_project/' + cellValues.row.id}>
-                <EditIcon className='edit-icon' />
-              </Link> */}
-              {/* <EditIcon className='edit-icon' onClick={handleOpenEdit} /> */}
-              <DeleteIcon className='delete-icon' onClick={() => handleOpenDeleteUser(cellValues.row.id, cellValues.row.Name)} />
+
+              <CloseIcon className='delete-icon' onClick={() => handleOpenDeleteUser(cellValues.row.id, cellValues.row.Name)} />
             </div>
           </>
 
@@ -86,7 +70,7 @@ const AllEnrollTargerUsers = () => {
     display: 'block'
     // p: 4,
   }
-  
+
   const DeleteUserStyle = {
     position: 'absolute',
     top: '50%',
@@ -99,7 +83,7 @@ const AllEnrollTargerUsers = () => {
     overflow: 'scroll',
     boxShadow: 24,
     display: 'block',
-    borderRadius:'5px'
+    borderRadius: '5px'
     // p: 4,
   }
   const DeleteUserStyle1 = {
@@ -114,7 +98,7 @@ const AllEnrollTargerUsers = () => {
     overflow: 'scroll',
     boxShadow: 24,
     display: 'block',
-    borderRadius:'5px'
+    borderRadius: '5px'
     // p: 4,
   }
 
@@ -144,14 +128,24 @@ const AllEnrollTargerUsers = () => {
   }
   const handleCloseDeleteUser = () => setOpenDeleteUser(false);
 
+
+  const usersLength = users.length
+
   return (
     <>
+      <div className="referesh-container">
+        <span className='referesh'>
+          <CachedIcon />
+          <span className='auto-enroll-user-text'>Refresh</span>
+        </span>
+        <span className='referesh-container-items'>{usersLength} items</span>
+      </div>
 
-      
-      <div className="">
-        
+
+      <div className="all-enroll-users-container">
+
         <div className="project-list">
-          <div style={{ height: 450, width: '100%' }}>
+          <div style={{ height: 440, width: '100%' }}>
 
             <DataGrid
               rows={users}
@@ -163,12 +157,12 @@ const AllEnrollTargerUsers = () => {
               rowsPerPageOptions={[5, 10, 20]}
               pagination
               {...users}
-              components={{ Toolbar: GridToolbar }}
+              // components={{ Toolbar: GridToolbar }}
 
 
             />
           </div>
-         
+
 
           {/* Delete User Model */}
 

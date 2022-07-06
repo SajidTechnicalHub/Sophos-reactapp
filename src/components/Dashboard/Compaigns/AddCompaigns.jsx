@@ -17,7 +17,6 @@ import EnrollUsersHome from './Enroll Users/EnrollUsersHome';
 import { Link, useNavigate } from 'react-router-dom';
 import EnhancedEncryptionIcon from '@mui/icons-material/EnhancedEncryption';
 import LinkIcon from '@mui/icons-material/Link';
-import CachedIcon from '@mui/icons-material/Cached';
 import AllEnrollTargerUsers from './Enroll Users/AllEnrollTargerUsers';
 
 const steps = ['Get Started', 'Choose Attack Payload', 'Customize', 'Enroll Target Users', 'Review & Schedule'];
@@ -75,7 +74,7 @@ const AddCompaigns = () => {
 
     // *********handle Active Class in all steps**********
     const [activeClass, setActiveClass] = useState()
-    const [activeClass1, setActiveClass1] = useState()
+    const [activeClass1, setActiveClass1] = useState('')
     const [activeClass2, setActiveClass2] = useState()
     const [activeClass3, setActiveClass3] = useState(0)
     const [activeClass4, setActiveClass4] = useState()
@@ -306,16 +305,9 @@ const AddCompaigns = () => {
 
 
                                                 </div>
-                                                <div className="auto-enroll-user-link"><a href=''> Learn more about this feature</a></div>
+                                                {/* <div className="auto-enroll-user-link"><a href=''> Learn more about this feature</a></div> */}
                                             </div>
-                                            <div className="referesh-container">
-                                                <span>
-                                                    <CachedIcon />
-                                                    <span className='auto-enroll-user-text'>Refresh</span>
-                                                </span>
-                                                <span>6 items</span>
-                                            </div>
-
+                                            
                                             {radioBotton == '1' ?
                                                 <EnrollUsersHome
                                                     setActiveClass3={setActiveClass3}
@@ -362,7 +354,7 @@ const AddCompaigns = () => {
                                         </Button>
                                         :
                                         activeStep === 3 ?
-                                            <Button style={activeClass3 == 0 ? nextNotAllowed : nextAllowed} onClick={handleNext} className='stepper-next-button'>
+                                            <Button style={activeClass3 == 1 || radioBotton == '2' ?  nextAllowed : nextNotAllowed} onClick={handleNext} className='stepper-next-button'>
                                                 {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
                                             </Button>
                                             :
