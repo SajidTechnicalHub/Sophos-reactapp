@@ -18,6 +18,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import EnhancedEncryptionIcon from '@mui/icons-material/EnhancedEncryption';
 import LinkIcon from '@mui/icons-material/Link';
 import AllEnrollTargerUsers from './Enroll Users/AllEnrollTargerUsers';
+import SearchIcon from '@mui/icons-material/Search';
 
 const steps = ['Get Started', 'Choose Attack Payload', 'Customize', 'Enroll Target Users', 'Review & Schedule'];
 
@@ -80,6 +81,7 @@ const AddCompaigns = () => {
     const [activeClass4, setActiveClass4] = useState()
     // *********handle Active Class in all steps**********
 
+    const [q, setQ] = useState("")
     const [input, setInput] = useState({
 
         name: ''
@@ -90,6 +92,14 @@ const AddCompaigns = () => {
         setInput(() => {
             return { ...input, [name]: value }
         })
+    }
+    const Search = (users) => {
+        return users.filter(
+            (row) =>
+                row.Name.toLowerCase().indexOf(q) > -1 ||
+                row.Name.indexOf(q) > -1
+
+        );
     }
 
     const handleRadioBotton = (value) => {
@@ -305,14 +315,20 @@ const AddCompaigns = () => {
 
 
                                                 </div>
-                                                {/* <div className="auto-enroll-user-link"><a href=''> Learn more about this feature</a></div> */}
+                                                <div className={radioBotton == '1' ? 'hide-search' : 'users-search'}>
+                                                    <SearchIcon className='users-search-icon' />
+                                                    <input type="text" value={q} onChange={(e) => setQ(e.target.value)} placeholder='Search Here.' className='users-input-search' />
+
+                                                </div>
                                             </div>
-                                            
+
                                             {radioBotton == '1' ?
                                                 <EnrollUsersHome
                                                     setActiveClass3={setActiveClass3}
                                                     activeClass3={activeClass3}
-                                                /> : <AllEnrollTargerUsers/>
+                                                /> : <AllEnrollTargerUsers
+                                                    search={Search}
+                                                />
                                             }
 
                                         </div> :
@@ -354,7 +370,7 @@ const AddCompaigns = () => {
                                         </Button>
                                         :
                                         activeStep === 3 ?
-                                            <Button style={activeClass3 == 1 || radioBotton == '2' ?  nextAllowed : nextNotAllowed} onClick={handleNext} className='stepper-next-button'>
+                                            <Button style={activeClass3 == 1 || radioBotton == '2' ? nextAllowed : nextNotAllowed} onClick={handleNext} className='stepper-next-button'>
                                                 {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
                                             </Button>
                                             :

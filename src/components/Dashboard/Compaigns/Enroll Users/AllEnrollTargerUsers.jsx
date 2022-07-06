@@ -14,13 +14,14 @@ import useWindowDimensions from '../../../useWindowDimensions';
 import DeleteUser from '../../Administration/User/DeleteUser';
 import CachedIcon from '@mui/icons-material/Cached';
 
-const AllEnrollTargerUsers = () => {
+const AllEnrollTargerUsers = (props) => {
   const { height, width } = useWindowDimensions();
   const handleDelete = (id) => {
     console.log(id)
     setUsers(users.filter((item) => item.id !== id))
     console.log(users)
   }
+  
 
   const columns = [
     { field: 'Name', headerName: 'Name', minWidth: 220, flex: true },
@@ -104,6 +105,7 @@ const AllEnrollTargerUsers = () => {
 
   const [users, setUsers] = useState(UserList)
   const [pageSize, setPageSize] = useState(5);
+  
 
   // Handle Project Create Model
   const [open, setOpen] = useState(false);
@@ -148,7 +150,7 @@ const AllEnrollTargerUsers = () => {
           <div style={{ height: 440, width: '100%' }}>
 
             <DataGrid
-              rows={users}
+              rows={props.search(users)}
               columns={columns}
               // checkboxSelection
               disableSelectionOnClick
