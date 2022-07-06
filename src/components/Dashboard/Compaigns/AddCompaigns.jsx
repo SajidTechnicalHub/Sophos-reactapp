@@ -17,6 +17,8 @@ import EnrollUsersHome from './Enroll Users/EnrollUsersHome';
 import { Link, useNavigate } from 'react-router-dom';
 import EnhancedEncryptionIcon from '@mui/icons-material/EnhancedEncryption';
 import LinkIcon from '@mui/icons-material/Link';
+import CachedIcon from '@mui/icons-material/Cached';
+import AllEnrollTargerUsers from './Enroll Users/AllEnrollTargerUsers';
 
 const steps = ['Get Started', 'Choose Attack Payload', 'Customize', 'Enroll Target Users', 'Review & Schedule'];
 
@@ -62,13 +64,14 @@ const nextNotAllowed = {
 
     // cursor: 'not-allowed', 
     pointerEvents: 'none',
-    color:'grey'
+    color: 'grey'
 }
 
 const AddCompaigns = () => {
 
     let navigate = useNavigate();
     const { height, width } = useWindowDimensions();
+    const [radioBotton, setRadioBotton] = useState('1')
 
     // *********handle Active Class in all steps**********
     const [activeClass, setActiveClass] = useState()
@@ -90,10 +93,19 @@ const AddCompaigns = () => {
         })
     }
 
+    const handleRadioBotton = (value) => {
+        if (value == '1') {
+            setRadioBotton('1')
+        } else {
+            setRadioBotton('2')
+
+        }
+    }
+
     const handleChooseAttack = (id) => {
-        if(activeClass1 == ''){
+        if (activeClass1 == '') {
             setActiveClass1(id)
-        }else{
+        } else {
             setActiveClass1('')
         }
 
@@ -272,26 +284,45 @@ const AddCompaigns = () => {
                                             <label htmlFor="name" className="form-label">Enroll Target Users</label>
                                             <div className="enroll-users-block">
                                                 {/* <span className='enroll-users-text enroll-users-text-bold '>Choose which users will receive this campaign below</span> */}
-                                                <span className='enroll-users-text'>Note: You can only add those users in the campaigns who have organizational email addresses. 
-                                                Public email addresses (outlook.com, gmail.com, yahoo.com, etc.) are not allowed. 
-                                                If the groups contain public email address users, that user will not be part of the campaign.</span>
+                                                <span className='enroll-users-text'>Note: You can only add those users in the campaigns who have organizational email addresses.
+                                                    Public email addresses (outlook.com, gmail.com, yahoo.com, etc.) are not allowed.
+                                                    If the groups contain public email address users, that user will not be part of the campaign.</span>
                                             </div>
                                             <div className="auto-enroll-new-new-block">
                                                 <div className="auto-enroll-block">
 
-                                                    <div class="form-check form-switch">
-                                                        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" />
-                                                        {/* <label class="form-check-label" for="flexSwitchCheckDefault">Default switch checkbox input</label> */}
+                                                    <div class="form-check">
+                                                        <input className="form-check-input" name='radioBotton' value='1' onClick={() => handleRadioBotton('1')} type="radio" id="flexRadioDefault1" defaultChecked />
+                                                        <label className="form-check-label" for="flexRadioDefault1">
+                                                            <span className='auto-enroll-user-text'>Include only specific users and groups</span>
+                                                        </label>
+                                                    </div>
+                                                    <div className="form-check">
+                                                        <input className="form-check-input" name='radioBotton' value='2' onClick={() => handleRadioBotton('2')} type="radio" id="flexRadioDefault1" />
+                                                        <label className="form-check-label" for="flexRadioDefault1">
+                                                            <span className='auto-enroll-user-text'>Include all users in my organization</span>
+                                                        </label>
                                                     </div>
 
-                                                    <span className='auto-enroll-user-text'>Auto-enroll new users to this campaign</span>
+
                                                 </div>
                                                 <div className="auto-enroll-user-link"><a href=''> Learn more about this feature</a></div>
                                             </div>
-                                            <EnrollUsersHome 
-                                             setActiveClass3={setActiveClass3}
-                                             activeClass3={activeClass3}
-                                            />
+                                            <div className="referesh-container">
+                                                <span>
+                                                    <CachedIcon />
+                                                    <span className='auto-enroll-user-text'>Refresh</span>
+                                                </span>
+                                                <span>6 items</span>
+                                            </div>
+
+                                            {radioBotton == '1' ?
+                                                <EnrollUsersHome
+                                                    setActiveClass3={setActiveClass3}
+                                                    activeClass3={activeClass3}
+                                                /> : <AllEnrollTargerUsers/>
+                                            }
+
                                         </div> :
                                         // ***************eview and Schedule Step*********************
                                         <div className='stepper-body'>Review and Schedule</div>

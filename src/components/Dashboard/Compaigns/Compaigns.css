@@ -414,7 +414,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 50px;
+    min-height: 50px;
+    max-height: fit-content;
     background-color: #eceff1;
     padding: 0px 10px;
     margin-top: 20px;
@@ -425,12 +426,15 @@
     display: flex;
     /* justify-content: space-between; */
     align-items: center;
-    /* gap:5px; */
+    gap:15px;
 }
 
 .auto-enroll-user-link,
 .auto-enroll-user-text {
     font-size: 12px;
+}
+.auto-enroll-user-text{
+    color: #1976d2;
 }
 
 .enroll-user-block {
@@ -516,6 +520,13 @@
 .email-filed-container{
     min-width: 280px;
 }
+.referesh-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
 
 @media(max-width:992px) {
     .enroll-user-block .card {
@@ -539,6 +550,16 @@
     .email-filed-container{
         min-width: 200px!important;
     }
+
+    .auto-enroll-new-new-block {
+        flex-direction: column!important;
+        margin-bottom: 30px!important;
+    }
+    /* .auto-enroll-block {
+       flex-direction: column!important;
+       gap: 0px!important;
+       justify-content: center!important;
+    } */
 }
 .choose-attack-container hr{
     margin-top: -10px!important;
