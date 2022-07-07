@@ -337,7 +337,7 @@ const AddCompaigns = () => {
                                         <div className='stepper-body'>
                                         <div className=" ">
                                             <label htmlFor="name" className="form-label">Review and Schedule</label>
-                                            <p className='language-text'>Launch immediately: This option will immediately launch the email campaign.</p>
+                                            
                                             <ReviewSchedule
                                             setActiveClass4={setActiveClass4}
                                             />

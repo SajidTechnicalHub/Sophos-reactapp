@@ -226,6 +226,7 @@
 
 .language-text {
     font-size: 14px;
+    font-weight: bold;
     
 }
 .customize .language-text {
@@ -587,7 +588,7 @@
     color: black!important;
 }
 .review-date-pikker{
-    display: none;
+    /* display: none; */
     margin-bottom: 5px;
 }
 .review-email-details{

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Templates from '../Templates'
 
 const ReviewSchedule = (props) => {
-  const [radioBotton, setRadioBotton] = useState('')
+  const [radioBotton, setRadioBotton] = useState('1')
   const [input, setInput] = useState({
     date_time: ''
   });
@@ -13,23 +13,23 @@ const ReviewSchedule = (props) => {
       return { ...input, [name]: value }
     })
     // props.setActiveClass4('2')
-    if(input.date_time != null){
+    if (input.date_time != null) {
       props.setActiveClass4('2')
-    }else{
+    } else {
       props.setActiveClass4('')
     }
-    
+
   }
 
   const handleRadioBotton = (value) => {
     if (value == '1') {
       setRadioBotton('1')
-      if(input.date_time != ''){
+      if (input.date_time != '') {
         props.setActiveClass4('2')
-      }else{
+      } else {
         props.setActiveClass4('')
       }
-     
+
     } else {
       setRadioBotton('2')
       props.setActiveClass4('2')
@@ -57,17 +57,19 @@ const ReviewSchedule = (props) => {
 
 
         </div>
-        <br />
-        <div className={radioBotton == '2' ? "review-date-pikker" : "mb-2"}>
-          {/* <input type="date" id="birthday" name="birthday" /> */}
-          <input type="datetime-local"
-            
-            name="date_time"
-            value={input.date_time}
-            onChange={InputEvent}
-          />
+        
+        {radioBotton == '' || radioBotton == '1' ?
+          <div className="review-date-pikker">
+            <input type="datetime-local"
+              name="date_time"
+              value={input.date_time}
+              onChange={InputEvent}
+            />
+          </div> :
+          <p className='language-text'>This option will immediately launch the email campaign.</p>
+        }
 
-        </div>
+
 
         <span>Email</span>
         <hr />

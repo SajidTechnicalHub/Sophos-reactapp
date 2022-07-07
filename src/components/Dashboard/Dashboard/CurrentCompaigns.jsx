@@ -239,7 +239,7 @@ const CurrentCompaigns = () => {
                             <Button variant="contained" onClick={handleClose} size="small" className='project-create-btn'>Cancel</Button>
                         </span>
                         <span className="train-them-save-btn">
-                            <Button variant="contained" type='submit' size="small" className='project-create-btn'>Save</Button>
+                            <Button variant="contained" type='submit' size="small" className='project-create-btn'>Send</Button>
 
                         </span>
                     </div>
