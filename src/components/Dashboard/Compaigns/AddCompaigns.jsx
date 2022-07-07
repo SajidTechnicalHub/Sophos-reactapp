@@ -19,6 +19,7 @@ import EnhancedEncryptionIcon from '@mui/icons-material/EnhancedEncryption';
 import LinkIcon from '@mui/icons-material/Link';
 import AllEnrollTargerUsers from './Enroll Users/AllEnrollTargerUsers';
 import SearchIcon from '@mui/icons-material/Search';
+import ReviewSchedule from '../Email/EmailTemplates/Review/ReviewSchedule';
 
 const steps = ['Get Started', 'Choose Attack Payload', 'Customize', 'Enroll Target Users', 'Review & Schedule'];
 
@@ -333,8 +334,14 @@ const AddCompaigns = () => {
 
                                         </div> :
                                         // ***************eview and Schedule Step*********************
-                                        <div className='stepper-body'>Review and Schedule</div>
-
+                                        <div className='stepper-body'>
+                                        <div className=" ">
+                                            <label htmlFor="name" className="form-label">Review and Schedule</label>
+                                            <p className='language-text'>Launch immediately: This option will immediately launch the email campaign.</p>
+                                            <ReviewSchedule/>
+                                        </div>
+                                        </div>
+                                                
                     }
                     <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }} className='stepper-back-button'>
                         <Button

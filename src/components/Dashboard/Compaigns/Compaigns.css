@@ -578,3 +578,8 @@
 .choose-attack-container hr{
     margin-top: -10px!important;
 }
+
+/* Review and schedule */
+.review-schedule .auto-enroll-user-text{
+    color: black!important;
+}

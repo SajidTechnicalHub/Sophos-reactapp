@@ -1,6 +1,5 @@
 
 import React, { useState, useEffect } from 'react'
-import SearchIcon from '@mui/icons-material/Search';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import DeleteIcon from '@mui/icons-material/Delete';
@@ -29,7 +28,7 @@ const AllEnrollTargerUsers = (props) => {
     { field: 'Groups', headerName: 'Groups', minWidth: 220, flex: true },
     { field: 'Role', headerName: 'Role', minWidth: 220, flex: true },
     {
-      field: "action", headerName: 'Action', Width: 100, sortable: false,
+      field: "action", headerName: 'Delete', Width: 100, sortable: false,
       renderCell: (cellValues) => {
         return (
           <>
