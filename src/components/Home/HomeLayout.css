@@ -243,6 +243,11 @@
   justify-content: space-between;
   align-items: center;
 }
+.signup-error-message{
+  color: red;
+  padding-left: 5px;
+  margin-top: 5px;
+}
 
 .submit-btn {
   display: flex;

@@ -3,9 +3,15 @@ import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 
 const SignUpForm = () => {
+    const [firstNameStatus, setFirstNameStatus] = useState(false)
+    const [lastNameStatus, setLastNameStatus] = useState(false)
+    const [usernameStatus, setUsernameStatus] = useState(false)
+    const [emailStatus, setEmailStatus] = useState(false)
+
     let navigate = useNavigate()
     const [input, setInput] = useState({
         fname: '',
+        lname: '',
         username: '',
         email: '',
         job_role: '',
@@ -24,10 +30,45 @@ const SignUpForm = () => {
     const Show = {
         display: 'inline'
     }
-    const NextChangeClass = () => {
-        // alert('Clicked next button')
-        setBeforenext(Hide)
-        setNext(Show)
+   
+//     const isValidEmail = email =>
+//   // eslint-disable-next-line no-useless-escape
+//   /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
+//     email
+//   );
+
+
+    const NextChangeClass = (e) => {
+        e.preventDefault()
+        if (input.fname == '') {
+            setFirstNameStatus(true)
+        } else {
+            setFirstNameStatus(false)
+        }
+
+        if (input.lname == '') {
+            setLastNameStatus(true)
+        } else {
+            setLastNameStatus(false)
+        }
+
+        if (input.username == '') {
+            setUsernameStatus(true)
+        } else {
+            setUsernameStatus(false)
+        }
+        if (input.email == '') {
+            setEmailStatus(true)
+        } else {
+            setEmailStatus(false)
+            // ValidateEmail(input.email)
+        }
+
+        if (input.fname != '' && input.lname != '' && input.username != '' && input.email != '') {
+            setBeforenext(Hide)
+            setNext(Show)
+        }
+
     }
     const [next, setNext] = useState(Hide);
     const [beforenext, setBeforenext] = useState(Show);
@@ -42,12 +83,16 @@ const SignUpForm = () => {
         setInput(() => {
             return { ...input, [name]: value }
         })
+
+
     }
     const SubmitEvent = (e) => {
         e.preventDefault()
+        console.log('submit event occure')
         // alert(`Your Fname: ${input.fname} and username is: ${input.username}, role:${input.job_role}, Phone: ${input.phone}, company: ${input.company}  `)
         setInput({
             fname: '',
+            lname: '',
             username: '',
             email: '',
             job_role: '',
@@ -68,13 +113,16 @@ const SignUpForm = () => {
                     <div className="mb-3">
                         <label htmlFor="Inputfname" className="form-label">First Name<span className='estaric'>*</span></label>
                         <input type="text"
+                            id='fanme'
                             name="fname"
                             value={input.fname}
                             onChange={InputEvent}
                             className="form-control"
-                            // required="required"
+                        // required="required"
                         />
-
+                        {firstNameStatus == true ?
+                            <span className='signup-error-message'>Please fill out this field</span> : <span></span>
+                        }
                     </div>
                     <div className="mb-3">
                         <label htmlFor="lname" className="form-label">Last Name<span className='estaric'>*</span></label>
@@ -83,8 +131,11 @@ const SignUpForm = () => {
                             value={input.lname}
                             onChange={InputEvent}
                             className="form-control"
-                            // required="required"
+                        // required="required"
                         />
+                        {lastNameStatus == true ?
+                            <span className='signup-error-message'>Please fill out this field</span> : <span></span>
+                        }
                     </div>
                     <div className="mb-3">
                         <label htmlFor="username" className="form-label">Username<span className='estaric'>*</span></label>
@@ -93,8 +144,11 @@ const SignUpForm = () => {
                             value={input.username}
                             onChange={InputEvent}
                             className="form-control"
-                            // required="required"
+                        // required="required"
                         />
+                        {usernameStatus == true ?
+                            <span className='signup-error-message'>Please fill out this field</span> : <span></span>
+                        }
                     </div>
                     <div className="mb-3">
                         <label htmlFor="email" className="form-label">Email<span className='estaric'>*</span></label>
@@ -103,23 +157,22 @@ const SignUpForm = () => {
                             value={input.email}
                             onChange={InputEvent}
                             className="form-control"
-                            // required="required"
+                        // required="required"
                         />
-
+                        {emailStatus == true ?
+                            <span className='signup-error-message'>Please fill out this field</span> : <span></span>
+                        }
                     </div>
                     <div className="nextLogin">
-                        <span className="form-btn-next" onClick={NextChangeClass}>Next</span>
+                        <button className="form-btn-next" onClick={NextChangeClass}>Next</button>
                         <Link to="/Sophos-reactapp/free_trail">
                             <span className="btn submit-btn">Back to Login</span>
                         </Link>
                     </div>
                     <p className='signup-para'>
-                        By submitting this form, you consent to be contacted about Sophos products
-                        and services from members of the Sophos group of companies and selected
-                        companies who partner with us to provide our products and services.
-                        Sophos is committed to safeguarding your privacy. If you want more information
-                        on how we collect and use your personal data, please read our <a href='#'> privacy notice</a>
-                        and <a href='#'>cookie information</a> page.</p>
+                    By signing this form, you consent to be contacted about PhishCode product updates and services from 
+                    members of the PhishCode company and selected companies who partner with us to provide our products and services. 
+                    PhishCode is committed to safeguarding your privacy</p>
 
                 </div>
                 {/* After Next Button */}
@@ -231,7 +284,7 @@ const SignUpForm = () => {
                                 onChange={InputEvent}
                                 className="form-control"
                                 required="required"
-                                
+
                                 aria-required="true"
                             >
                                 <option value="" selected="selected">- Select -</option>
@@ -494,7 +547,7 @@ const SignUpForm = () => {
                     <div className="mb-3 form-check">
                         <input type="checkbox" className="form-check-input" id="Check2" />
                         <label className="form-check-label check-text" htmlFor="Check2">
-                            I agree to all the terms and conditions in the <a href=''>  Phish Code End User Terms of Use</a>.
+                             I agree to all the terms and conditions in the <a href=''>PhishCode End User Terms of Use</a>.
                         </label>
                     </div>
                     <div className='submit-btn'>
