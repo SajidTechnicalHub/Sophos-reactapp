@@ -176,7 +176,7 @@ const ChooseAttack = (props) => {
               }
             }).map((currentElem) => {
               return (
-                <>
+                <React.Fragment key={currentElem.id}>
                   <div className="col-lg-4 g-3">
                     <div className="card ">
                       <div className="card-header ">
@@ -226,7 +226,7 @@ const ChooseAttack = (props) => {
                   </div>
 
 
-                </>
+                </React.Fragment>
               )
             })
           }

@@ -79,7 +79,7 @@ const AddCompaigns = () => {
     const [activeClass1, setActiveClass1] = useState('')
     const [activeClass2, setActiveClass2] = useState()
     const [activeClass3, setActiveClass3] = useState(0)
-    const [activeClass4, setActiveClass4] = useState()
+    const [activeClass4, setActiveClass4] = useState('')
     // *********handle Active Class in all steps**********
 
     const [q, setQ] = useState("")
@@ -338,7 +338,9 @@ const AddCompaigns = () => {
                                         <div className=" ">
                                             <label htmlFor="name" className="form-label">Review and Schedule</label>
                                             <p className='language-text'>Launch immediately: This option will immediately launch the email campaign.</p>
-                                            <ReviewSchedule/>
+                                            <ReviewSchedule
+                                            setActiveClass4={setActiveClass4}
+                                            />
                                         </div>
                                         </div>
                                                 
@@ -382,7 +384,7 @@ const AddCompaigns = () => {
                                             </Button>
                                             :
                                             activeStep === 4 ?
-                                                <Button style={activeClass == null ? nextNotAllowed : nextAllowed} onClick={handleNext} className='stepper-next-button'>
+                                                <Button style={activeClass4 == '' ? nextNotAllowed : nextAllowed} onClick={handleNext} className='stepper-next-button'>
                                                     {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
                                                 </Button>
                                                 :
