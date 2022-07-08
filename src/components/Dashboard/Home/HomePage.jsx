@@ -9,6 +9,8 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Responsi
 import GaugeChart from "react-gauge-chart";
 import { Doughnut } from 'react-chartjs-2';
 import { DoughnutData, DoughnutOptions, plugins } from './HomePageData'
+import IntroImg from './Intro.png'
+import FeedBackImg from './FeedBack.png'
 
 import { Chart, Title, ArcElement } from 'chart.js'
 Chart.register(Title, ArcElement);
@@ -28,26 +30,7 @@ const HomePage = () => {
   }
 
   const [isClick, SetIsClick] = useState(true)
-  const [feedBack, setFeedBack] = useState('feedback')
-  const [intro, setIntro] = useState('intro')
-  // const OnclickEvent = () => {
-  //   if (isClick === true) {
-
-  //     SetIsClick(false)
-  //   } else {
-
-  //     SetIsClick(true)
-  //   }
-
-
-  //   if (feedBack === false) {
-  //     setFeedBack(true)
-  //     setIntro(false)
-  //   } else {
-  //     setFeedBack(false)
-  //     setIntro(true)
-  //   }
-  // }
+  
   const handleTabs = (val) => {
     console.log(val)
     if (val == 'intro') {
@@ -68,8 +51,8 @@ const HomePage = () => {
         <div className="row">
 
           <div className="col-lg-6 ">
-            {isClick == false ? <img src='../Intro.png' className='home-img' alt="intro image" />:
-            <img src='../FeedBack.png' className='home-img' alt="logo image" />}
+            {isClick == true ? <img src={IntroImg} className='home-img' alt="intro image" />:
+            <img src={FeedBackImg} className='home-img' alt="logo image" />}
             
           </div>
           <div className="col-lg-6 mt-3 ">
@@ -82,8 +65,6 @@ const HomePage = () => {
 
             <div className='hpmepage-child-navbar mb-2'>
 
-              {/* <span style={intro ? activeClass : notActiveClass} className=' intro-class' onClick={OnclickEvent}  >Intro</span>
-              <span style={feedBack ? activeClass : notActiveClass} className='intro-class' onClick={OnclickEvent} >Give Feedback</span> */}
               <span style={isClick == true ? activeClass : notActiveClass} className=' intro-class' onClick={() => handleTabs('intro')}  >Intro</span>
               <span style={isClick == false ? activeClass : notActiveClass} className='intro-class' onClick={() => handleTabs('feedback')} >Give Feedback</span>
 
