@@ -8,12 +8,21 @@ import './EmailTemplates.css'
 import img from '../Learning Hub/Images/video1.png'
 import Templates from './EmailTemplates/Templates';
 import TemplatesModel from './EmailTemplates/TemplatesModel';
+// import  {myTemplate}  from './EmailTemplates/Templates';
+
+
+const ReactDOMServer = require('react-dom/server');
+const HtmlToReactParser = require('html-to-react').Parser;
+
+
+
+ 
 
 
 const EmailTemplateData = [
   {
     id: 1,
-    template: <Templates />,
+    template: <Templates/>,
     name: 'EmailTemplates',
     ImgUrl: img,
     title: 'Managing COVID-19 Stress',
@@ -211,6 +220,7 @@ const EmailTemplates = () => {
                             <hr />
                             <div className='create-project-model-form-container'>
                               {currentElem.template}
+                              
                             </div>
                             <div className="template-cancel-btn">
                               <Button variant="contained" onClick={handleClose} size="small" className='project-create-btn'>Cancel</Button>

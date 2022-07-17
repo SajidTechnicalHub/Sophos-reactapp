@@ -335,15 +335,15 @@ const AddCompaigns = () => {
                                         </div> :
                                         // ***************eview and Schedule Step*********************
                                         <div className='stepper-body'>
-                                        <div className=" ">
-                                            <label htmlFor="name" className="form-label">Review and Schedule</label>
-                                            
-                                            <ReviewSchedule
-                                            setActiveClass4={setActiveClass4}
-                                            />
+                                            <div className=" ">
+                                                <label htmlFor="name" className="form-label">Review and Schedule</label>
+
+                                                <ReviewSchedule
+                                                    setActiveClass4={setActiveClass4}
+                                                />
+                                            </div>
                                         </div>
-                                        </div>
-                                                
+
                     }
                     <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }} className='stepper-back-button'>
                         <Button
@@ -399,3 +399,5 @@ const AddCompaigns = () => {
 }
 
 export default AddCompaigns
+
+
