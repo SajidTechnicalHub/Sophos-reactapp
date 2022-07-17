@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Templates from '../../Email/EmailTemplates/Templates'
 import EditEmailTemplate from './EditEmailTemplate'
 
+
 const AttackEmailTemplate = () => {
     const [editBtn, setEditBtn ] = useState(false)
     // const [editBtnToggle, setEditBtnToggle] = useState(true)
