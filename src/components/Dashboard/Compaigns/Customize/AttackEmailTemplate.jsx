@@ -3,7 +3,7 @@ import Templates from '../../Email/EmailTemplates/Templates'
 import EditEmailTemplate from './EditEmailTemplate'
 
 
-const AttackEmailTemplate = () => {
+const AttackEmailTemplate = (props) => {
     const [editBtn, setEditBtn ] = useState(false)
     // const [editBtnToggle, setEditBtnToggle] = useState(true)
 
@@ -30,7 +30,10 @@ const AttackEmailTemplate = () => {
                             </div>
                             <div class="card-body edit-attack-template-block">
                               {
-                                  editBtn ? <EditEmailTemplate /> : < Templates />  
+                                  editBtn ? <EditEmailTemplate /> : 
+                                  < Templates 
+                                  template={props.saveCampaignData.template}
+                                  />  
                               }  
                                 
                                 

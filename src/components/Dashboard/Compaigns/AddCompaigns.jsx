@@ -303,7 +303,9 @@ const AddCompaigns = () => {
                                         <div className=" ">
                                             <label htmlFor="name" className="form-label">Customize</label>
                                             <p className='language-text'>This pane helps you update the template and email profile according to your requirements.</p>
-                                            <Customize />
+                                            <Customize 
+                                            saveCampaignData={saveCampaignData}  // pass save template to customize component
+                                            />
                                         </div>
                                     </div> :
                                     // ***************Enroll Users Step*********************

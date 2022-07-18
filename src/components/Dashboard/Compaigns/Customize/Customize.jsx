@@ -42,7 +42,7 @@ function a11yProps(index) {
   };
 }
 
-export default function Customize() {
+export default function Customize(props) {
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
@@ -67,7 +67,10 @@ export default function Customize() {
       </Box>
       <TabPanel value={value} index={0}>
         <AttackEmail />
-        <AttackEmailTemplate />
+        <AttackEmailTemplate
+        saveCampaignData={props.saveCampaignData} //pass saved template 
+        />
+        
       </TabPanel>
       {/* <TabPanel value={value} index={1}>
         <RemainderEmail />
