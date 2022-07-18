@@ -73,6 +73,7 @@ const AddCompaigns = () => {
     let navigate = useNavigate();
     const { height, width } = useWindowDimensions();
     const [radioBotton, setRadioBotton] = useState('1')
+    
 
     // *********handle Active Class in all steps**********
     const [activeClass, setActiveClass] = useState()
@@ -113,6 +114,7 @@ const AddCompaigns = () => {
     }
 
     const handleChooseAttack = (id) => {
+       
         if (activeClass1 == '') {
             setActiveClass1(id)
         } else {
@@ -275,6 +277,7 @@ const AddCompaigns = () => {
                                         <ChooseAttack
                                             handleChooseAttack={handleChooseAttack}
                                             activeClass1={activeClass1}
+                                            
                                         />
                                     </div>
 

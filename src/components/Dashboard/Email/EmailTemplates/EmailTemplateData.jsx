@@ -114,6 +114,7 @@ export const EmailTemplateData = [
       btn: 'Click to see more',
       type: 'Hard',
       featured: 'Featured',
+      attack: 'Choose this attack',
       days: '2 Days ago'
   
     },
@@ -166,6 +167,7 @@ export const EmailTemplateData = [
       btn: 'Click to see more',
       type: 'Moderate',
       featured: 'Featured',
+      attack: 'Choose this attack',
       days: '3 Days ago'
   
     },
@@ -412,6 +414,7 @@ export const EmailTemplateData = [
       btn: 'Click to see more',
       type: 'Simple',
       featured: 'New',
+      attack: 'Choose this attack',
       days: '2 Days ago'
   
     },
@@ -530,6 +533,7 @@ export const EmailTemplateData = [
         btn: 'Click to see more',
         type: 'Hard',
         featured: 'Featured',
+        attack: 'Choose this attack',
         days: '2 Days ago'
     
       },
@@ -648,6 +652,7 @@ export const EmailTemplateData = [
         btn: 'Click to see more',
         type: 'Hard',
         featured: 'Featured',
+        attack: 'Choose this attack',
         days: '2 Days ago'
     
       },

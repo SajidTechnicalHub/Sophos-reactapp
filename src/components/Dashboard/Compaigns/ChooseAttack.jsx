@@ -8,76 +8,10 @@ import useWindowDimensions from '../../useWindowDimensions'
 import img from '../Learning Hub/Images/video1.png'
 import Templates from '../Email/EmailTemplates/Templates';
 import DoneIcon from '@material-ui/icons/Done';
+import { EmailTemplateData } from '../Email/EmailTemplates/EmailTemplateData';
 
 
-const EmailTemplateData = [
-  {
-    id: 1,
-    template: <Templates />,
-    name: 'EmailTemplates',
-    ImgUrl: img,
-    title: 'Managing COVID-19 Stress',
-    description: 'With supporting text below as a natural.',
-    btn: 'Click to see more',
-    type: 'Hard',
-    featured: 'Featured',
-    attack: 'Choose this attack'
-
-  },
-  {
-    id: 2,
-    template: <Templates />,
-    name: 'EmailTemplates',
-    ImgUrl: img,
-    title: 'LinkedIn Closed Account',
-    description: 'With supporting text below as a natural.',
-    btn: 'Click to see more',
-    type: 'Moderate',
-    featured: 'Featured',
-    attack: 'Choose this attack'
-
-  },
-  {
-    id: 3,
-    template: <Templates />,
-    name: 'EmailTemplates',
-    ImgUrl: img,
-    title: 'New Parking Rules',
-    description: 'With supporting text below as a natural.',
-    btn: 'Click to see more',
-    type: 'Simple',
-    featured: 'New',
-    attack: 'Choose this attack'
-
-  },
-  {
-    id: 4,
-    template: <Templates />,
-    name: 'EmailTemplates',
-    ImgUrl: img,
-    title: 'Your Voice Engagement Survey Pulse',
-    description: 'With supporting text below as a natural.',
-    btn: 'Click to see more',
-    type: 'Moderate',
-    featured: 'Simple',
-    attack: 'Choose this attack'
-
-  },
-  {
-    id: 5,
-    template: <Templates />,
-    name: 'EmailTemplates',
-    ImgUrl: img,
-    title: 'Back to Work Post COVID-19',
-    description: 'With supporting text below as a natural.',
-    btn: 'Click to see more',
-    type: 'Hard',
-    featured: 'Featured',
-    attack: 'Choose this attack'
-
-  },
-
-]
+  
 const ChooseAttack = (props) => {
   const [q, setQ] = useState("")
   // const { height, width } = useWindowDimensions();
@@ -111,10 +45,16 @@ const ChooseAttack = (props) => {
   }
 
   const { height, width } = useWindowDimensions();
+  const [templateModel, setTemplateModel] = useState('')
   // Handle Create Model
   const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
+  const handleOpen = (template) =>{
+     setOpen(true);
+     setTemplateModel(template)
+  }
   const handleClose = () => setOpen(false);
+     
+  
 
   // const [activeClass, setActiveClass] = useState()
 
@@ -192,8 +132,12 @@ const ChooseAttack = (props) => {
                         {/* <div className='email-featred'></div>
                         <span className="rotate"><div>{currentElem.featured}</div></span> */}
 
-                        <div className="card-body email-card " style={{ cursor: 'pointer' }} onClick={handleOpen}>
-                          {currentElem.template}
+                        <div className="card-body email-card " style={{ cursor: 'pointer' }} onClick={()=>handleOpen(currentElem.template)}>
+                          {/* {currentElem.template} */}
+                          <Templates
+                          template={currentElem.template}
+                          
+                          />
 
                         </div>
                         <div className={props.activeClass1 == currentElem.id ? "select-choose-attack" : "card-footer"} onClick={e => props.handleChooseAttack(currentElem.id)}>
@@ -216,6 +160,7 @@ const ChooseAttack = (props) => {
                             <div className='create-project-model-form-container'>
                               <Templates
                                 Cancel={handleClose}
+                                template={templateModel}
                               />
                             </div>
 
