@@ -71,6 +71,12 @@ const nextNotAllowed = {
 const AddCompaigns = () => {
 
     let navigate = useNavigate();
+    const [saveCampaignData, setSaveCampaignData] = useState(
+        {
+            templateId: '',
+            template:''
+        }
+    )
     const { height, width } = useWindowDimensions();
     const [radioBotton, setRadioBotton] = useState('1')
     
@@ -113,12 +119,19 @@ const AddCompaigns = () => {
         }
     }
 
-    const handleChooseAttack = (id) => {
+    const handleChooseAttack = (id, template) => {
        
         if (activeClass1 == '') {
             setActiveClass1(id)
+            setSaveCampaignData({
+                 templateId: id,
+                 template: template
+                 })
+
         } else {
+
             setActiveClass1('')
+
         }
 
     }
@@ -137,6 +150,7 @@ const AddCompaigns = () => {
     };
 
     const handleNext = () => {
+        
         let newSkipped = skipped;
         if (isStepSkipped(activeStep)) {
             newSkipped = new Set(newSkipped.values());
@@ -277,6 +291,7 @@ const AddCompaigns = () => {
                                         <ChooseAttack
                                             handleChooseAttack={handleChooseAttack}
                                             activeClass1={activeClass1}
+                                           
                                             
                                         />
                                     </div>

@@ -8,7 +8,7 @@ import './EmailTemplates.css'
 import img from '../Learning Hub/Images/video1.png'
 import Templates from './EmailTemplates/Templates';
 import TemplatesModel from './EmailTemplates/TemplatesModel';
-import EmailQuaratineTemplate from './EmailTemplates/EmailQuaratineTemplate';
+
 import { EmailTemplateData } from './EmailTemplates/EmailTemplateData';
 
 
