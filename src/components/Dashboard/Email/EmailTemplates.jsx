@@ -8,85 +8,16 @@ import './EmailTemplates.css'
 import img from '../Learning Hub/Images/video1.png'
 import Templates from './EmailTemplates/Templates';
 import TemplatesModel from './EmailTemplates/TemplatesModel';
-// import  {myTemplate}  from './EmailTemplates/Templates';
+import EmailQuaratineTemplate from './EmailTemplates/EmailQuaratineTemplate';
+import { EmailTemplateData } from './EmailTemplates/EmailTemplateData';
 
-
-const ReactDOMServer = require('react-dom/server');
-const HtmlToReactParser = require('html-to-react').Parser;
 
 
 
  
 
 
-const EmailTemplateData = [
-  {
-    id: 1,
-    template: <Templates/>,
-    name: 'EmailTemplates',
-    ImgUrl: img,
-    title: 'Managing COVID-19 Stress',
-    description: 'With supporting text below as a natural.',
-    btn: 'Click to see more',
-    type: 'Hard',
-    featured: 'Featured',
-    days: '2 Days ago'
 
-  },
-  {
-    id: 2,
-    template: <Templates />,
-    name: 'EmailTemplates',
-    ImgUrl: img,
-    title: 'LinkedIn Closed Account',
-    description: 'With supporting text below as a natural.',
-    btn: 'Click to see more',
-    type: 'Moderate',
-    featured: 'Featured',
-    days: '3 Days ago'
-
-  },
-  {
-    id: 3,
-    template: <Templates />,
-    name: 'EmailTemplates',
-    ImgUrl: img,
-    title: 'New Parking Rules',
-    description: 'With supporting text below as a natural.',
-    btn: 'Click to see more',
-    type: 'Simple',
-    featured: 'New',
-    days: '2 Days ago'
-
-  },
-  {
-    id: 4,
-    template: <Templates />,
-    name: 'EmailTemplates',
-    ImgUrl: img,
-    title: 'Your Voice Engagement Survey Pulse',
-    description: 'With supporting text below as a natural.',
-    btn: 'Click to see more',
-    type: 'Moderate',
-    featured: 'Simple',
-    days: '5 Days ago'
-
-  },
-  {
-    id: 5,
-    template: <Templates />,
-    name: 'EmailTemplates',
-    ImgUrl: img,
-    title: 'Back to Work Post COVID-19',
-    description: 'With supporting text below as a natural.',
-    btn: 'Click to see more',
-    type: 'Hard',
-    featured: 'Featured',
-    days: '2 Days ago'
-
-  },
-
-]
 const EmailTemplates = () => {
   const [q, setQ] = useState("")
   // const { height, width } = useWindowDimensions();
@@ -123,9 +54,11 @@ const EmailTemplates = () => {
   // Handle Create Model
   const [open, setOpen] = useState(false);
   const [templateName, setTemplateName] = useState('')
-  const handleOpen = (name) =>{
+  const [templateModel, setTemplateModel] = useState('')
+  const handleOpen = (name, template) =>{
      setOpen(true);
      setTemplateName(name)
+     setTemplateModel(template)
   }
   const handleClose = () => setOpen(false);
 
@@ -199,10 +132,14 @@ const EmailTemplates = () => {
                         <span className="rotate"><div>{currentElem.featured}</div></span> */}
 
                         <div className="card-body email-card">
-                          {currentElem.template}
+                          {/* {currentElem.template} */}
+                          <Templates
+                          template={currentElem.template}
+                          
+                          />
                         </div>
                         <div className="card-footer">
-                          <span className=' btn title' onClick={() => handleOpen(currentElem.title)} > View this Attack Payload</span>
+                          <span className=' btn title' onClick={() => handleOpen(currentElem.title, currentElem.template)} > View this Attack Payload</span>
                         </div>
                       </div>
 
@@ -219,7 +156,9 @@ const EmailTemplates = () => {
                             </div>
                             <hr />
                             <div className='create-project-model-form-container'>
-                              {currentElem.template}
+                            <Templates
+                             template={templateModel}
+                          />
                               
                             </div>
                             <div className="template-cancel-btn">
