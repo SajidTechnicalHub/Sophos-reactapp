@@ -76,7 +76,9 @@ const ReviewSchedule = (props) => {
         <br />
         <div className="review-email-block">
           <div className="review-email-template">
-            <Templates />
+            <Templates 
+            template={props.saveCampaignData.template}
+            />
           </div>
           <div className="review-email-details">
             <span style={{ fontWeight: 'bold' }}>Email Details</span>

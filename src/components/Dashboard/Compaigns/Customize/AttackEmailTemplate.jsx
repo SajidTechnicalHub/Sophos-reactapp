@@ -30,7 +30,9 @@ const AttackEmailTemplate = (props) => {
                             </div>
                             <div class="card-body edit-attack-template-block">
                               {
-                                  editBtn ? <EditEmailTemplate /> : 
+                                  editBtn ? <EditEmailTemplate 
+                                  template={props.saveCampaignData.template}
+                                  /> : 
                                   < Templates 
                                   template={props.saveCampaignData.template}
                                   />  

@@ -360,6 +360,7 @@ const AddCompaigns = () => {
 
                                                 <ReviewSchedule
                                                     setActiveClass4={setActiveClass4}
+                                                    saveCampaignData={saveCampaignData}
                                                 />
                                             </div>
                                         </div>
